@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>qyptqttz</code>  
+	<name>qyptqttz</name>  
+	<alias>企业平台前台台帐</alias>  
+	<version>V1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>/qyptqttz/qyptqttz.jsp</url>  
+	<package_time>2015-08-05 18:03:02</package_time>  
+	<reserve_zones> 
+		<reserve_zone> 
+			<name>info</name>  
+			<alias>消息</alias>  
+			<type>2</type>  
+			<page>qyptqttz.jsp</page> 
+		</reserve_zone> 
+	</reserve_zones>  
+	<functions> 
+		<function> 
+			<name>setXxId</name>  
+			<page>qyptqttz.jsp</page>  
+			<return_datas> 
+				<return_data> 
+					<name>xxid</name>  
+					<remark/> 
+				</return_data> 
+			</return_datas>  
+			<remark/> 
+		</function> 
+	</functions>  
+	<remark/> 
+</component>

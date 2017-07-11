@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-07-18 10:37:27
+ * @version $Id$
+ */
+ @import url('reset.css');
+
+ .login,.loginfooter{
+ 	position:absolute;
+ 	left:0;
+ 	width:100%;
+ }
+ .login{
+ 	top:0;
+ 	bottom:44px;
+ 	overflow: auto;
+ }
+ .loginbg{
+ 	width: 100%;
+ 	position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    min-height: 250px;
+ }
+ .slogan{
+ 	background: url(images/login/slogan.png) no-repeat center;
+ 	width: 278px;
+ 	height:27px;
+ 	position: absolute;
+ 	right:10%;
+ 	top:10%;
+ }
+ .logoname2,
+ .logoname1{
+ 	margin-top: 10%;
+ 	max-width: 100%;
+ 	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+ .logoname1{
+ 	max-width: 80%;
+ 	margin-top: 5%;
+ }
+.form{
+ 	width: 348px;
+    margin: 5% auto 0 auto;
+}
+.form-item{
+	margin-top: 20px;
+ 	margin-left: auto;
+    margin-right: auto;
+}
+.form-item.form-user,
+.form-item.form-pwd{
+ 	background: url(images/login/usernameBox.png) no-repeat;
+ 	width: 319px;
+ 	height:57px;
+ }
+ .form-item.form-pwd{
+ 	background: url(images/login/passwordBox.png) no-repeat;
+ }
+ .form-item input{
+ 	border: 0;
+    width: 247px;
+    margin-left: 46px;
+    margin-top: 5px;
+    padding: 16px 8px;
+    font-size: 14px;
+ }
+ .loginBtn{
+ 	display: inline-block;
+ 	background: url(images/login/loginBtn.png) no-repeat center;
+ 	width:344px;
+ 	height:83px;
+ 	cursor: pointer;
+ }
+ .loginfooter{
+ 	bottom:0;
+ 	height:44px;
+ 	background:#e5e5e5;
+ 	line-height: 44px;
+ 	text-align: center;
+ 	font-size: 12px;
+ }

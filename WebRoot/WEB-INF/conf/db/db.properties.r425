@@ -1,0 +1,89 @@
+#config 1.0 oracle database settings
+jdbc.driver=com.highgo.jdbc.Driver
+#jdbc.url=jdbc:highgo://192.10.22.187:5866/dfpt_qhzyc
+jdbc.url=jdbc:highgo://10.0.114.20:5866/dfpt_qhzyc
+#jdbc.url=jdbc:highgo://10.0.114.20:5866/sdbwt_sdzyc0310
+#jdbc.url=jdbc:highgo://10.0.137.60:5866/sdbwt_sdzyc
+#jdbc.url=jdbc:oracle:thin:@140.207.93.46:5211:orcl
+#jdbc.url=jdbc:oracle:thin:@192.168.1.154:1521:orcl
+#jdbc.url=jdbc:oracle:thin:@192.168.3.123:1521:orcl
+#jdbc.url=jdbc:oracle:thin:@10.10.40.5:1521:orcl
+#jdbc.url=jdbc:oracle:thin:@192.168.1.113:1521:orcl
+#jdbc.url=jdbc:oracle:thin:@139.227.192.224:5211:orcl
+jdbc.username=highgo
+jdbc.password=highgo123
+#jdbc.username=config_spzs
+#jdbc.password=config_spzs
+µ×²¿
+#config 1.0 sqlserver2005 database settings
+#jdbc.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#jdbc.url=jdbc:sqlserver://192.168.1.100:1433;DatabaseName=config10_dhx;SelectMethod=Cursor
+#jdbc.username=sa
+#jdbc.password=000000
+
+#config 1.0 DaMeng database settings
+#jdbc.driver=dm.jdbc.driver.DmDriver
+#jdbc.url=jdbc:dm://192.168.1.150:5236
+#jdbc.username=config10_dhx_test
+#jdbc.password=config10_dhx_test
+
+#config 1.0 mysql database setting
+#jdbc.driver=com.mysql.jdbc.Driver
+#jdbc.url=jdbc:mysql://localhost/quickstart?useUnicode=true&characterEncoding=utf-8
+#jdbc.username=root
+#jdbc.password=
+
+#config 1.0 dbcp settings
+dbcp.maxIdle=5
+dbcp.maxActive=40
+dbcp.validationQuery=select 1
+
+
+#authsystem 3.5 oracle database settings
+authsystem.jdbc.driver=com.highgo.jdbc.Driver
+#authsystem.jdbc.url=jdbc:highgo://192.10.22.187:5866/auth_dfpt_qhzyc
+authsystem.jdbc.url=jdbc:highgo://10.0.114.20:5866/auth_dfpt_qhzyc
+#authsystem.jdbc.url=jdbc:oracle:thin:@140.207.93.46:5211:orcl
+#authsystem.jdbc.url=jdbc:oracle:thin:@192.168.3.123:1521:orcl
+#authsystem.jdbc.url=jdbc:oracle:thin:@10.10.40.5:1521:orcl
+#authsystem.jdbc.url=jdbc:oracle:thin:@192.168.1.113:1521:orcl
+#authsystem.jdbc.url=jdbc:oracle:thin:@139.227.192.224:5211:orcl
+authsystem.jdbc.username=highgo
+authsystem.jdbc.password=highgo123
+
+#authsystem 3.5 sqlserver2005 database settings
+#authsystem.jdbc.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#authsystem.jdbc.url=jdbc:sqlserver://192.168.1.100:1433;DatabaseName=auth_new;SelectMethod=Cursor
+#authsystem.jdbc.username=sa
+#authsystem.jdbc.password=000000
+#authsystem 3.5 DaMeng database settings
+#authsystem.jdbc.driver=dm.jdbc.driver.DmDriver
+#authsystem.jdbc.url=jdbc:dm://192.168.1.150:5236
+#authsystem.jdbc.username=auth_new
+#authsystem.jdbc.password=auth_new
+
+#authsystem 3.5 dbcp settings
+authsystem.dbcp.maxIdle=5
+authsystem.dbcp.maxWait=10000
+authsystem.dbcp.maxActive=40
+authsystem.dbcp.validationQuery=select 1
+
+
+herb.jdbc.driver=com.highgo.jdbc.Driver
+herb.jdbc.url=jdbc:highgo://10.0.114.20:5866/herb_qhzyc
+herb.jdbc.username=highgo
+herb.jdbc.password=highgo123
+herb.dbcp.maxIdle=5
+herb.dbcp.maxWait=10000
+herb.dbcp.maxActive=40
+herb.dbcp.validationQuery=select 1
+
+
+# dialect
+hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#hibernate.dialect=org.hibernate.dialect.SQLServerDialect
+#hibernate.dialect=org.hibernate.dialect.DmDialect¡¤
+
+#common setting
+hibernate.show_sql=true
+hibernate.format_sql=false

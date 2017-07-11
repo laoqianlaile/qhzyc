@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,li, dl, dt, dd, form, a, fieldset, input, th, td{margin: 0; padding: 0; border: 0; outline: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, ol{list-style: none;}
+img{display:inline-block;border:0;}
+*{font-family:'微软雅黑';}
+.clearfix:before, .clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+	overflow:hidden;
+}
+.clearfix{
+	zoom:1;
+}

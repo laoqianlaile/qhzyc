@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+#first-tab .img{ 
+	background:url(../images/task-icon2.png) no-repeat center center;
+	-moz-background-size:contain;     
+	-webkit-background-size:contain;      
+	-o-background-size:contain;
+	background-size:contain; 
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+		src='../images/task-icon2.png',
+		sizingMethod='scale'
+	);
+}
+#second-tab .img{ 
+	background:url(../images/complete-icon1.png) no-repeat center center;
+	-moz-background-size:contain;     
+	-webkit-background-size:contain;      
+	-o-background-size:contain;
+	background-size:contain; 
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+		src='../images/complete-icon1.png',
+		sizingMethod='scale'
+	);
+}
+
+.table-body .activeTd1{
+	background-color:#f08300 !important;
+}

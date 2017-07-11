@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd   
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd   
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+           http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		   http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+           default-lazy-init="true">
+    <!-- 系统管理平台配置参数 -->
+    <!-- sdk配置，原system-sdk-conf.xml中的配置内容
+    	 去除了数据源的配置，改为使用Spring来管理数据源的方式
+     -->
+    <!--bean id="authsystem_sdk_conf" class="java.util.HashMap">
+    	<constructor-arg>
+    		<map>
+    			<entry key="entity-factory-class-name" value="ces.sdk.system.dbfactory.DbEntityFactory"/>
+    			<entry key="facade-factory-class-name" value="com.ces.xarch.plugins.authsystem.facade.XarchSystemFacadeFactory"/>
+    			<entry key="auth-engine-class-name" value="ces.sdk.system.engine.NoCacheAuthEngine"/>
+    		</map>
+    	</constructor-arg>
+    </bean-->
+    
+    
+    <!-- 分页查询配置参数 -->
+    <!-- 默认每页记录数 -->
+    <bean id="defaultPagesize" class="java.lang.String">
+    	<constructor-arg index="0" value="20"/>
+    </bean>
+    <!-- 默认当前页号参数名称 -->
+    <bean id="defaultPageNumberParam" class="java.lang.String">
+    	<constructor-arg index="0" value="P_pageNumber"/>
+    </bean>
+    <!-- 默认每页记录数参数名称 -->
+    <bean id="defaultPageSizeParam" class="java.lang.String">
+    	<constructor-arg index="0" value="P_pagesize"/>
+    </bean>
+    <!-- 默认排序参数名称（排序字段,[排序字段,排序方式],[排序字段]） -->
+    <bean id="defaultOrderParam" class="java.lang.String">
+    	<constructor-arg index="0" value="P_orders"/>
+    </bean>
+    
+    
+    <!-- 自动装载aop -->
+	<aop:aspectj-autoproxy />
+	
+	<!-- enable autowire -->
+	<context:annotation-config />
+	
+    <!-- 使用 annotation 自动注册bean注解已被注入 --> 
+	<context:component-scan base-package="com.ces" />
+	
+	
+    
+    <!-- 资源加密过滤器，如果需要对所有信息进行加密请启用该过滤器 -->
+	<!--bean id="SecurityFilterChainProxy" class="com.ces.xarch.core.security.filter.SecurityFilterChainProxy">
+		<property name="useSecurity" value="false" />
+		<property name="accessDeniedFilters">
+			<list>
+			</list>
+		</property>
+		<property name="filters">
+			<list>
+				<ref local="AESFilter"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="AESFilter" class="com.ces.xarch.core.security.filter.AESFilter">
+		<property name="definitionSource">
+			<value>
+				/file/*
+				/image/*
+			</value>
+		</property>
+	</bean-->
+
+    <context:property-placeholder ignore-unresolvable="true" location="/WEB-INF/conf/db/db.properties" />
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+
+        <property name="maxActive" value="${dbcp.maxActive}" />
+        <property name="initialSize" value="2" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="${dbcp.maxIdle}" />
+        <property name= "testWhileIdle" value="true" />
+        <property name= "testOnBorrow" value="false" />
+        <property name= "testOnReturn" value="false" />
+        <property name= "validationQueryTimeout" value="1" />
+        <property name= "timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="filters" value="stat" />
+        <property name="validationQuery" value="${dbcp.validationQuery}" />
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+    </bean>
+
+    <!-- 添加spring定时器进行每日流水号重置工作 -->
+    <!-- 配置任务类-->
+    <bean name="taskJob" class="com.ces.component.trace.utils.TaskJob" />
+    <!-- 启动定时器加载 任务类及触发的方法 -->
+    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--false表示等上一个任务执行完后再开启新的任务-->
+        <property name="concurrent" value="false"/>
+        <property name="targetObject">
+            <ref bean="taskJob"/>
+        </property>
+        <property name="targetMethod">
+            <value>updateLsh</value>
+        </property>
+    </bean>
+    <!--  调度触发器 -->
+    <bean id="myTrigger"
+          class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="jobDetail" />
+        </property>
+        <property name="cronExpression">
+            <!-- 凌晨两点进行流水号编码更新，每一天都从0开始更新-->
+            <value>0 0 2 * * ?</value>
+        </property>
+    </bean>
+    <!-- 调度工厂 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="myTrigger"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

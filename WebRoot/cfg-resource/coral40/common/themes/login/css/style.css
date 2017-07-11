@@ -1,0 +1,134 @@
+body,div,p,input{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.login{
+    width: 100%;
+    height: 100%;
+    background:url(./images/qhlogin/bg.png);
+    background-size: 100% 100%;
+    position: relative;
+    min-height: 670px;
+}
+.login-header{
+    width: 100%;
+    height:500px;
+    line-height: 500px;
+    background:url(./images/qhlogin/login-header.png);
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 1;
+}
+.login-header span{
+    position: absolute;
+    right: 10%;
+    top: -30%;
+}
+.log{
+    width: 325px;
+    height: 100px;
+    margin:0 auto;
+}
+.main{
+    width: 670px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 320px;
+    z-index: 2;
+}
+.main p{
+    width: 40%;
+    height:36px;
+    margin:20px auto;
+    position: relative;
+}
+.main p span{
+    width: 36px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    border-right: 1px solid #cecece;
+    margin: 8px 0;
+}
+.main p img{
+    width: 16px;
+    height: 16px;
+}
+.main p:nth-child(2){
+    margin-top: 80px;
+}
+.main p:nth-child(3) img{
+    width: 15px;
+    height: 19px;
+}
+.main p input{
+    width: 100%;
+    height: 100%;
+    border-right:1px solid green;
+    border-bottom:1px solid green;
+    border-left:2px solid green;
+    border-top:2px solid green;
+    border-radius: 6px;
+    font-size: 16px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+.main p button{
+    width: 100%;
+    height: 100%;
+    background-color: #73BD1E;
+    border:0;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 1px #000;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #E5E5E5;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+.foot{
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 100%;
+    height: 99px;
+}
+.foot img{
+    width: 100%;
+    height: 100%;
+}
+.login_l_b{
+    position: absolute;
+    left: 0;
+    bottom:40px;
+    z-index: 1;
+    width: 386px;
+    height: 402px;
+}
+.login_l_b img{
+    width: 100%;
+    height: 100%;
+}
+.login_r{
+    position: absolute;
+    top:230px;
+    right: 0;
+}

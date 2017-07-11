@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{  margin:0 auto; box-sizing:border-box;}
+.wrapper .TL{
+	width:93.4%;
+	margin:0 auto;
+}
+
+
+
+/*测试部分的样式*/
+.TL .TL-title{ margin-bottom:15px;}
+.TL-title .text{ float:left;}
+.TL-title .buttons{ float:right;}
+#save, #cancel, #edit{ cursor:pointer;}
+#save, #cancel{ display:none;}
+
+
+
+/*内容部分的样式*/
+.TL .TL-content{
+	width: 91%;
+	border:#d3d3d3 solid 1px;
+	box-sizing:border-box;
+	background-color:#f1f1f1;
+}
+.TL-content .TL-cnt-title{ position:relative;}
+.TL-cnt-title .TL-title-text{
+	font-size:16px;
+	color:#fff;
+	line-height:48px;
+	text-align:center;
+	background-color:#2ac79f;
+}
+.TL-cnt-title .selectBox{
+	position:absolute;
+	top:7px;
+	right:12px;
+}
+.selectBox label{
+	font-size:14px;
+	color:#fff;
+	margin-right:6px;
+}
+/*覆盖组件原来的样式--------------------------------------------------------------------------------------------------*/
+/*改变下拉框的大小和圆角样式*/
+/*.coral-combo{ width:108px;}*/
+/*.coral-combo .coral-combo-border{ height:34px;}*/
+/*.coral-combo .coral-corner-all{*/
+/*-webkit-border-radius:0px;*/
+/*-moz-border-radius:0px;*/
+/*-ms-border-radius:0px;*/
+/*-o-border-radius:0px;*/
+/*border-radius:0px;*/
+/*}*/
+/*右边下拉箭头的样式*/
+/*.icon-arrow-down2:before {*/
+/*font-size: 18px;*/
+/*color: #3e3a39;*/
+/*}*/
+/*.coral-combo-arrow{*/
+/*padding-top:7px;*/
+/*}*/
+/*改变默认显示框的样式*/
+/*.coral-combo .coral-textbox-default{*/
+/*height: 30px;*/
+/*padding-left: 36px;*/
+/*}*/
+/*.coral-combo .coral-textbox-border{ border:none; border-bottom: 1px solid #e6e6e6;}*/
+/*改变下拉选项的样式*/
+/*.coral-combo-wrapper {*/
+/*border: none;*/
+/*-moz-box-shadow: 4px 2px 6px 0 rgba(0,0,0,.1);*/
+/*-webkit-box-shadow: 4px 2px 6px 0 rgba(0,0,0,.1);*/
+/*box-shadow: 4px 2px 6px 0 rgba(0,0,0,.1);*/
+/*-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(color='rgba(0,0,0,.1)',direction=145,strength=3)"; */
+/*filter: progid:DXImageTransform.Microsoft.Shadow( color=rgba(0,0,0,.1), Direction=145, Strength=3 );*/
+/*}*/
+/*.coral-combo-wrapper .coral-combobox-item {*/
+/*width:100%;*/
+/*height: 34px;*/
+/*padding: 7px 0 7px 36px;*/
+/*border-bottom: 1px solid #e6e6e6;*/
+/*font-size:13px;*/
+/*}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_1"]{ background:url(../images/icon1.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_2"]{ background:url(../images/icon2.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_3"]{ background:url(../images/icon3.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_4"]{ background:url(../images/icon4.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_5"]{ background:url(../images/icon5.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_6"]{ background:url(../images/icon6.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item[id="combobox_i1_7"]{ background:url(../images/icon7.png) no-repeat 9px top;}*/
+/*.coral-combo-wrapper .coral-combobox-item:hover{ background-position:9px bottom;}*/
+/*.coral-combo-wrapper .coral-combobox-item.coral-combobox-item-selected{ background-position:9px bottom;}*/
+/*.coral-combo-wrapper .coral-combobox-item-selected, .coral-combo-wrapper .coral-combobox-item-hover{ color:#2ac79f;}*/
+/*整个下拉框显示高度和条目宽度*/
+/*.coral-combo-content{ max-height:272px !important; width:108px;}*/
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+.TL-content .TL-cnt-body{ width:520px; margin:0 auto;}
+.TL-cnt-body .TL-body-left{ width:100px; float:left; clear:both;}
+.TL-body-left .TL-operation:first-child{ margin-top:44px;}
+.TL-operation .TL-operation-name{
+	font-size:16px;
+	color:#2ac79f;
+	line-height:56px;
+	float:left;
+}
+.TL-operation .TL-icon1, .TL-operation .TL-icon2, .TL-operation .TL-icon3, .TL-operation .TL-icon4, .TL-operation .TL-icon5, .TL-operation .TL-icon6, .TL-operation .TL-icon7{
+	float:right;
+	width:56px;
+	height:56px;
+	margin-bottom:7px;
+}
+.TL-operation .TL-icon1{ background:url(../images/TL-plant.png) no-repeat center top;}
+.TL-operation .TL-icon1-complete{ background:url(../images/TL-plant.png) no-repeat center bottom;}
+.TL-operation .TL-icon2{ background:url(../images/TL-fertilize.png) no-repeat center top;}
+.TL-operation .TL-icon3{ background:url(../images/Tl-watering.png) no-repeat center top;}
+.TL-operation .TL-icon4{ background:url(../images/TL-weeding.png) no-repeat center top;}
+.TL-operation .TL-icon5{ background:url(../images/TL-drug.png) no-repeat center top;}
+.TL-operation .TL-icon6{ background:url(../images/TL-detection.png) no-repeat center top;}
+.TL-operation .TL-icon7{ background:url(../images/TL-recovery.png) no-repeat center top;}
+.TL-operation:last-child .TL-arrow{ display:none;}
+.TL-body-left .TL-arrow{
+	clear:both;
+	margin-bottom:7px;
+}
+.TL-arrow .TL-arrow-top{
+	height:4px;
+	background:url(../images/green-top.png) no-repeat 67px center;
+}
+.TL-arrow .TL-arrow-middle{
+	height:75px;
+	background:url(../images/greenBar.png) repeat-y 67px center;
+}
+.TL-arrow .TL-arrow-bottom{
+	height:4px;
+	background:url(../images/green-bottom.png) no-repeat 67px center;
+}
+
+
+.TL-cnt-body .TL-body-right{ width:400px; float:right;}
+.TL-body-right .TL-right-item{ margin:18px 0 22px 0; float:left; width:125%;}/*这里使用浮动是为了解决上下共用margin的问题*/
+.TL-right-item .TL-triangle{
+	float:left;
+	width:0;
+	height:0;
+	border-top:7px solid transparent;
+	border-bottom:7px solid transparent;
+	border-right:7px solid #2ac79f;
+	margin-top:49px;
+}
+.TL-right-item .TL-item-info{
+	float:left;
+	width:450px;
+}
+.TL-item-info .TL-info-input{
+	height:87px;
+	background-color:#2ac79f;
+	-webkit-border-radius:6px 6px 0 0;
+	-moz-border-radius:6px 6px 0 0;
+	-ms-border-radius:6px 6px 0 0;
+	-o-border-radius:6px 6px 0 0;
+	border-radius:6px 6px 0 0;
+	margin:0 0 1px 0;
+	color:#fff;
+}
+.TL-info-input label{
+	margin:0 0 0 38px;
+	font-size:14px;
+	color:#fff;
+}
+.TL-info-input label[for="TL-operater"]{letter-spacing:0px;}
+.TL-info-input span[name="farmingItem"]{
+	font-size: 14px;
+	line-height: 54px;
+	padding-left: 14px;
+}
+
+.TL-info-input label[for="datepicker"]{letter-spacing:4px;}
+.TL-info-input span[name="datepicker"]{
+	font-size: 14px;
+	padding-left: 14px;
+}
+/*下面是改变日历插件的样式*/
+span#datepicker1_span2{
+	width:160px;
+	height:28px;
+	background-color:transparent;
+	-webkit-border-radius:14px;
+	-moz-border-radius:14px;
+	-ms-border-radius:14px;
+	-o-border-radius:14px;
+	border-radius:14px;
+	border:none;
+	box-shadow:none;
+}
+span#datepicker1_span2{
+	font-size:18px;
+	color:#fff;
+	line-height:24px;
+}
+.coral-icon-calendar {
+	right: 12px;
+	top: 6px;
+}/*改变日历小图标的位置*/
+.icon-calendar4:before {color: #2ac79f;}/*改变日历小图标的颜色*/
+.coral-readonly .coral-icon-calendar {display:none;}
+
+.TL-item-info .TL-item-comment{
+	height:25px;
+	background-color:#2ac79f;
+	-webkit-border-radius:0 0 6px 6px;
+	-moz-border-radius:0 0 6px 6px;
+	-ms-border-radius:0 0 6px 6px;
+	-o-border-radius:0 0 6px 6px;
+	border-radius:0 0 6px 6px;
+}

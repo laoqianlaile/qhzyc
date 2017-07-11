@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wrapper{ width:100%; position:relative;}
+.wrapper .info{
+	float:right;
+	margin:24px 24px 0 0;
+}
+.info *{ float:left; margin-right:8px;}
+.info span a{ font-size:12px; line-height:19px; color:#fff;}
+.info #arrow{ margin-right:20px; cursor:pointer;}
+
+/*页脚部分*/
+.wrapper .footer{
+	width:100%;
+	height:40px;
+	background-color:#d3d3d3;
+	text-align:center;
+	font-size:12px;
+	color:#666;
+	line-height:40px;
+	font-weight:bold;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.footer .English{ font-family:Arial, Helvetica, sans-serif;}
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1440px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg.png) no-repeat center top; }
+	.wrapper .system-select{
+		width:954px;
+		margin:420px auto 0;
+	}
+	.system-select #back-arrow,#next-arrow{ width:21px; height:35px; margin:70px 0 0 0; cursor:pointer;}
+	.system-select #back-arrow{ float:left; background:url(../../images/hdtyLogin/back-arrow.png) no-repeat center -265px;}
+	.system-select #back-arrow:hover{ background-position:center -300px;}
+	.system-select #next-arrow{ float:right; background:url(../../images/hdtyLogin/next-arrow.png) no-repeat center -265px;}
+	.system-select #next-arrow:hover{ background-position:center -300px;}
+	.system-select .middlebox{ width:854px;  margin:0 auto; overflow:hidden;}
+	/*.middlebox .itemsbox{ width:1752px;}*/
+    /*modified by Synge @20160225 : 最多滚动3屏*/
+    .middlebox .itemsbox{ width:2628px;}
+	.itemsbox .items{ width:876px; float:left;}
+	.items .item{ width:124px; margin:0 22px 0 0; float:left;}
+	.item #wholesale-market,#food-processing,#farming-system,#planting-system,#aquatic-product,#store,#butcher,#dinner,#group,#meat_market,#vegetable_market{
+		width:124px; 
+		height:137px;  
+		cursor:pointer;
+	}
+	.item #wholesale-market{ background:url(../../images/hdtyLogin/wholesale-market-icon.png) no-repeat center -452px;}
+	.item #food-processing{ background:url(../../images/hdtyLogin/food-processing-icon.png) no-repeat center -452px;}
+	.item #farming-system{ background:url(../../images/hdtyLogin/farming-system-icon.png) no-repeat center -452px;}
+	.item #planting-system{ background:url(../../images/hdtyLogin/planting-system-icon.png) no-repeat center -452px;}
+	.item #aquatic-product{ background:url(../../images/hdtyLogin/aquatic-product-icon.png) no-repeat center -452px;}
+	.item #store{ background:url(../../images/hdtyLogin/store-icon.png) no-repeat center  -452px;}
+	.item #butcher{ background:url(../../images/hdtyLogin/butcher.png) no-repeat center  -446px;}
+	.item #dinner{ background:url(../../images/hdtyLogin/dinner.png) no-repeat center  -446px;}
+	.item #group{ background:url(../../images/hdtyLogin/group.png) no-repeat center  -446px;}
+	.item #meat_market{ background:url(../../images/hdtyLogin/meat_market.png) no-repeat center  -446px;}
+	.item #vegetable_market{ background:url(../../images/hdtyLogin/vegetable_market.png) no-repeat center  -446px;}
+	.item span a{
+		display:inline-block;
+		width:124px; 
+		font-size:16px;
+		text-align:center;
+		color:#353535;
+		margin:18px 0 0 0;
+	}
+}
+@media screen and (max-width:1440px) and (max-height:768px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg.png) no-repeat center -60px; min-height:600px; }
+	.wrapper .system-select{
+		margin:340px auto 0;
+	}
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media screen and (min-width:1440px) and (max-width:1920px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg-big.png) no-repeat center top;  }
+	.wrapper .system-select{
+		width:1376px;
+		margin:540px auto 0;
+	}
+	.system-select #back-arrow,#next-arrow{ width:32px; height:53px; margin:96px 0 0 0; cursor:pointer;}
+	.system-select #back-arrow{ float:left; background:url(../../images/hdtyLogin/back-arrow.png) no-repeat center -159px;}
+	.system-select #back-arrow:hover{ background-position:center -212px;}
+	.system-select #next-arrow{ float:right; background:url(../../images/hdtyLogin/next-arrow.png) no-repeat center -159px;}
+	.system-select #next-arrow:hover{ background-position:center -212px;}
+	.system-select .middlebox{ width:1222px;  margin:0 auto; overflow:hidden;}/*(177+32)*6-32*/
+	/*.middlebox .itemsbox{ width:2508px;}/!*(1222+32)*2*!/*/
+    /*modified by Synge @20160225 : 最多滚动3屏*/
+	.middlebox .itemsbox{ width:3762px;}/*(1222+32)*2*/
+	.itemsbox .items{ width:1254px; float:left;}
+	.items .item{ width:177px; margin:0 32px 0 0; float:left;}
+	.item #wholesale-market,#food-processing,#farming-system,#planting-system,#aquatic-product,#store,#butcher,#dinner,#group,#meat_market,#vegetable_market{
+		width:177px; 
+		height:196px;  
+		cursor:pointer;
+	}
+	.item #wholesale-market{ background:url(../../images/hdtyLogin/wholesale-market-icon.png) no-repeat center -256px;}
+	.item #food-processing{ background:url(../../images/hdtyLogin/food-processing-icon.png) no-repeat center -256px;}
+	.item #farming-system{ background:url(../../images/hdtyLogin/farming-system-icon.png) no-repeat center -256px;}
+	.item #planting-system{ background:url(../../images/hdtyLogin/planting-system-icon.png) no-repeat center -256px;}
+	.item #aquatic-product{ background:url(../../images/hdtyLogin/aquatic-product-icon.png) no-repeat center -256px;}
+	.item #store{ background:url(../../images/hdtyLogin/store-icon.png) no-repeat center  -256px;}
+    .item #butcher{ background:url(../../images/hdtyLogin/butcher.png) no-repeat center  -256px;}
+    .item #dinner{ background:url(../../images/hdtyLogin/dinner.png) no-repeat center  -256px;}
+    .item #group{ background:url(../../images/hdtyLogin/group.png) no-repeat center  -256px;}
+    .item #meat_market{ background:url(../../images/hdtyLogin/meat_market.png) no-repeat center  -256px;}
+    .item #vegetable_market{ background:url(../../images/hdtyLogin/vegetable_market.png) no-repeat center  -256px;}
+	.item span a{
+		display:inline-block;
+		width:177px; 
+		font-size:18px;
+		text-align:center;
+		color:#353535;
+		margin:32px 0 0 0;
+	}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:850px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg-big.png) no-repeat center -110px; min-height:730px; }
+	.wrapper .system-select{ margin:420px auto 0; }
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media screen and (min-width:1920px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg-big.png) no-repeat center top; }
+	.wrapper .system-select{
+		width:1820px;
+		margin:560px auto 0;
+	}
+	.system-select #back-arrow,#next-arrow{ width:48px; height:80px; margin:122px 0 0 0; cursor:pointer;}
+	.system-select #back-arrow{ float:left; background:url(../../images/hdtyLogin/back-arrow.png) no-repeat center 0;}
+	.system-select #back-arrow:hover{ background-position:center -80px;}
+	.system-select #next-arrow{ float:right; background:url(../../images/hdtyLogin/next-arrow.png) no-repeat center 0;}
+	.system-select #next-arrow:hover{ background-position:center -80px;}
+	.system-select .middlebox{ width:1635px;  margin:0 auto; overflow:hidden;}
+	/*.middlebox .itemsbox{ width:3360px;}*/
+    /*modified by Synge @20160225 : 最多滚动3屏*/
+	.middlebox .itemsbox{ width:5040px;}
+	.itemsbox .items{ width:1680px; float:left;}
+	.items .item{ width:235px; margin:0 45px 0 0; float:left;}
+	.item #wholesale-market,#food-processing,#farming-system,#planting-system,#aquatic-product,#store,#butcher,#dinner,#group,#meat_market,#vegetable_market{
+		width:235px; 
+		height:256px;  
+		cursor:pointer;
+	}
+	.item #wholesale-market{ background:url(../../images/hdtyLogin/wholesale-market-icon.png) no-repeat center top;}
+	.item #food-processing{ background:url(../../images/hdtyLogin/food-processing-icon.png) no-repeat center top;}
+	.item #farming-system{ background:url(../../images/hdtyLogin/farming-system-icon.png) no-repeat center top;}
+	.item #planting-system{ background:url(../../images/hdtyLogin/planting-system-icon.png) no-repeat center top;}
+	.item #aquatic-product{ background:url(../../images/hdtyLogin/aquatic-product-icon.png) no-repeat center top;}
+	.item #store{ background:url(../../images/hdtyLogin/store-icon.png) no-repeat center  top;}
+    .item #butcher{ background:url(../../images/hdtyLogin/butcher.png) no-repeat center top;}
+    .item #dinner{ background:url(../../images/hdtyLogin/dinner.png) no-repeat center top;}
+    .item #group{ background:url(../../images/hdtyLogin/group.png) no-repeat center top;}
+    .item #meat_market{ background:url(../../images/hdtyLogin/meat_market.png) no-repeat center top;}
+    .item #vegetable_market{ background:url(../../images/hdtyLogin/vegetable_market.png) no-repeat center top;}
+	.item span a{
+		display:inline-block;
+		width:235px; 
+		font-size:24px;
+		text-align:center;
+		color:#353535;
+		margin:45px 0 0 0;
+	}
+}
+@media screen and (min-width:1920px) and (max-height:940px){
+	.wrapper{ background:url(../../images/hdtyLogin/bg-big.png) no-repeat center -110px; min-height:820px; }
+	.wrapper .system-select{ margin:420px auto 0; }
+}

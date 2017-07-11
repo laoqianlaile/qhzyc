@@ -1,0 +1,146 @@
+@CHARSET "UTF-8";
+
+/**解决所有浏览器兼容性的重置样式代码**/
+html, body, object, iframe, div, span, img, h1, h2, h3, h4, h5, h6, ul, li, form, label, input, button{
+	margin: 0;
+	border: 0;
+	padding: 0;
+    outline: 0;
+}
+html,body,iframe,object{
+	width: 100%;
+	height: 100%;
+}
+html,body{
+	font: 12px/16px "Microsoft YaHei","Microsoft JhengHei";
+	color: #434343;
+	font-size: 12px;
+	overflow: hidden;
+	letter-spacing: 2px;
+	background-color: #E9ECEC;
+}
+
+/** 显示纵向滚动条 **/
+.scroll-y{
+	overflow-y: auto!important; 
+}
+
+/** 修复因字体大小的关系导致元素不能定义最小高度 **/
+.no-height{
+	height: 0!important;
+	padding: 0!important;
+	font-size: 0!important;
+}
+
+/** 设置字体 **/
+h1,.h1{
+	font: bold 20px "Microsoft YaHei","Microsoft JhengHei";
+}
+h2,.h2{
+	font: bold 16px "Microsoft YaHei","Microsoft JhengHei";
+}
+h3,.h3{
+	font: bold 14px "Microsoft YaHei","Microsoft JhengHei";
+}
+h4,.h4{
+	font: bold 12px "Microsoft YaHei","Microsoft JhengHei";
+}
+
+/** 超链接样式 **/
+a{
+	color: #d8d8d8;
+	cursor: pointer;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+a.has-decoration{
+	text-decoration: underline;
+}
+a.link_icon{
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+a.link_add{
+	width: 82px;
+	height: 80px;
+	display: block;
+}
+
+/** 清除无序列表样式 **/
+ul li{
+	list-style:none;
+}
+
+/** 横向无序列表样式 **/
+ul li.horizontal{
+	float: left;
+}
+
+/** 文本域样式 **/
+textarea {
+	width:99%;
+	border:1px solid #B7D5EA;
+	resize:none;
+}
+
+/** 防止百分比时页面变形 **/
+input,textarea {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+/** 重置表格边框属性 **/
+table.border,
+table.border tr td{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ABC0D3;
+	border-collapse: collapse;
+}
+
+/*表格内英文字符自动换行*/
+td{
+ 	table-layout: fixed; 
+ 	word-break: break-all; 
+ 	overflow: hidden;
+}
+
+/** 元素左右浮动 **/
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+/** 清除浮动 **/
+.float-clear{
+	clear:both;
+}
+
+/** 隐藏元素 **/
+.display-hidden{
+	display: none;
+}
+.display-block{
+	display: block;
+}
+
+/** 边框底部阴影 **/
+.box-shadow-black{
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=180,strength=2);
+}
+.box-shadow-white{
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#ffffff,direction=180,strength=2);
+}
+
+.ptop-4px{
+	padding-top: 4px;
+}
+
+.mtop-10px{
+	margin-top: 10px;
+}
+.fixheight-10px{
+	height: 10px;
+}

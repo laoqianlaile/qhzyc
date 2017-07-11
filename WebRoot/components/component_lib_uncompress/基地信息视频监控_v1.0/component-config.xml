@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>jdxxspjk</code>  
+	<name>jdxxspjk</name>  
+	<alias>基地信息视频监控</alias>  
+	<version>v1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>jdxxspjk/jdxxspjk.jsp</url>  
+	<package_time>2016-05-09 11:00:08</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>sysParam</name>  
+			<remark/> 
+		</system_parameter> 
+	</system_parameters>  
+	<self_parameters> 
+		<self_parameter> 
+			<name>sysParam</name>  
+			<type>0</type>  
+			<text/>  
+			<value/>  
+			<remark/> 
+		</self_parameter> 
+	</self_parameters>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>inputParam</name>  
+			<value/>  
+			<remark/> 
+		</input_parameter> 
+	</input_parameters>  
+	<output_parameters> 
+		<output_parameter> 
+			<name>outParam</name>  
+			<remark/> 
+		</output_parameter> 
+	</output_parameters>  
+	<remark/> 
+</component>

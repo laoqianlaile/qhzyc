@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>cjgylrkjczm</code>  
+	<name>cjgylrkjczm</name>  
+	<alias>粗加工原料入库检测证明</alias>  
+	<version>V1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>cjgylrkjczm/cjgylrkjczm.jsp</url>  
+	<package_time>2016-05-11 15:47:43</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>sysParma</name>  
+			<remark/> 
+		</system_parameter> 
+	</system_parameters>  
+	<self_parameters> 
+		<self_parameter> 
+			<name>sysParma</name>  
+			<type>0</type>  
+			<text/>  
+			<value/>  
+			<remark/> 
+		</self_parameter> 
+	</self_parameters>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>inputParma</name>  
+			<value/>  
+			<remark/> 
+		</input_parameter> 
+	</input_parameters>  
+	<output_parameters> 
+		<output_parameter> 
+			<name>outputParma</name>  
+			<remark/> 
+		</output_parameter> 
+	</output_parameters>  
+	<remark/> 
+</component>

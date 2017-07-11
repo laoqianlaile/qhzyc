@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>zzzmxz</code>  
+	<name>zzzmxz</name>  
+	<alias>山东中药材种植种苗新增</alias>  
+	<version>v1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>zzzmxz/zzzmxz.jsp</url>  
+	<package_time>2016-04-14 19:56:23</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>systemParam1</name>  
+			<remark/> 
+		</system_parameter> 
+	</system_parameters>  
+	<self_parameters> 
+		<self_parameter> 
+			<name>selfParam1</name>  
+			<type>0</type>  
+			<text/>  
+			<value/>  
+			<remark/> 
+		</self_parameter> 
+	</self_parameters>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>inputParamName_1</name>  
+			<value/>  
+			<remark/> 
+		</input_parameter> 
+	</input_parameters>  
+	<remark/> 
+</component>

@@ -1,0 +1,13 @@
+package com.ces.component.${packageName}.service;
+
+import org.springframework.stereotype.Component;
+
+import com.ces.component.${packageName}.dao.${className}Dao;
+import com.ces.component.trace.service.base.TraceShowModuleDefineDaoService;
+import com.ces.xarch.core.entity.StringIDEntity;
+
+@Component
+public class ${className}Service extends TraceShowModuleDefineDaoService<StringIDEntity, ${className}Dao> {
+
+    
+}

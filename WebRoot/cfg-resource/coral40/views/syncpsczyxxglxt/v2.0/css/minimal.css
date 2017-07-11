@@ -1,0 +1,129 @@
+/* iCheck plugin Minimal skin, black
+----------------------------------- */
+.icheckbox_minimal, .icheckbox_minimal-red, .icheckbox_minimal-green, .icheckbox_minimal-blue, .icheckbox_minimal-aero, .icheckbox_minimal-grey, .icheckbox_minimal-orange, .icheckbox_minimal-yellow, .icheckbox_minimal-pink, .icheckbox_minimal-purple, .iradio_minimal, .iradio_minimal-red, .iradio_minimal-green, .iradio_minimal-blue, .iradio_minimal-aero, .iradio_minimal-grey, .iradio_minimal-orange, .iradio_minimal-yellow, .iradio_minimal-pink, .iradio_minimal-purple {
+	*position: absolute;
+}
+
+
+.icheckbox_minimal{
+    *display: inline;
+    vertical-align: middle;
+    margin: 0 auto;
+    padding: 0;
+    width: 50px;
+    height: 44px;
+    background:url(../images/gouxuankuang1.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_minimal {
+    background-position: 0 0;
+}
+.icheckbox_minimal.hover {
+	background-position: -50px 0;
+}
+.icheckbox_minimal.checked {
+	background-position: -100px 0;
+}
+.icheckbox_minimal.disabled {
+	background-position: -150px 0;
+	cursor: default;
+}
+.icheckbox_minimal.checked.disabled {
+	background-position: -200px 0;
+}
+
+
+@media screen and (max-width:1024px){
+	.icheckbox_minimal{
+		*display: inline;
+		vertical-align: middle;
+		margin: 0 auto;
+		padding: 0;
+		width: 30px;
+		height: 27px;
+		background:url(../images/gouxuankuang3.png) no-repeat;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.icheckbox_minimal {
+		background-position: 0 0;
+	}
+	.icheckbox_minimal.hover {
+		background-position: -30px 0;
+	}
+	.icheckbox_minimal.checked {
+		background-position: -60px 0;
+	}
+	.icheckbox_minimal.disabled {
+		background-position: -90px 0;
+		cursor: default;
+	}
+	.icheckbox_minimal.checked.disabled {
+		background-position: -120px 0;
+	}
+}
+@media screen and (min-width:1024px) and (max-width:1440px){
+	.icheckbox_minimal{
+		*display: inline;
+		vertical-align: middle;
+		margin: 0 auto;
+		padding: 0;
+		width: 45px;
+		height: 40px;
+		border:red solid 1px;
+		background:url(../images/gouxuankuang2.png) no-repeat;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.icheckbox_minimal {
+		background-position: 0 0;
+	}
+	.icheckbox_minimal.hover {
+		background-position: -45px 0;
+	}
+	.icheckbox_minimal.checked {
+		background-position: -90px 0;
+	}
+	.icheckbox_minimal.disabled {
+		background-position: -135px 0;
+		cursor: default;
+	}
+	.icheckbox_minimal.checked.disabled {
+		background-position: -180px 0;
+	}
+}
+
+@media screen and (max-height:768px){
+	.icheckbox_minimal{
+		*display: inline;
+		vertical-align: middle;
+		margin: 0 auto;
+		padding: 0;
+		width: 30px;
+		height: 27px;
+		background:url(../images/gouxuankuang3.png) no-repeat;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.icheckbox_minimal {
+		background-position: 0 0;
+	}
+	.icheckbox_minimal.hover {
+		background-position: -30px 0;
+	}
+	.icheckbox_minimal.checked {
+		background-position: -60px 0;
+	}
+	.icheckbox_minimal.disabled {
+		background-position: -90px 0;
+		cursor: default;
+	}
+	.icheckbox_minimal.checked.disabled {
+		background-position: -120px 0;
+	}
+}

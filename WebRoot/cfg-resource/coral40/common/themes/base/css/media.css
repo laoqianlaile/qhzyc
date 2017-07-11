@@ -1,0 +1,21 @@
+/************header transform*************/
+/* @-webkit-keyframes gWelHealth { 
+	50% {transform: scale(0.7, 0.7);}
+	100%{transform:scale(1,1);}
+}
+@-moz-keyframes gWelHealth { 
+	50% {transform: scale(0.7, 0.7);}
+	100%{transform: scale(1,1);}
+}
+@-o-keyframes gWelHealth { 
+	50% {transform: scale(0.7, 0.7);}
+	100%{transform: scale(1,1);}
+}
+@-ms-keyframes gWelHealth { 
+	50% {transform: scale(0.7, 0.7);}
+	100%{transform: scale(1,1);}
+} */
+@keyframes gWelHealth {
+	50% {transform: scale(0.7, 0.7);}
+	100%{transform: scale(1,1);}
+}

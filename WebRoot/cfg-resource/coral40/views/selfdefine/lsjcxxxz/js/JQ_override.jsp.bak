@@ -1,0 +1,722 @@
+<%@page language="java" pageEncoding="UTF-8"%>
+<script type="text/javascript">
+/***************************************************!
+ * @author qiucs 
+ * @date   2014-7-15
+ * 系统配置平台应用自定义二次开发JS模板 
+ ***************************************************/
+ 
+ 
+(function(subffix) {
+
+/**
+ * 二次开发定位自己controller
+ * @returns {String}
+ **/
+window[CFG_actionName(subffix)] = function () {
+	// this.assembleData 就是 configInfo
+	return $.contextPath + "/lsjcxxxz";
+};
+var barCode;
+/**
+ * 二次开发：复写自定义表单
+ */
+function _override_form (ui) {
+	// ui.assembleData 就是 configInfo
+	//console.log("override grid!");
+	//ui.getAction = function () { 
+	//	return $.contextPath + "/appmanage/show-module";
+	//};
+	function Map() {
+			var struct = function(key, value) { 
+						this.key = key; 
+						this.value = value;
+			}  
+	   
+	 		var put = function(key, value){  
+	  				for (var i = 0; i < this.arr.length; i++) {
+	  					if ( this.arr[i].key === key ) {
+	  						this.arr[i].value = value; return;
+	  					}
+	  				}  
+	   				this.arr[this.arr.length] = new struct(key, value);
+	   		}  
+	   
+	 		var get = function(key) {  
+	  				for (var i = 0; i < this.arr.length; i++) {  
+	   					if ( this.arr[i].key === key ) { 
+	   						return this.arr[i].value; 
+	   					}  
+	  				}  
+	  				return null;  
+	 		}
+	 		this.arr = new Array();  
+			this.get = get;  
+			this.put = put;  
+	 }
+	 var spmcMap = new Map();
+	if(ui.options.number==1){
+		//初始化表单数据
+		ui._init = function(){
+			var jhpch = $("#JHPCH_"+ui.timestamp, this.uiForm);
+			var jcbh = $("#SCJCBH_"+ui.timestamp, this.uiForm);
+			var lsscbm = $("#LSSCBM_"+ui.timestamp, this.uiForm);
+			if(jcbh.textbox('getValue')==null||jcbh.textbox('getValue')==''){
+				jQuery.ajax({
+					type:'post',
+					url:$.contextPath +'/lsjcxxxz!getScjcbh.json',
+					dataType:'json',
+					success:function(data){
+						jcbh.textbox("setValue",data.scjcbh);
+					},
+					error:function(data){
+					}
+				});
+			}
+			if(jhpch.textbox("getValue")==null||jhpch.textbox("getValue")==''){
+				jQuery.ajax({
+					type:'post',
+					url:$.contextPath +'/lsjcxxxz!initFormData.json',
+					dataType:'json',
+					success:function(data){
+						jhpch.textbox("setValue",data.jhpch);
+						lsscbm.textbox("setValue",data.lsscbm);
+					},
+					error:function(data){
+					}
+				});
+			}
+			//加载批发商名称下拉列表
+			var jqjyz = ui.getItemJQ("PFSMC");
+			var jsonData=$.loadJson($.contextPath+"/jyzxx!getJyzxx.json?xtlx=LS&zt=1");
+			//var jyzData = $.loadJson($.contextPath + "/lsjyzda!getPfsGrid.json");
+			jqjyz.combogrid("reload",jsonData.data);
+			//加载菜品名称
+			var spmcData = $.loadJson($.contextPath + "/lsjcxxxz!getAllSpmc.json");
+			for(var i=0;i<spmcData.length;i++){
+				spmcMap.put(spmcData[i][0],spmcData[i][1]);
+			}
+		}
+		
+		ui.bindEvent = function () {
+			//批发商名称下拉列表
+			var jqPfsmc = $("#PFSMC_" + ui.timestamp);
+			var jqCdmc = $("#CDMC_" + ui.timestamp);
+			jqPfsmc.combogrid("option","onChange",function(e,data){
+				var text = data.text;
+				var value = data.value;
+				ui.setFormData({PFSMC:text,PFSBM:value});
+			});
+			//产地名称下拉列表
+			jqCdmc.combogrid("option","onChange",function(e,data){
+				var text = data.text;
+				var value = data.value;
+				ui.setFormData({CDMC:text,CDBM:value});
+			});
+		}
+		
+		/**
+		 * 获取选择的经营者信息
+		 */
+		ui.addCallback("getJyzInfo",function(data) {
+			if(data==null) return;
+			var jyzInfo = data.jyzInfo;
+			if(jyzInfo==null) return;
+			//填充form表单
+			$(ui.uiForm).form();
+			var jyzData = {"PFSMC":jyzInfo.JYZMC,"PFSBM":jyzInfo.JYZBM};
+			ui.uiForm.form("loadData",jyzData);
+		});
+		/**
+		 * 获取弹出框产地信息
+		 */
+		ui.addCallback("getCdxx",function(data) {
+			if(data==null) return;
+			var cdxx = data.cdxx;
+			if(cdxx==null) return;
+			//填充form表单
+			$(ui.uiForm).form();
+			var cdxxData = {"CDMC":cdxx.CDMC,"CDBM":cdxx.CDBM};
+			ui.uiForm.form("loadData",cdxxData);
+		});
+		
+		//设置经营者下拉列表
+		ui.addCallback("setComboGridValue_Jyzmc",function(o){
+			if( null == o) return ;
+			var rowData = o.result;
+			if( null == rowData) return ;
+			ui.setFormData({PFSMC:rowData.A_JYZMC,PFSBM:rowData.A_JYZBM});
+		});
+		//设置产地信息下拉列表
+		ui.addCallback("setComboGridValue_Cdmc",function(o){
+			var rowData = o.result;
+			ui.setFormData({CDMC:rowData.CDMC});
+		});
+		
+		//添加读卡功能
+		ui.clickSecondDev = function(id){
+			if (id==$.config.preButtonId+"inputBarCode") {
+				showDialog();
+			}
+			if(id==$.config.preButtonId+"dk"){
+				/**
+				 * 从卡内读取理货卡信息在表单上显示
+				 */
+			 	if (isSwt) {
+					var result = _window("readUserInfoAndBusinessDetail");
+					
+					var res = JSON.parse(result);
+					
+					var user = res.user;
+					var records = res.records;
+					
+					if(res.status == "true" || res.status == true){
+						//判断卡类型是否为菜卡
+						if(user.cardType != 2 || user.cardType != '2'){
+							$.message( {message:"本卡不是菜卡，请选择菜卡进行操作！", cls:"info"});
+							return;
+						}
+						//批发商信息
+						//ui.setFormData({PFSMC:user.userName,PFSBM:user.userId});
+						//交易信息
+						var cGrid = ui.getDetailGrid();
+						var cForm = ui.getDetailForm();
+						for(var i = 0; i<records.length;i++){
+							var detailData = records[i];
+							cForm.SPMC = spmcMap.get(detailData.productCode);
+							cForm.ZL = detailData.dealWeight;
+							cForm.DJ = detailData.dealPrice;
+							//隐藏字段暂时无法这样赋值
+							cForm.JHPCH = detailData.batchCode;
+							cForm.SPBM = detailData.productCode;
+							cForm.GHPCSCBM = detailData.sellerCode;
+							cForm.GHPCSCMC = detailData.sellerName;
+							cForm.JYPZH = detailData.tracecode;
+							//计算批次金额
+							if (!$.isNumeric(detailData.dealWeight)) cForm.ZL = 0;
+							if (!$.isNumeric(detailData.dealPrice)) cForm.DJ = 0;
+							cForm.JE = parseFloat(cForm.ZL, 10) * parseFloat(cForm.DJ, 10);
+							//向表单中添加数据
+							cGrid.addRowData(cForm);
+						}
+						//更新主表单理货总重量和总金额
+						var rowData = cGrid.getRowData(), zl,je,lhzzl=0, lhzje=0;
+					    for (var i = 0, len = rowData.length; i < len; i++) {
+					    	zl = rowData[i].ZL;
+					    	je = rowData[i].JE;
+					    	if (!$.isNumeric(zl)) zl = 0;
+					    	if (!$.isNumeric(je)) je = 0;
+					    	lhzzl += parseInt(zl, 10);
+					    	lhzje += parseInt(je, 10);
+					    }
+					    $(this.uiForm).form();
+						this.uiForm.form("loadData",{ZZL: lhzzl,ZJE:lhzje});
+						$.message( {message:"读卡成功", cls:"info"});
+					}else{
+						$.message( {message:"读卡失败，请重试", cls:"warning"});
+					}
+				} else {
+					$.alert("请在程序中操作");
+				}
+			 }
+		}
+		
+		//保存（若读卡，清空卡数据）
+		ui.clickSaveAll = function () {
+			var dGrid = ui.getDetailGrid();
+			if (!dGrid) return;
+			var jqForm  = $("form", ui.uiForm),
+			    rowData = dGrid.toFormData(), 
+			    formData, url;
+			// 表单检验
+			if (!jqForm.form("valid")) return false;
+			// 检验
+			if (!rowData.length) {
+				CFG_message("请先添加明细列表数据再保存！", "warning");
+				return false;
+			}
+			// 获取表单数据
+		    formData = jqForm.form("formData", false);
+		    // 向列表添加数据
+		    // 重置表单数据
+		    url = ui.getAction() + "!saveAll.json?P_tableId=" + ui.options.tableId + "&P_D_tableIds=" + dGrid.options.tableId;
+			//console.log("master: " + $.config.toString(formData));
+			//console.log("detail: " + $.config.toString(rowData));
+		    $.ajax({
+		    	url : url,
+				type : "post",
+				data : {E_entityJson: $.config.toString(formData),
+					    E_dEntitiesJson: $.config.toString(rowData),
+					    barCode : barCode == null ? "" : barCode},
+				dataType : "json",
+				success : function(rlt) {
+					if (rlt.success) {
+						jqForm.form("loadData", rlt.data.master);
+						dGrid.clearGridData();
+						dGrid.addRowData(rlt.data.detail);
+						CFG_message("保存成功！", "success");
+						//清除卡交易信息
+						if (isSwt) {
+							var jypzhArray = new Array();
+							for(var i=0;i<rowData.length;i++){
+								var detail = rowData[i];
+								jypzhArray.push(detail.JYPZH);
+							}
+							_window("clearBusinessInfoAndDetail",jypzhArray);
+						}
+					} else {
+						CFG_message(rlt.message, "warning");
+					}
+				},
+				error : function() {
+					CFG_message("保存主从表数据失败！", "error");
+				}
+		    });
+		}
+		ui.addOutputValue("getJyz",function(o){
+			var pColumns = "((EQ_C_JYZLX≡2) OR (EQ_C_JYZLX≡3)) +AND (EQ_C_ZT≡1)" ;
+			var o = {
+				status : true,
+				P_columns : pColumns
+			}
+			return o;
+		});
+		
+	}else if(ui.options.number==2){
+		var masterForm = ui.getMasterForm();
+		var masterFormData =  $('form',masterForm.uiForm).form('formData',false);
+		ui._init = function(){
+			var jqSpmc = ui.getItemJQ("SPMC");
+			var jsonData = $.loadJson($.contextPath + "/cpfl!getCpflGrid.json");
+			jqSpmc.combogrid("reload",jsonData.data);
+		}
+		ui.bindEvent = function () {
+			var je = $("input[name='JE']", this.uiForm),
+			zl = $("input[name='ZL']", this.uiForm),
+			dj = $("input[name='DJ']", this.uiForm);
+			zl.textbox("option", "onChange", function(e, data) {
+				var djValue = dj.textbox("getValue"), 
+					zlValue = data.value,
+					jeValue;
+				if (!$.isNumeric(djValue)) djValue = 0;
+				if (!$.isNumeric(zlValue)) zlValue = 0;
+				jeValue = parseFloat(djValue, 10) * parseFloat(zlValue, 10);
+				je.textbox("setValue", Math.round(jeValue*100)/100);
+			});
+			dj.textbox("option", "onChange", function(e, data) {
+				var zlValue = zl.textbox("getValue"), 
+					djValue = data.value,
+					jeValue;
+				if (!$.isNumeric(djValue)) djValue = 0;
+				if (!$.isNumeric(zlValue)) zlValue = 0;
+				jeValue = parseFloat(djValue, 10) * parseFloat(zlValue, 10);
+				je.textbox("setValue", Math.round(jeValue*100)/100);
+			});
+			var jqspmc = ui.getItemJQ("SPMC");
+			jqspmc.combogrid("option","onChange",function(e,data){
+				var spmc = data.text;
+				var spbm = data.value;
+				ui.setFormData({SPBM:spbm,SPMC:spmc});
+			})
+		}
+		/**
+		 * 获取弹出框商品信息
+		 */
+		ui.addCallback("getSpxx",function(data) {
+			if(data==null) return;
+			var spxx = data.spxx;
+			if(spxx==null) return;
+			//填充form表单
+			$(ui.uiForm).form();
+			var spxxData = {"SPMC":spxx.SPMC,"SPBM":spxx.SPBM};
+			ui.uiForm.form("loadData",spxxData);
+		});
+		
+		//设置商品名称下拉列表
+		ui.addCallback("setComboGridValue_Spmc",function(o){
+			var rowData = o.result;
+			ui.setFormData({CDMC:rowData.CDMC});
+		});
+		//添加数据
+		ui.clickAdd = function(){
+			var masterForm = ui.getMasterForm();
+			var masterFormData =  $('form',masterForm.uiForm).form('formData',false);
+			var cGrid = this.getSelfGrid(), // 对应列表
+			    jqForm = $("form", this.uiForm),
+			    formData;
+			// 表单检验
+			if (!jqForm.form("valid")) return false;
+			// 获取表单数据
+		    formData = jqForm.form("formData", false);
+		    //写入进货批次号
+		    formData.JHPCH = masterFormData.JHPCH;
+		   // 向列表添加数据
+			cGrid.addRowData(formData);
+		    // 重置表单数据
+			ui.clickCreate();
+			//更新主表单理货总重量和总金额
+			var rowData = cGrid.getRowData(), zl,je,lhzzl=0, lhzje=0;
+		    for (var i = 0, len = rowData.length; i < len; i++) {
+		    	zl = rowData[i].ZL;
+		    	je = rowData[i].JE;
+		    	if (!$.isNumeric(zl)) zl = 0;
+		    	if (!$.isNumeric(je)) je = 0;
+		    	lhzzl += parseFloat(zl, 10);
+		    	lhzje += parseFloat(je, 10);
+		    }
+			masterForm.setFormData({ZZL:lhzzl,ZJE:lhzje});
+		};
+
+
+		//删除数据
+		ui.clickSecondDev = function(id){
+			if(id==$.config.preButtonId+"del"){
+				var cGrid = this.getSelfGrid();
+				var rowIdArr = cGrid.getSelectedRowId();
+				if (rowIdArr === null||0 === rowIdArr.length) {
+					$.message({message: "请选择记录!", cls: "warning"});
+					return;
+				}
+				for(var i = rowIdArr.length - 1; i > -1; i-- ){
+					cGrid.uiGrid.grid("delRowData",rowIdArr[i]);
+				}
+				//更新主表单理货总重量和总金额
+				var rowData = cGrid.getRowData(), zl,je,lhzzl=0, lhzje=0;
+			    for (var i = 0, len = rowData.length; i < len; i++) {
+			    	zl = rowData[i].ZL;
+			    	je = rowData[i].JE;
+			    	if (!$.isNumeric(zl)) zl = 0;
+			    	if (!$.isNumeric(je)) je = 0;
+			    	lhzzl += parseFloat(zl, 10);
+			    	lhzje += parseFloat(je, 10);
+			    }
+				masterForm.setFormData({ZZL: lhzzl,ZJE:lhzje});
+			}
+		};
+
+	}
+	function setPfsxx(jyzbm,jyzmc,barCode){//根据读码信息获取本市场内该经营者信息
+		var lsscbm = ui.getItemJQ("LSSCBM").textbox("getValue");
+		var getJyzId = $.loadJson($.contextPath+'/jyzxx!getJyzxxByBmAndQybm.json?jyzbm='+jyzbm+"&qybm="+lsscbm);
+		if("FATAL" == getJyzId){
+			CFG_message("批发商信息错误，请录入！", "warning");
+		}else if("SUCCESS" == getJyzId){
+			ui.setFormData({
+				PFSMC:jyzmc,
+				PFSBM:jyzbm
+			});
+		} else {
+			var id = getJyzId;
+			var createJyz = $.loadJson($.contextPath + "/jyzxx!createJyz.json?id="+id+"&qybm="+lsscbm+"&xltx=LS&barCode="+barCode);
+			ui.setFormData({
+				PFSMC:jyzmc,
+				PFSBM:jyzbm
+			});
+			CFG_message({message:"已添加经营者"+jyzmc+"！", position: {at:"center top+210"}}, "success");
+		}
+	}
+
+	function checkSpxx(spxxArray){//读码添加本门店没有的商品
+		var spbmArray = new Array();
+		var addedSpmcArray = new Array();
+		for(var i = 0;i<spxxArray.length;i++){
+			spbmArray.push(spxxArray[i].SPBM);
+		}
+		var exsitSp = $.loadJson($.contextPath + '/qyptmdspgl!checkSpid.json?spbm=' + JSON.stringify(spbmArray));
+		if(exsitSp!=null&&exsitSp.length!=0){
+			for(var i = 0;i<spxxArray.length;i++){
+				for(var j = 0;j<exsitSp.length;j++){
+					if(spxxArray[i].SPBM!=exsitSp[j].SPBM){
+						if(j == exsitSp.length-1){
+							addedSpmcArray.push(spxxArray[i].SPMC);
+						}
+						continue;
+					}
+					break;
+				}
+			}
+		} else {
+			for(var i = 0;i<spxxArray.length;i++){
+				addedSpmcArray.push(spxxArray[i].SPMC);
+			}
+		}
+
+		if(addedSpmcArray.length>0){
+			CFG_message("已添加商品"+JSON.stringify(addedSpmcArray)+"至系统","success");
+		}
+	}
+	function showDialog(){
+		var _this = ui;
+		var jqGlobal = $(ui.options.global);
+		var jqUC = $("<div id=\"jqUC\"></div>").appendTo(jqGlobal);
+		jqUC.dialog({
+			appendTo : jqGlobal,
+			modal : true,
+			title : "请输入条码",
+			width : 240,
+			height : 80,
+			resizable : false,
+			position : {
+				at: "center top+200"
+			},
+			onClose : function() {
+				jqUC.remove();
+				jqUC.remove();
+			},
+			onCreate : function() {
+				var jqDiv = $("<div class=\"app-inputdiv-full\" style=\"padding:10px 20px;\"></div>").appendTo(this);
+				var jq = $("<input id=\"UNTREAD_OPINION_" + _this.uuid + "\" name=\"opinion\"></textarea>").appendTo(jqDiv);
+				jq.textbox({width: 200, maxlength: 22});
+			},
+			onOpen : function() {
+				_this.close(false);
+				var jqPanel = $(this).dialog("buttonPanel").addClass("app-bottom-toolbar"),
+						jqDiv   = $("<div class=\"dialog-toolbar\">").appendTo(jqPanel);
+				jqDiv.toolbar({
+					data: ["->", {id:"sure", label:"确定", type:"button"}, {id:"cancel", label:"取消", type:"button"}],
+					onClick: function(e, ui) {
+						if ("sure" === ui.id) {
+							barCode=$("#UNTREAD_OPINION_" + _this.uuid).val();
+							setFormData(barCode);
+							_this.close(jqUC);
+						} else {
+							_this.close(jqUC);
+						}
+						$("#UNTREAD_OPINION_" + _this.uuid).remove();
+					}
+				});
+			}
+		});
+	}
+	function setFormData(barCode){
+		if(barCode.length != 22){
+			CFG_message("请输入有效的条形码!", "warning");
+			return;
+		}
+		var prefix = barCode.substring(0,2);
+		var detailForm = ui.getDetailForm();
+		var detailGrid = ui.getDetailGrid();
+		if("ZZ" === prefix){
+			var jsonData = $.loadJson($.contextPath + '/lsjcxxxz!getZzccxx.json?zztmh='+barCode);
+			if ("ERROR" === jsonData) {
+				CFG_message("该条码已被使用!", "warning");
+			}else{
+				//添加系统内不存在的商品
+				if(jsonData.SPMC!=null&&jsonData.SPMC!=""&&jsonData.SPBM!=null&&jsonData.SPBM!=""){
+					var spxx = {};
+					var spxxArray = new Array();
+					spxx.SPMC = jsonData.SPMC;
+					spxx.SPBM = jsonData.SPBM;
+					spxxArray.push(spxx);
+					checkSpxx(spxxArray);
+				}
+				//加载主表数据
+				ui.setFormData({
+					CDPZH:jsonData.CDZMH,
+					YSCPH:jsonData.YSCPH,
+					SCJD:jsonData.ZZJDMC,//
+					CDMC:jsonData.CDMC,
+					CDBM:jsonData.CDBM
+				});
+				//加载从表列表数据
+				detailForm.SPMC=jsonData.SPMC;
+				detailForm.SPBM=jsonData.SPBM;
+				detailForm.ZL=jsonData.ZL;
+				detailForm.JHPCH=jsonData.CCPCH;
+				detailForm.JYPZH=jsonData.ZSM;
+				detailGrid.addRowData(detailForm);
+
+				//更新主表理货重量 金额
+				var rowData = detailGrid.getRowData(), zl,je,zzl=0, zje=0;
+				for (var i = 0, len = rowData.length; i < len; i++) {
+					zl = rowData[i].ZL;
+					je = rowData[i].JE;
+					if (!$.isNumeric(zl)) zl = 0;
+					if (!$.isNumeric(je)) je = 0;
+					zzl += parseInt(zl, 10);
+					zje += parseInt(je, 10);
+				}
+				ui.setFormData({
+					ZZL : zzl,
+					ZJE : zje,
+					JHPCH:""//to be deleted
+				});
+			}
+		}else if("PC" === prefix){
+			var jsonData = $.loadJson($.contextPath + '/lsjcxxxz!getPcjyxx.json?pctmh='+barCode);
+
+			if("ERROR" === jsonData){
+				CFG_message("该条码已被使用!", "warning");
+			}else{
+				var lhxx = jsonData.lhxx;
+				var jymxxx = jsonData.jymxxx;
+				var lssmc = lhxx.LSSMC;
+				var lssbm = lhxx.LSSBM;
+				if(jymxxx!=null&&jymxxx.length>0){
+					var spxxArray = new Array();
+					for(var i = 0 ; i<jymxxx.length ; i++){
+						var spxx = {};
+						spxx.SPMC = jymxxx[i].SPMC;
+						spxx.SPBM = jymxxx[i].SPBM;
+						spxxArray.push(spxx);
+					}
+					checkSpxx(spxxArray);
+				}
+				setPfsxx(lssbm,lssmc,barCode);
+				//加载主表数据
+				ui.setFormData({
+					CDPZH:lhxx.CDZMH,
+					YSCPH:lhxx.YSCPH,
+					SCJD:lhxx.SCJD,//
+					CDMC:lhxx.CDMC
+				});
+				detailGrid.clearGridData();
+				//加载从表列表数据
+				for(var i = 0;i<jymxxx.length;i++){
+					detailForm.SPMC=jymxxx[i].SPMC;
+					detailForm.SPBM=jymxxx[i].SPBM;
+					detailForm.ZL=jymxxx[i].ZL;
+					detailForm.DJ=jymxxx[i].DJ;
+					detailForm.JE=jymxxx[i].JE;
+					detailForm.JHPCH=jymxxx[i].JHPCH;
+					detailForm.JYPZH=jymxxx[i].ZSM;
+					detailForm.GHPFSCBM = lhxx.PFSCBM;
+					detailForm.GHPFSCMC = lhxx.PFSCMC;
+					detailGrid.addRowData(detailForm);
+				}
+				//更新主表理货重量 金额
+				var rowData = detailGrid.getRowData(), zl,je,zzl=0, zje=0;
+				for (var i = 0, len = rowData.length; i < len; i++) {
+					zl = rowData[i].ZL;
+					je = rowData[i].JE;
+					if (!$.isNumeric(zl)) zl = 0;
+					if (!$.isNumeric(je)) je = 0;
+					zzl += parseInt(zl, 10);
+					zje += parseInt(je, 10);
+				}
+				ui.setFormData({
+					ZZL : zzl,
+					ZJE : zje,
+					JHPCH:""//to be deleted
+				});
+			}
+		}else {
+			CFG_message("请输入以ZZ或PC开头的条形码!", "warning");
+			return;
+		}
+	}
+};
+/**
+ *  二次开发：复写自定义列表
+ */
+function _override_grid (ui) {
+	// ui.assembleData 就是 configInfo
+	//console.log("override grid!");
+	//ui.getAction = function () {
+	//	return $.contextPath + "/appmanage/show-module";
+	//};
+	ui.eSelectRow = function(e, data) {return null;};
+};
+/**
+ *  二次开发：复写自定义树
+ */
+function _override_tree (ui) {
+	// ui.assembleData 就是 configInfo
+	//console.log("override tree!");
+	//ui.getAction = function () {
+	//	return $.contextPath + "/appmanage/show-module";
+	//};
+};
+/**
+ *  二次开发：复写自定义工具条
+ */
+function _override_tbar (ui) {
+	// ui.assembleData 就是 configInfo
+	//console.log("override tbar!");
+	//ui.getAction = function () {
+	//	return $.contextPath + "/appmanage/show-module";
+	//};
+
+	//主表单添加读卡按钮
+	if(ui.options.number == 1){
+		ui.processItems = function (data) {
+			var btns = [];
+			btns.push({
+				id:$.config.preButtonId + "inputBarCode",
+				label: "输入条码",
+				type : "button"
+			});
+			btns.push({
+				id:$.config.preButtonId + "dk",
+				label: "读卡",
+				type : "button"
+			});
+			for (var i = 0; i < data.length; i++) {
+				btns.push(data[i]);
+			}
+			return btns;
+		};
+	}
+	//子表单添加删除按钮
+	if(ui.options.number ==2 ){
+		ui.processItems = function (data) {
+			var btns = [];
+			for (var i = 0; i < data.length; i++) {
+				btns.push(data[i]);
+			}
+			btns.push({
+				id:$.config.preButtonId + "del",
+				label: "删除",
+				type : "button"
+			});
+			return btns;
+		};
+	}
+};
+/**
+ *  二次开发：复写自定义布局
+ */
+function _override_layout (ui) {
+	//console.log("override layout!");
+	//ui.getAction = function () {
+	//	return $.contextPath + "/appmanage/show-module";
+	//};
+};
+
+
+
+
+
+
+
+
+/**
+ * 在此可以复写所有自定义JS类
+ * @param selector
+ * @returns {JQ_override}
+ */
+window[CFG_overrideName(subffix)] = function () {
+	
+	var startTime = new Date().getTime();
+	
+	if (this instanceof $.config.cform) {
+		_override_form(this);
+	} else if (this instanceof $.config.cgrid) {
+		_override_grid(this);
+	} else if (this instanceof $.config.ctree) {
+		_override_tree(this);
+	} else if (this instanceof $.config.ctbar) {
+		_override_tbar(this);
+	} else if (this instanceof $.config.clayout) {
+		_override_layout(this);
+	}
+	
+	console.log("over ride cost time: " + (new Date().getTime() - startTime));
+};
+
+	
+	
+	
+	
+})("${timestamp}");
+</script>

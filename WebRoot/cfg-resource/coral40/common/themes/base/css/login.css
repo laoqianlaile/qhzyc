@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+html{overflow: hidden;}
+body{overflow: hidden;}
+.loginbody {
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/login/loginbody.jpg');
+	background-size: cover;
+ 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='cfg-resource/coral40/_cui_library/css/arch/images/login/loginbody.jpg', sizingMethod='scale');
+	background-color: #fff;
+	background-repeat: no-repeat;
+	position:relative;
+}
+.loginblock{ position:absolute; width:100%; height:400px; z-index:1; left:0;top:50%; margin-top:-200px; }
+.loginbcenter{
+	width: 100%;
+	height: 117px;
+	background-image: url('../images/login/loginbgCenter.png');
+	background-size: 100% 117px;
+ 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='cfg-resource/coral40/_cui_library/css/arch/images/login/loginbgCenter.png', sizingMethod='scale');
+	background-repeat: no-repeat;
+	position:absolute; left:0; bottom:134px;
+	}
+
+.loginbox{ width:750px; height:400px; position:absolute; left:50%; top:50%; margin-left:-375px; margin-top:-230px; background:url(../images/login/logintext1024.png) right top no-repeat; z-index:2;}
+.logo3{ background:url(../images/login/logo3_1024.png) center no-repeat;margin-top: 40px;height: 100px;}
+.logo5{ background:url(../images/login/logo1024.png) center no-repeat;margin-top: 40px;height: 100px;}
+.loginul{margin-top:75px;}
+.loginul,
+.loginul li{ float:left; display:inline;}
+.loginul li{ margin:5px 10px; position:relative;}
+.loginul li label.text_l{max-width:auto;}
+.loginul li input.re_checkbox{margin:0; vertical-align:middle;}
+.logininput{ font-weight:bold;outline:0; border:0; width:191px; background:#fff; padding:8px 5px 8px 55px;font-size: 14px;font-family:'微软雅黑','华文细黑',Microsoft YaHei,arial;}
+.user,.password{
+	background: #767676 url(../images/globalicon.png) no-repeat 0px -249px;
+	width: 50px;
+	height: 36px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	*top:1px;
+	}
+.password{
+	background: #767676 url(../images/globalicon.png) no-repeat -79px -249px;
+	}
+.submitbtn{ background:#162d7c url(../images/globalicon.png) no-repeat -158px -252px;outline: 0;border: 0; height:36px; width:68px;}
+.submitbtn:hover{ background-color:#1e3998; box-shadow: 0 0 5px #fff;}
+.copyright_l{ margin-top:50px;}
+.text_l{ color:#fff; margin-left:5px;line-height: 36px;}
+.re_checkbox{ width:20px; height:20px; vertical-align:middle; line-height: 36px;}
+
+@media screen and (min-width: 1250px){
+.loginblock {
+	height: 450px;
+	margin-top: -225px;
+	}
+.loginbox {
+	width: 900px;
+	height: 450px;
+	margin-left: -450px;
+	margin-top: -280px;
+	background: url(../images/login/logintext.png) right top no-repeat;
+	}
+.logo3 {
+	background: url(../images/login/logo3.png) center no-repeat;
+	margin-top: 90px;
+	height: 125px;
+}
+.logo5 {
+	background: url(../images/login/logo.png) center no-repeat;
+	margin-top: 90px;
+	height: 125px;
+}
+.loginul {
+	margin-top: 90px;
+}
+.logininput{
+	width: 264px;
+}
+.loginbcenter{
+	bottom:118px;
+}
+}

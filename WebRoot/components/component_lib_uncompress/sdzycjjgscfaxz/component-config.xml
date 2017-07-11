@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>sdzycjjgscfaxz</code>  
+	<name>sdzycjjgscfaxz</name>  
+	<alias>山东中药材精加工生产方案新增</alias>  
+	<version>v1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>sdzycjjgscfaxz/sdzycjjgscfaxz.jsp</url>  
+	<package_time>2016-04-19 11:28:27</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>scfabh</name>  
+			<remark>生产方案编号</remark> 
+		</system_parameter>  
+		<system_parameter> 
+			<name>qybm</name>  
+			<remark>企业编码</remark> 
+		</system_parameter> 
+	</system_parameters>  
+	<remark>山东中药材精加工生产方案新增</remark> 
+</component>

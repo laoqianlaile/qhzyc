@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-07-18 10:37:27
+ * @version $Id$
+ */
+ @import url('reset.css');
+ 
+ .login,.loginfooter{
+ 	position:absolute;
+ 	left:0;
+ 	width:100%;
+ }
+ .login{
+ 	top:0;
+ 	bottom:0px;
+ 	overflow: auto;
+	overflow-x: hidden;
+ }
+ .loginbg{
+ 	width: 100%;
+ 	position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    min-height: 250px;
+ }
+ .slogan{
+ 	background: url(images/login/slogan.png) no-repeat center;
+ 	width: 278px;
+ 	height:27px;
+ 	position: absolute;
+ 	right:10%;
+ 	top:10%;
+ }
+ .logoname2,
+ .logoname1{
+ 	margin-top: 10%;
+ 	max-width: 100%;
+ 	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+ .logoname1{
+ 	max-width: 80%;
+ 	margin-top: 5%;
+ }
+.form{
+ 	width: 348px;
+    margin: 5% auto 0 auto;
+}
+.form-item{
+	margin-top: 20px;
+ 	margin-left: auto;
+    margin-right: auto;
+}
+.form-item.form-user,
+.form-item.form-pwd{
+ 	background: url(images/login/usernameBox.png) no-repeat;
+ 	width: 319px;
+ 	height:57px;
+ }
+ .form-item.form-pwd{
+ 	background: url(images/login/passwordBox.png) no-repeat;
+ }
+ 
+ 
+ 
+ 
+ 
+ .form-item input{
+ 	border: 0;
+    width: 247px;
+    margin-left: 46px;
+    margin-top: 5px;
+    padding: 16px 8px;
+    font-size: 14px;
+ }
+ .loginBtn{
+ 	display: inline-block;
+ 	background: url(images/login/loginBtn.png) no-repeat center;
+ 	width:344px;
+ 	height:83px;
+ 	cursor: pointer;
+ }
+ #loginBtn1{background: url(images/login/loginBtn1.png) no-repeat center;}
+ #loginBtn2{background: url(images/login/loginBtn2.png) no-repeat center;}
+ #loginBtn3{background: url(images/login/loginBtn3.png) no-repeat center;}
+ #loginBtn4{background: url(images/login/loginBtn4.png) no-repeat center;}
+ #loginBtn5{background: url(images/login/loginBtn5.png) no-repeat center;}
+ #loginBtn6{background: url(images/login/loginBtn6.png) no-repeat center;}
+ #loginBtn7{background: url(images/login/loginBtn7.png) no-repeat center;}
+ .loginfooter{
+ 	bottom:0;
+ 	height:44px;
+ 	background:#e5e5e5;
+ 	line-height: 44px;
+ 	text-align: center;
+ 	font-size: 12px;
+ }
+ 
+ 
+ .login1, .login2, .login3, .login4, .login5, .login6, .login7{
+	background:url(images/login/loginbg1.png) no-repeat center top;
+	background-size:cover;
+ }
+ .login2{
+	background-image:url(images/login/loginbg2.png); 
+ }
+ .login3{
+	background-image:url(images/login/loginbg3.png); 
+ }
+ .login4{
+	background-image:url(images/login/loginbg4.png);
+ }
+ .login5{
+	background-image:url(images/login/loginbg5.png); 
+ }
+ .login6{
+	background-image:url(images/login/loginbg6.png); 
+ }
+ .login7{
+	background-image:url(images/login/loginbg7.png); 
+ }
+ 
+ .form-item.form-user1{background: url(images/login/usernameBox1.png) no-repeat;}
+ .form-item.form-user2, .form-item.form-user3{background: url(images/login/usernameBox2.png) no-repeat;}
+ .form-item.form-user6{background: url(images/login/usernameBox6.png) no-repeat;}
+ .form-item.form-user7{background: url(images/login/usernameBox7.png) no-repeat;}
+ 
+ .form-item.form-pwd1{background: url(images/login/passwordBox1.png) no-repeat;}
+ .form-item.form-pwd2, .form-item.form-pwd3{
+ 	background: url(images/login/passwordBox2.png) no-repeat;
+ }
+ .form-item.form-pwd6{
+ 	background: url(images/login/passwordBox6.png) no-repeat;
+ }
+ .form-item.form-pwd7{
+ 	background: url(images/login/passwordBox7.png) no-repeat;
+ }
+ 
+ .loginBtn1{background: url(images/login/loginBtn1.png) no-repeat center;}
+ .loginBtn2, .loginBtn3{background: url(images/login/loginBtn2.png) no-repeat center;}
+ .loginBtn4, .loginBtn5{background: url(images/login/loginBtn4.png) no-repeat center;}
+ .loginBtn6{background: url(images/login/loginBtn6.png) no-repeat center;}
+ .loginBtn7{background: url(images/login/loginBtn7.png) no-repeat center;}
+ 
+ 
+ .left_top_icon{
+	position:absolute;
+	top:1%;
+	left:1%; 
+ }
+ .logoName{
+	display:block;
+	margin:3% auto 0;
+	width:85%;	 
+ }
+ @media screen and (max-width:1440px){
+	 .logoName{
+		margin-top:0;
+		width:100%;	 
+	 }
+ }
+ @media screen and (max-width:1280px){
+	 .logoName{
+		margin-top:2%;	 
+	 }
+	 .left_top_icon{width:300px;}
+ }
+  @media screen and (max-width:1024px){
+	 .logoName{
+		margin-top:4%;	 
+	 }
+ }
+ @media screen and (max-width:900px){
+	 .logoName{
+		 width:120%;
+		margin-top:10%;	 
+		margin-left:-10%;
+	 }
+ }
+ .form1 {margin: 10% auto 0 auto;}

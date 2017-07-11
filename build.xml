@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<project name="config1.0" default="main" basedir=".">
+<!--
+
+	<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+-->
+
+	<property environment="env" />  
+	<property name="destSrc.dir" value="${basedir}/destSrc" />  
+	<property name="lib.dir" value="${basedir}/WebRoot/WEB-INF/lib" />  
+	<property name="build.dir" value="${basedir}/WebRoot/WEB-INF/classes" />  
+	
+	<!-- 设置classpath目录 -->
+	<path id="classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- 清空编译目录 -->
+	<target name="clean">
+	<!--
+		<delete dir="${build.dir}"></delete>
+	-->
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}" includes="**/*" defaultexcludes="false"/>
+		</delete>
+	</target>
+
+	<!-- 初始化,建立目录,将多个src目录复制到同一src目录，编译，打包完成后自动清除 -->  
+	<target name="init" description="初始化,建立目录,复制文件" depends="clean">  
+		<mkdir dir="${destSrc.dir}"/>
+		<copy todir="${destSrc.dir}">
+			<fileset dir="${basedir}/src/authsystem4.0-plugin-1.0">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${destSrc.dir}">
+			<fileset dir="${basedir}/src/component">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${destSrc.dir}">
+			<fileset dir="${basedir}/src/config">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${destSrc.dir}">
+			<fileset dir="${basedir}/src/sdk4.0">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy todir="${destSrc.dir}">
+			<fileset dir="${basedir}/src/selfdefine">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- 编译class -->
+	<target name="compile" depends="init">
+		<!--
+		<mkdir dir="build/classes"/>
+		-->
+		<javac srcdir="${destSrc.dir}" nowarn="on" destdir="${build.dir}" encoding="utf-8" includeantruntime="on" source="1.6" target="1.6" bootclasspath="${java.home}/lib/rt.jar">
+			<classpath refid="classpath"></classpath>
+		</javac>
+		<copydir src="${basedir}/src/authsystem4.0-plugin-1.0" dest="${build.dir}">
+			<include name="conf/**"/>
+		</copydir>
+		<copydir src="${basedir}/src/sdk4.0" dest="${build.dir}">
+			<include name="sql_config/**"></include>
+		</copydir>
+	</target>
+
+	<!-- 删除合并的src目录 -->
+	<target name="del" depends="compile">
+		<delete dir="${destSrc.dir}"></delete>
+	</target>
+
+	<!-- 主程序 -->
+	<target name="main" depends="del">
+	</target>
+
+</project>

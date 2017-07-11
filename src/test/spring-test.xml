@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd   
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd   
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+           http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    	   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		   http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+           default-lazy-init="true">
+    <!--   事件监听:实现了 ApplicationListener监听接口，包括AuthenticationCredentialsNotFoundEvent 事件，
+		AuthorizationFailureEvent事件，AuthorizedEvent事件， PublicInvocationEvent事件 -->
+	<bean  class="org.springframework.security.authentication.event.LoggerListener" />
+
+	<!-- 定义上下文返回的消息的国际化。 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:org/springframework/security/messages_zh_CN"/>
+	</bean>
+	
+	<!-- 自动装载aop -->
+	<aop:aspectj-autoproxy />
+	
+	<!-- enable autowire -->
+	<context:annotation-config />
+
+	<!-- 分页查询配置参数 -->
+	<!-- 默认每页记录数 -->
+	<bean id="defaultPagesize" class="java.lang.String">
+		<constructor-arg index="0" value="20"/>
+	</bean>
+	<!-- 默认当前页号参数名称 -->
+	<bean id="defaultPageNumberParam" class="java.lang.String">
+		<constructor-arg index="0" value="P_pageNumber"/>
+	</bean>
+	<!-- 默认每页记录数参数名称 -->
+	<bean id="defaultPageSizeParam" class="java.lang.String">
+		<constructor-arg index="0" value="P_pagesize"/>
+	</bean>
+	<!-- 默认排序参数名称（排序字段,[排序字段,排序方式],[排序字段]） -->
+	<bean id="defaultOrderParam" class="java.lang.String">
+		<constructor-arg index="0" value="P_orders"/>
+	</bean>
+
+	<!-- 使用 annotation 自动注册bean注解已被注入 -->
+	<context:component-scan base-package="com.ces.config.dhtmlx.dao.common,com.ces.xarch.core.utils,com.ces.config.dhtmlx.service.appmanage" />
+
+    <!-- 使用 annotation 自动注册bean注解已被注入 -->
+	<context:component-scan base-package="com.ces.component.trace.**.service,com.ces.component.trace.**.utils" />
+
+	<!-- Jpa Entity Manager 配置 -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="dataSource" ref="dataSource"/>
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
+		<property name="persistenceProvider" ref="persistenceProvider"/>
+		<property name="jpaDialect" ref="jpaDialect"/>
+		<property name="packagesToScan" value="com.ces.xarch.core.entity,com.ces.component.cspt.entity,com.ces.config.dhtmlx.entity.appmanage"/>
+		<!-- 当配置多个数据源时，使用该属性来进行标识区分不同的数据源
+			类中的注解 @Transactional(value="oracle") 与其配合使用
+		<property name="persistenceUnitName" value="oracle" />
+		-->
+		<property name="jpaProperties">
+			<props>
+				<!-- 命名规则 My_NAME->MyName -->
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<!--prop key="hibernate.hbm2ddl.auto">update</prop-->
+				<prop key="hibernate.jdbc.fetch_size">18</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<!-- jsr303验证模式 因为其要么验证 要么不验证 不能按照规则走 所以此处禁用 -->
+                <!-- #http://docs.jboss.org/hibernate/entitymanager/3.6/reference/en/html/configuration.html -->
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<!-- 只扫描class文件，不扫描hbm，默认两个都搜索 -->
+                <prop key="hibernate.archive.autodetection">class</prop>
+                <!-- 不检查@NamedQuery -->
+                <prop key="hibernate.query.startup_check">false</prop>
+			</props>
+		</property>
+		<property name="loadTimeWeaver"><!-- 运行时植入 -->
+			<bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+		</property>
+	</bean>
+
+	<bean id="persistenceProvider" class="org.hibernate.ejb.HibernatePersistence"/>
+	<bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="generateDdl" value="false" />
+	</bean>
+	
+	<!-- Spring Data Jpa配置 -->
+ 	<jpa:repositories base-package="com.ces.component.trace.**.dao,com.ces.config.dhtmlx.dao.appmanage" repository-impl-postfix="Impl" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
+   
+	<!-- Jpa 事务配置 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<beans>
+		<context:property-placeholder ignore-unresolvable="true" location="file:WebRoot/WEB-INF/conf/db/db.properties" />
+
+		<!-- DBCP连接池 -->
+		<bean id="dataSource" class="com.ces.utils.dbcp.XarchBasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${jdbc.driver}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+			<property name="defaultAutoCommit" value="false" />
+			
+			<!-- Connection Pooling Info -->
+			<property name="maxActive" value="${dbcp.maxActive}" />
+			<property name="maxIdle" value="${dbcp.maxIdle}" />
+			<property name= "testWhileIdle" value="true" />
+			<property name= "testOnBorrow" value="false" />
+			<property name= "testOnReturn" value="false" />
+			<property name= "validationQuery" value="${dbcp.validationQuery}" />
+			<property name= "validationQueryTimeout" value="1" />
+			<property name= "timeBetweenEvictionRunsMillis" value="60000" />
+			<property name= "numTestsPerEvictionRun" value="${dbcp.maxIdle}" />
+		</bean>
+	</beans>
+</beans>

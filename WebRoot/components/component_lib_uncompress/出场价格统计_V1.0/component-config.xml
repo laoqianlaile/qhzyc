@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>ccjgtj</code>  
+	<name>ccjgtj</name>  
+	<alias>出场价格统计</alias>  
+	<version>V1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>/ccjgtj/ccjgtj.jsp</url>  
+	<package_time>2015-07-20 10:56:45</package_time>  
+	<remark/> 
+</component>

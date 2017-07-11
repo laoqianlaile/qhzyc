@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+	<excludes>
+		<pattern>/static/*</pattern>
+		<pattern>/companyImages/*</pattern>
+		<pattern>/js/*</pattern>
+		<pattern>/css/*</pattern>
+		<pattern>/images/*</pattern>
+		<pattern>/login*</pattern>
+		<pattern>/index.jsp</pattern>
+		<pattern>/cfg.jsp*</pattern>
+		<pattern>/app.jsp*</pattern>
+		<pattern>/WEB-INF/views/index.jsp</pattern>
+		<pattern>/WEB-INF/views/error/*</pattern>
+		<pattern>/WEB-INF/views/success.jsp</pattern>
+		<pattern>/views/config/appmanage/report/*</pattern>
+		<pattern>/*!coflowTrack*</pattern>
+		<pattern>/WEB-INF/views/coflow/graph.jsp*</pattern>
+		<pattern>/coflow/*</pattern>
+		<pattern>/action/project-manager!*</pattern>
+		<pattern>/cfg-resource/coral40/*</pattern>
+		<pattern>/component/component-version!previewConfigFile*</pattern>
+		<pattern>/*!toUI*</pattern>
+		<pattern>/cfg-resource/cell/*</pattern>
+		<pattern>/coflow/*</pattern>
+		<pattern>/sso.jsp*</pattern>
+		<pattern>/services/*</pattern>
+		<pattern>/resource/*</pattern>
+		<pattern>/cfg-resource/coral40/views/syncpsczyxxglxt/*</pattern>
+		<pattern>/download/*</pattern>
+	</excludes>
+	
+	<!-- <decorator name="logout" page="logout.jsp">
+		<pattern>/login</pattern>
+	</decorator> -->
+	
+	<decorator name="main" page="main.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+</decorators>

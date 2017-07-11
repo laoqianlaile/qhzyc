@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>dkxxcgqz</code>  
+	<name>dkxxcgqz</name>  
+	<alias>地块信息传感器组</alias>  
+	<version>V1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>dkxxcgqz/dkxxcgqz.jsp</url>  
+	<package_time>2016-05-09 17:03:16</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>sysPrama</name>  
+			<remark/> 
+		</system_parameter> 
+	</system_parameters>  
+	<self_parameters> 
+		<self_parameter> 
+			<name>sysPrama</name>  
+			<type>0</type>  
+			<text/>  
+			<value/>  
+			<remark/> 
+		</self_parameter> 
+	</self_parameters>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>inputPrama</name>  
+			<value/>  
+			<remark/> 
+		</input_parameter> 
+	</input_parameters>  
+	<output_parameters> 
+		<output_parameter> 
+			<name>outputPrama</name>  
+			<remark/> 
+		</output_parameter> 
+	</output_parameters>  
+	<remark/> 
+</component>

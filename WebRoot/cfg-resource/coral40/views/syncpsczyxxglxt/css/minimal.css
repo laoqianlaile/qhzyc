@@ -1,0 +1,36 @@
+/* iCheck plugin Minimal skin, black
+----------------------------------- */
+.icheckbox_minimal, .icheckbox_minimal-red, .icheckbox_minimal-green, .icheckbox_minimal-blue, .icheckbox_minimal-aero, .icheckbox_minimal-grey, .icheckbox_minimal-orange, .icheckbox_minimal-yellow, .icheckbox_minimal-pink, .icheckbox_minimal-purple, .iradio_minimal, .iradio_minimal-red, .iradio_minimal-green, .iradio_minimal-blue, .iradio_minimal-aero, .iradio_minimal-grey, .iradio_minimal-orange, .iradio_minimal-yellow, .iradio_minimal-pink, .iradio_minimal-purple {
+	*position: absolute;
+}
+
+
+.icheckbox_minimal{
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 59px;
+    height: 55px;
+    background:url(../images/gouxuankuang1.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_minimal {
+    background-position: 0 0;
+}
+.icheckbox_minimal.hover {
+	background-position: -59px 0;
+}
+.icheckbox_minimal.checked {
+	background-position: -118px 0;
+}
+.icheckbox_minimal.disabled {
+	background-position: -177px 0;
+	cursor: default;
+}
+.icheckbox_minimal.checked.disabled {
+	background-position: -236px 0;
+}

@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+.TL-body-right .TL-right-item1{ margin:18px 0 0 0;}
+.TL-arrow .TL-arrow-top1{ 
+	height:4px;
+	background:url(../images/gray-top.png) no-repeat 67px center;
+}
+.TL-arrow .TL-arrow-middle1{ 
+	height:75px;
+	background:url(../images/grayBar.png) repeat-y 67px center;
+}
+.TL-arrow .TL-arrow-bottom1{ 
+	height:4px;
+	background:url(../images/gray-bottom.png) no-repeat 67px center;
+}
+.TL-operation .TL-operation-name1{ color:#898989;}
+
+.TL-right-item .TL-triangle1{
+	float:left;
+	width:0;
+	height:0;
+	border-top:7px solid transparent;
+	border-bottom:7px solid transparent;
+	border-right:7px solid #898989;
+	margin-top:49px;
+	
+}
+.TL-item-info .TL-info-table{
+	height:87px;
+	background-color:#898989;
+	-webkit-border-radius:6px 6px 0 0;
+	-moz-border-radius:6px 6px 0 0;
+	-ms-border-radius:6px 6px 0 0;
+	-o-border-radius:6px 6px 0 0;
+	border-radius:6px 6px 0 0;
+	margin:0 0 1px 0;
+	color:#fff;
+	overflow:hidden;
+}
+.TL-info-table table{
+	margin:12px 0 0 36px;
+	font-size:14px;
+	color:#fff;
+}
+.TL-info-table table td{ height:28px; vertical-align:top;}
+.TL-info-table .TL-table-text{ line-height:26px;}
+.TL-info-table table td .date{ font-size:18px;}
+.TL-info-table table td .start-time{ margin-right:75px;}
+.TL-operater{ letter-spacing:7px;}
+.TL-item-info .TL-item-comment1{
+	background-color:#dbdbdb;
+	-webkit-border-radius:0 0 6px 6px;
+	-moz-border-radius:0 0 6px 6px;
+	-ms-border-radius:0 0 6px 6px;
+	-o-border-radius:0 0 6px 6px;
+	border-radius:0 0 6px 6px;
+}
+.TL-item-comment1 .TL-comment-button{
+	font-size:12px;
+	color:#fff;
+	line-height:25px;
+	float:right;
+	margin:0 10px 0 6px;
+	cursor:pointer;
+}
+.TL-item-comment1 img{ float:right; margin-top:5px;}
+/*星星评价*/
+.TL-item-comment1 .stars{ clear:both; float:left;}
+.TL-item-comment1 .stars ul{ float:left; margin-top:-7px;}
+.TL-item-comment1 .stars{padding-left:24px;}
+.TL-item-comment1 .stars ul li{
+	width:22px;
+	height:26px;
+	float:left;
+	padding-right:3px;
+	background:url(../images/star.png) no-repeat 0 0;
+}
+.TL-item-comment1 .stars ul li.on{background-position:0 -26px;}
+
+/*有关评论的表单信息*/
+.TL-item-comment1 .TL-comment-form{ clear:both; width:344px; margin:0 0 0 24px;}
+.TL-comment-form table{ width:100%;}
+.TL-comment-form table td{ color:#3e3a39; vertical-align:top;}
+.TL-comment-form table .box{ 
+	width:100%;
+	font-size:14px;
+	line-height:24px; 
+	padding:8px 18px 0; 
+	color:#3e3a39; 
+	background-color:transparent;
+	border:none;
+	resize: none;/*不让用户随意改变输入框的大小*/
+}
+.TL-comment-form table .TL-comment-time{ padding-left:18px;}
+.TL-comment-form table .TL-comment-edit, .TL-comment-form table .TL-comment-delete{ 
+	background-color:transparent;
+	font-size:14px;
+	color:#3e3a39;
+	border:none;
+	margin:0 0 0 12px;
+	cursor:pointer;
+}
+.TL-comment-form table .TL-comment-announce{
+	width:80px;
+	height:32px;
+	background-color:#2ac79f;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-ms-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+	font-size:12px;
+	color:#fff;
+	vertical-align:top;
+	letter-spacing:6px;
+	padding-left:6px;
+	margin:0 0 9px;
+	float:right;
+	-moz-box-shadow:0 4px 0 0 #19ab87;            
+    -webkit-box-shadow:0 4px 0 0 #19ab87;           
+    box-shadow:0 4px 0 0 #19ab87;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=180, Color='#19ab87')";
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+	cursor:pointer;
+	visibility:hidden;
+}

@@ -1,0 +1,131 @@
+/* Tiny Scrollbar */
+#scrollbar1 { width:98.42%; margin: 0 auto; padding-bottom:5px;}
+#scrollbar1 .viewport { width:97.645%; overflow:hidden; position: relative; margin:12px 0 20px 0;}
+#scrollbar1 .overview { width:100%; list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#scrollbar1 .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+#scrollbar1 .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+#scrollbar1 .thumb { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#scrollbar1 .thumb .end { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+#scrollbar1 .disable { display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+@media screen and (max-width:1280px){
+	#scrollbar1 .viewport { height:550px;}
+}
+@media screen and (max-width:1280px) and (max-height:880px){
+	#scrollbar1 .viewport { height:500px;}
+}
+@media screen and (max-width:1280px) and (max-height:768px){
+	#scrollbar1 .viewport { height:420px;}
+}
+
+
+@media screen and (min-width:1280px) and (max-width:1440px){
+	#scrollbar1 .viewport { height:600px;}
+}
+@media screen and (min-width:1280px) and (max-width:1440px) and (max-height:880px){
+	#scrollbar1 .viewport { height:480px;}
+}
+@media screen and (min-width:1280px) and (max-width:1440px) and (max-height:768px){
+	#scrollbar1 .viewport { height:390px;}
+}
+
+
+@media screen and (min-width:1440px) and (max-width:1920px){
+	#scrollbar1 .viewport { height:570px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:920px){
+	#scrollbar1 .viewport { height:540px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:880px){
+	#scrollbar1 .viewport { height:510px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:860px){
+	#scrollbar1 .viewport { height:460px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:768px){
+	#scrollbar1 .viewport { height:410px;}
+}
+
+
+@media screen and (min-width:1920px){
+	#scrollbar1 .viewport { height:605px;}
+}
+
+
+
+#scrollbar2 { width:98.42%; margin: 0 auto;  padding-bottom:5px;}
+#scrollbar2 .viewport { width:97.645%; overflow:hidden; position: relative; margin:12px 0 20px 0;}
+#scrollbar2 .overview { width:100%; list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#scrollbar2 .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+#scrollbar2 .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+#scrollbar2 .thumb { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#scrollbar2 .thumb .end { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+#scrollbar2 .disable { display: none; }
+
+@media screen and (max-width:1280px){
+	#scrollbar2 .viewport { height:550px;}
+}
+@media screen and (max-width:1280px) and (max-height:880px){
+	#scrollbar2 .viewport { height:500px;}
+}
+@media screen and (max-width:1280px) and (max-height:768px){
+	#scrollbar2 .viewport { height:420px;}
+}
+
+
+@media screen and (min-width:1280px) and (max-width:1440px){
+	#scrollbar2 .viewport { height:570px;}
+}
+@media screen and (min-width:1280px) and (max-width:1440px) and (max-height:880px){
+	#scrollbar2 .viewport { height:480px;}
+}
+@media screen and (min-width:1280px) and (max-width:1440px) and (max-height:768px){
+	#scrollbar2 .viewport { height:390px;}
+}
+
+
+
+@media screen and (min-width:1440px) and (max-width:1920px){
+	#scrollbar2 .viewport { height:570px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:920px){
+	#scrollbar2 .viewport { height:540px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:880px){
+	#scrollbar2 .viewport { height:510px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:860px){
+	#scrollbar2 .viewport { height:460px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px) and (max-height:768px){
+	#scrollbar2 .viewport { height:410px;}
+}
+
+
+@media screen and (min-width:1920px){
+	#scrollbar2 .viewport { height:550px;}
+}
+
+
+#scrollbar3 { width:94%; margin: 0 auto; padding-bottom:5px;}
+#scrollbar3 .viewport { width:84.6%; overflow:hidden; position: relative; margin:12px 0 20px 5%;}
+#scrollbar3 .overview { width:100%; list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#scrollbar3 .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+#scrollbar3 .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+#scrollbar3 .thumb { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#scrollbar3 .thumb .end { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+#scrollbar3 .disable { display: none; }
+
+@media screen and (max-width:1280px){
+	#scrollbar3 .viewport { height:310px;}
+}
+@media screen and (min-width:1280px) and (max-width:1440px){
+	#scrollbar3 .viewport { height:340px;}
+}
+@media screen and (min-width:1440px) and (max-width:1920px){
+	#scrollbar3 .viewport { height:390px;}
+}
+@media screen and (min-width:1920px){
+	#scrollbar3 .viewport { height:540px;}
+}

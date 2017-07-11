@@ -1,0 +1,502 @@
+/***************************************************
+ * 自定义构件样式集
+ ***************************************************/
+ 
+/* textbox label */
+.coral-textbox-border .coral-buttonset .coral-button-text-only .coral-button-text {
+    padding: 2px 2px;
+}
+
+.coral-dialog-buttonset .coral-toolbar {
+	float: none;
+} 
+
+.fillwidth{ width:100%;}
+
+.container-center {margin-left: auto;margin-right: auto;}
+
+.app-inputdiv-full {float: left;padding-top: 6px;width:98%;}
+.app-inputdiv12 {float: left;padding-top: 6px;width:96%;}
+.app-inputdiv9 {float: left;padding-top: 6px;width:72%;}
+.app-inputdiv8 {float: left;padding-top: 6px;width:64%;}
+.app-inputdiv6 {float: left;padding-top: 6px;width:48%;}
+.app-inputdiv4 {float: left;padding-top: 6px;width:32%;}
+.app-inputdiv3 {float: left;padding-top: 6px;width:24%;}
+
+.app-inputdiv-full .coral-textbox, .app-inputdiv-full .coral-combo,.app-inputdiv-full .coral-datepicker,
+.app-inputdiv-full .coral-radiolist,.app-inputdiv-full .coral-checkboxlist   {
+ 	width: 100%;
+}
+.app-inputdiv12 .coral-textbox, .app-inputdiv12 .coral-combo,.app-inputdiv12 .coral-datepicker,
+.app-inputdiv12 .coral-radiolist, .app-inputdiv12 .coral-checkboxlist {
+ 	width: 87.5%;
+}
+.app-inputdiv6 .coral-textbox,.app-inputdiv6 .coral-combo,.app-inputdiv6 .coral-datepicker,
+.app-inputdiv6 .coral-radiolist, .app-inputdiv6 .coral-checkboxlist {
+	width: 75%;
+}
+.app-inputdiv4 .coral-textbox,.app-inputdiv4 .coral-combo,.app-inputdiv4 .coral-datepicker,
+.app-inputdiv4 .coral-radiolist, .app-inputdiv4 .coral-checkboxlist {
+	width: 70%;
+}
+.app-inputdiv3 .coral-textbox,.app-inputdiv3 .coral-combo,.app-inputdiv3 .coral-datepicker,
+.app-inputdiv3 .coral-radiolist, .app-inputdiv3 .coral-checkboxlist {
+	width: 55%;
+}
+
+.app-inputdiv8 .coral-textbox,.app-inputdiv8 .coral-combo,.app-inputdiv8 .coral-datepicker,
+.app-inputdiv8 .coral-radiolist, .app-inputdiv8 .coral-checkboxlist {
+	width: 85%;
+}
+.app-inputdiv9 .coral-textbox,.app-inputdiv9 .coral-combo,.app-inputdiv9 .coral-datepicker,
+.app-inputdiv9 .coral-radiolist, .app-inputdiv9 .coral-checkboxlist {
+	width: 85%;
+}
+
+.colspan2 .app-inputdiv12 .coral-textbox,.colspan2 .app-inputdiv12 .coral-combo,.colspan2 .app-inputdiv12 .coral-datepicker,
+.colspan2 .app-inputdiv12 .coral-radiolist, .colspan2 .app-inputdiv12 .coral-checkboxlist {
+	width: 87.5%;
+}
+
+.colspan3 .app-inputdiv4 .coral-textbox,.colspan3 .app-inputdiv4 .coral-combo,.colspan3 .app-inputdiv4 .coral-datepicker,
+.colspan3 .app-inputdiv4 .coral-radiolist, .colspan3 .app-inputdiv4 .coral-checkboxlist {
+	width: 62.5%;
+}
+
+.colspan3 .app-inputdiv8 .coral-textbox,.colspan3 .app-inputdiv8 .coral-combo,.colspan3 .app-inputdiv8 .coral-datepicker,
+.colspan3 .app-inputdiv8 .coral-radiolist, .colspan3 .app-inputdiv8 .coral-checkboxlist {
+	width: 81.3%;
+}
+
+.colspan4 .app-inputdiv12 .coral-textbox,.colspan4  .app-inputdiv12 .coral-combo,.colspan4  .app-inputdiv12 .coral-datepicker,
+.colspan4 .app-inputdiv12 .coral-radiolist, .colspan4 .app-inputdiv12 .coral-checkboxlist {
+	width: 88.5%;
+}
+
+.colspan4 .app-inputdiv6 .coral-textbox,.colspan4 .app-inputdiv6 .coral-combo,.colspan4 .app-inputdiv6 .coral-datepicker,
+.colspan4 .app-inputdiv6 .coral-radiolist, .colspan4 .app-inputdiv6 .coral-checkboxlist {
+	width: 77%;
+}
+/* label width(pct:percent) */
+.colspan1 .app-inputdiv12 .app-input-label.pct-fixed,
+.colspan2 .app-inputdiv6 .app-input-label.pct-fixed,
+.colspan3 .app-inputdiv4 .app-input-label.pct-fixed,
+.colspan4 .app-inputdiv3 .app-input-label.pct-fixed {
+	width: 5%;
+}
+/* 0.5 col width(pct:percent) - label width */
+.colspan1 .app-inputdiv12 .coral-textbox.pct50-label, 
+.colspan1 .app-inputdiv12 .coral-combo.pct50-label, 
+.colspan1 .app-inputdiv12 .coral-datepicker.pct50-label {
+	float: left;
+	width: 41.25%;
+}
+.colspan2 .app-inputdiv6 .coral-textbox.pct50-label, 
+.colspan2 .app-inputdiv6 .coral-combo.pct50-label, 
+.colspan2 .app-inputdiv6 .coral-datepicker.pct50-label {
+	float: left;
+	width: 35%;
+}
+.colspan3 .app-inputdiv4 .coral-textbox.pct50-label, 
+.colspan3 .app-inputdiv4 .coral-combo.pct50-label, 
+.colspan3 .app-inputdiv4 .coral-datepicker.pct50-label {
+	float: left;
+	width: 28.75%;
+}
+.colspan4 .app-inputdiv3 .coral-textbox.pct50-label, 
+.colspan4 .app-inputdiv3 .coral-combo.pct50-label, 
+.colspan4 .app-inputdiv3 .coral-datepicker.pct50-label {
+	float: left;
+	width: 25%;
+}
+/* 0.5 col width(pct:percent) */
+.colspan1 .app-inputdiv12 .coral-textbox.pct50, 
+.colspan1 .app-inputdiv12 .coral-combo.pct50, 
+.colspan1 .app-inputdiv12 .coral-datepicker.pct50 {
+	float: left;
+	width: 43.75%;
+}
+.colspan2 .app-inputdiv6 .coral-textbox.pct50, 
+.colspan2 .app-inputdiv6 .coral-combo.pct50, 
+.colspan2 .app-inputdiv6 .coral-datepicker.pct50 {
+	float: left;
+	width: 37.5%;
+}
+.colspan3 .app-inputdiv4 .coral-textbox.pct50, 
+.colspan3 .app-inputdiv4 .coral-combo.pct50, 
+.colspan3 .app-inputdiv4 .coral-datepicker.pct50 {
+	float: left;
+	width: 31.25%;
+}
+.colspan4 .app-inputdiv3 .coral-textbox.pct50, 
+.colspan4 .app-inputdiv3 .coral-combo.pct50, 
+.colspan4 .app-inputdiv3 .coral-datepicker.pct50 {
+	float: left;
+	width: 27.5%;
+}
+/* 0.75 col width(pct:percent)*/
+.colspan1 .app-inputdiv12 .coral-textbox.pct75, 
+.colspan1 .app-inputdiv12 .coral-combo.pct75 {
+	float: left;
+	width: 71%;
+}
+.colspan2 .app-inputdiv6 .coral-textbox.pct75, 
+.colspan2 .app-inputdiv6 .coral-combo.pct75 {
+	float: left;
+	width: 58.5%;
+}
+.colspan3 .app-inputdiv4 .coral-textbox.pct75, 
+.colspan3 .app-inputdiv4 .coral-combo.pct75 {
+	float: left;
+	width: 46%;
+}
+.colspan4 .app-inputdiv3 .coral-textbox.pct75, 
+.colspan4 .app-inputdiv3 .coral-combo.pct75 {
+	float: left;
+	width: 38.5%;
+}
+/* 0.25 col width(pct:percent) */
+.colspan1 .app-inputdiv12 .coral-textbox.pct25, 
+.colspan1 .app-inputdiv12 .coral-combo.pct25,
+.colspan2 .app-inputdiv6 .coral-textbox.pct25, 
+.colspan2 .app-inputdiv6 .coral-combo.pct25,
+.colspan3 .app-inputdiv4 .coral-textbox.pct25, 
+.colspan3 .app-inputdiv4 .coral-combo.pct25,
+.colspan4 .app-inputdiv3 .coral-textbox.pct25, 
+.colspan4 .app-inputdiv3 .coral-combo.pct25 {
+	float: left;
+	width: 16.5%;
+}
+
+.coral-combo.pct25 .coral-combo-border .coral-textbox-default {
+	padding: 1px 5px;
+}
+
+/**  placeholder col  **/
+.signmark.coral-textbox-border {
+	border:1px solid transparent;
+	box-shadow: none;
+	height: auto;
+  	display: block;
+}
+
+.signmark .coral-textbox-textarea, .signmark .coral-textbox-default {
+	display:block;
+	padding: 0;
+}
+
+/* .coral-textbox-default.appform-placeholder {
+	display: block;
+	margin-top: 1px;
+	margin-bottom: 1px;
+} */
+.app-input-label{
+	font-size: 14px;
+}
+.app-input-label {
+	text-align: right;
+	vertical-align: middle;
+	display: inline-block;
+	width: 80px;
+	overflow: hidden;
+	float: left;
+	/* text-overflow: ellipsis;
+	white-space: nowrap; */
+}
+.app-inputdiv12 .app-input-label {
+	width: 12.5%;
+}
+.colspan2 .app-inputdiv6 .app-input-label, .colspan3 .app-inputdiv6 .app-input-label {
+	width: 25%;
+}
+.colspan3 .app-inputdiv4 .app-input-label {
+	width: 37.5%;
+}
+.colspan3 .app-inputdiv8 .app-input-label {
+	width: 18.7%;
+}
+.colspan4 .app-inputdiv3 .app-input-label {
+	width: 45%;
+}
+.colspan4 .app-inputdiv6 .app-input-label {
+	width: 23%;
+}
+.colspan4 .app-inputdiv9 .app-input-label {
+	width: 15%;
+}
+.colspan4 .app-inputdiv12 .app-input-label {
+	width: 11.2%;
+}
+.cform-dialog .coral-toolbar {
+	margin-top: 0;
+}
+
+/************************(GRID)****************************/
+.app-toolbar-picgrid,.app-toolbar-txtgrid,
+.app-toolbar-picgrid.active,.app-toolbar-txtgrid.active {
+	background:#898989 url("images/switch-grid.png") no-repeat center -24px; 
+	width:36px; 
+	height:28px; 
+	border:1px solid #d3d3d3; 
+	border-radius:3px;
+	display:inline-block;
+	margin-left: 5px;
+	cursor:pointer;
+}
+
+.app-toolbar-txtgrid,.app-toolbar-txtgrid.active {
+	background-position:center 8px;
+}
+.app-toolbar-picgrid:hover,.app-toolbar-txtgrid:hover { 
+	background-color:#6842FF;
+	box-shadow: 0 0 8px rgba(0,0,0,.2);
+}
+
+.app-toolbar-picgrid.active,.app-toolbar-txtgrid.active,
+.app-toolbar-picgrid:active,.app-toolbar-txtgrid:active { 
+	background-color:#3a5bd5;
+	border:1px solid #486FFD; 
+	box-shadow:none;
+}
+
+.app-bottom-toolbar {
+	height: 46px;
+	width: 100%;
+	/*line-height: 46px;*/
+	background-color: #f8f8f8;
+	text-align: center;
+	padding-top: 8px;
+	border: 1px solid #d3d3d3;
+	border-width: 1px 0;
+	overflow: hidden;
+	/* position: absolute;
+	bottom: 0; */
+}
+.toolbar-center .coral-toolbar{
+	margin: 0 auto;
+}
+.app-bottom-toolbar button {
+	margin-right: 5px;
+}
+
+.app-bottom-toolbar .coral-toolbar {
+	float : none;
+	margin-top: 0;
+}
+/* @media screen and (min-width: 1360px){
+	.app-input-label {
+		width: 100px;
+	}
+}
+ */
+.app-batch-update-fieldset {
+	
+}
+.app-batch-update-legend {
+	cursor: pointer;
+	text-align: right;	
+    padding-left: 0;
+    padding-right: 0;
+}
+.app-batch-update .app-inputdiv12 .coral-radiolist{
+	width: auto;
+}
+.app-batch-update .app-inputdiv12 .app-input-label,
+.app-search-form .app-inputdiv12 .app-input-label,.app-search-form .app-inputdiv9 .app-input-label,
+.app-search-form .app-inputdiv8 .app-input-label,.app-search-form .app-inputdiv6 .app-input-label,
+.app-search-form .app-inputdiv4 .app-input-label,.app-search-form .app-inputdiv3 .app-input-label {
+	width: 100px;
+}
+.app-search-form .app-inputdiv12 .coral-textbox, .app-search-form .app-inputdiv12 .coral-combo,.app-search-form  .app-inputdiv12 .coral-datepicker ,.app-search-form  .app-inputdiv12 .coral-radiolist,
+.app-search-form .app-inputdiv6 .coral-textbox,.app-search-form .app-inputdiv6 .coral-combo,.app-search-form .app-inputdiv6 .coral-datepicker,.app-search-form .app-inputdiv6 .coral-radiolist,
+.app-search-form .app-inputdiv4 .coral-textbox,.app-search-form .app-inputdiv4 .coral-combo,.app-search-form .app-inputdiv4 .coral-datepicker,.app-search-form .app-inputdiv4 .coral-radiolist,
+.app-search-form .app-inputdiv3 .coral-textbox,.app-search-form .app-inputdiv3 .coral-combo,.app-search-form .app-inputdiv3 .coral-datepicker,.app-search-form .app-inputdiv3 .coral-radiolist,
+.app-search-form .app-inputdiv8 .coral-textbox,.app-search-form .app-inputdiv8 .coral-combo,.app-search-form .app-inputdiv8 .coral-datepicker,.app-search-form .app-inputdiv8 .coral-radiolist,
+.app-search-form .app-inputdiv9 .coral-textbox,.app-search-form .app-inputdiv9 .coral-combo,.app-search-form .app-inputdiv9 .coral-datepicker,.app-search-form .app-inputdiv9 .coral-radiolist {
+	width : 160px;
+}
+
+.app-search-great-colspan {
+	margin-bottom: 10px;
+	float: left;
+}
+.app-search-great-fieldset {
+	height: 200px;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+.app-search-great-legend {
+	width: auto;
+    margin-bottom: 0;
+    font-size: inherit;
+}
+.app-search-great-multiple {
+	width: 100%;
+	height: 100%;
+    margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 4px;
+}
+.app-search-great-colspan .coral-textbox, .app-search-great-colspan .coral-combo {
+	width: 160px;
+}
+.app-search-great-tbar {
+	text-align: right;
+	margin-right: 80px;
+}
+.app-search-great-tbar .coral-toolbar {
+	float: none;
+	margin: 0;
+}
+.app-search-great-border {
+	/* height: 124px; */
+	margin-left: 180px;
+	margin-right: 80px;
+}
+.app-search-great-bottom {
+	margin-bottom: 0;
+}
+.appsearch-great-label {
+	width: 80px;
+	text-align: right;
+}
+.app-confirm-opinion {
+	float: right;
+	width: 87.5%;
+	height: 60px;
+	background: #fff;
+	border: 1px solid #d2d2d2;
+	overflow: hidden;
+	padding: 10px;
+	margin-left: 9px;
+	border-radius: 4px;	
+}
+
+/**select normal & active***/
+.coflow-performer-border {
+	min-height: 126px;
+}
+/**normal**/
+.coflow-performer-border .coral-adjusted {
+	overflow: hidden !important;
+}
+select[multiple].selectNormal,
+select[size].selectNormal{
+	width: 95%;
+	height: 100%;
+	background: #fff;
+	border: 1px solid #d2d2d2;
+	overflow: auto;
+	padding: 10px;
+	/* margin-left: 9px; */
+	border-radius: 4px;
+}
+
+/**active**/
+select[multiple].selectNormal,
+select[size].selectActive{
+	background: #FCFCFC;
+	box-shadow: 0px 0 6px rgba(0,0,0,.2) inset;
+}
+
+.app-confirm-opinion-item-sign {
+	padding:0 10px;
+	text-align:right;
+	width:100%;
+}
+.app-confirm-opinion-item-text {
+	padding:0 10px;
+	width:100%;
+}
+hr.app-confirm-opinion-form-split {
+	margin: 10px 0 0 0;
+	width : 100%;
+	float : left;
+}
+hr.app-confirm-opinion-item-split {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width:100%;
+}
+/** coflow organize tree search box **/
+.tree-search-box {
+	margin: 5px 5px;
+	width : 95%;
+}
+
+/** right toolbar(base search/great search/setting) css **/
+.config-bsearch .coral-adjusted {
+	overflow-x: hidden !important;
+}
+.btnSearch, .btnHighSearch, .btnSetting {
+	cursor: pointer;
+}
+.toolbarsnav .search{
+	height: 34px;
+	float: left;
+}
+.btnSearch.btnHover, .btnHighSearch.btnHover, .btnSetting.btnHover {
+	background: #fff url(../images/globalicon.png) no-repeat -340px -152px;
+	border: 1px solid #d3d3d3;
+	border-bottom: 0;
+}
+
+.btnHighSearch.btnHover {
+	background-position: -400px -152px;
+}
+
+.btnSetting.btnHover {
+	background-position: -462px -152px;
+}
+
+.btnSearch, .btnHighSearch, .btnSetting	{
+	background: url(../images/globalicon.png) no-repeat;
+	/*position: relative;*/
+	z-index: 223;
+}
+
+.btnSearch {
+	background-position: -340px -152px;
+}
+
+.btnHighSearch {
+	background-position: -400px -152px;
+}
+
+.btnSetting {
+	background-position: -462px -152px;
+}
+
+.coral-button.coral-state-hover.btnSearch {
+	  background: url(../images/globalicon.png) no-repeat -340px -152px;
+}
+.coral-button.coral-state-hover.btnHighSearch {
+	  background: url(../images/globalicon.png) no-repeat -400px -152px;
+}
+.coral-button.coral-state-hover.btnSetting {
+	  background: url(../images/globalicon.png) no-repeat -462px -152px;
+}
+
+.panelSearch {
+	padding: 10px;
+	z-index: 222;
+	position: absolute;
+	right: 0;
+	height: auto;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin-top: -1px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+.panelSearch .coral-combo,.panelSearch .coral-textbox {
+	width: 150px;
+}
+
+.panelSearch label {
+	margin-left: 10px;
+}
+
+.panelSearch .panelBtnOption {
+	text-align: center;
+}

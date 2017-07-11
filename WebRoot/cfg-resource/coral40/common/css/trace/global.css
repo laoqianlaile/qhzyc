@@ -1,0 +1,4093 @@
+@charset "utf-8";
+
+/*
+ * Author:Qi Ying
+ * Version:1.0.0
+*/
+
+body, button, input, select, textarea {
+    font: 12px/1.5 Arial, Heiti SC, STHeiti, Microsoft YaHei, Segoe UI, SimHei, SimSun, sans-serif
+}
+body {
+    background-color: #fff;
+    color:#595757;
+}
+html{
+    overflow: auto;
+}
+html,body{
+    height: 100%;
+}
+.wrapper{
+    height: 100%;
+}
+.wrapperbox{
+    min-height: 100%;
+}
+
+/***login**/
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1300;
+    background: #000;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+}
+.loginbox{
+    width: 240px;
+    height: 330px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -120px;
+    margin-top: -150px;
+    z-index: 1301;
+}
+.exampledialog{
+    display: none;
+}
+.loginarea,
+.exampledialogarea{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,.3);
+    border-radius: 20px;
+    overflow:hidden;
+}
+.exampledialogarea{
+    text-align: center;
+}
+.exampledialogarea img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.loginclose,
+.exampledialogclose{
+    background: #e4e2e2 url(../images/trace-image/iconall.png) no-repeat -227px -40px;
+    height: 45px;
+    width: 60px;
+    position: absolute;
+    right: -40px;
+    cursor: pointer;
+    z-index: -1;
+}
+.loginclose:hover,
+.loginclose:active{
+    background-color: #fff;
+}
+.loginmenu li{
+    height: 45px;
+    line-height: 45px;
+    background:#e4e2e2;
+    width: 50%;
+    text-align: center;
+    color: #595757;
+    float: left;
+    cursor: pointer;
+    border-radius: 20px 0 0 0;
+    font-size: 14px;
+}
+.loginmenu li:last-child{
+    border-radius: 0 20px 0 0;
+}
+.loginmenu li.current{
+    color: #093777;
+    background:#fff;
+}
+.login-fix{
+    display: none;
+}
+.block{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.login-input,
+.login-register,
+.identifyingbox{
+    width: 80%;
+    margin:10px auto 10px auto;
+    border-radius: 4px;
+}
+.login-input{
+    height: 40px;
+    position: relative;
+    border:1px solid #093777;
+    background: #f9f9f9;
+}
+.loginbtn{
+    background: #093777;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.loginbtn:hover,
+.loginbtn:active{
+    background: #0B4699;
+}
+.icon-login{
+    width: 40px;
+    height: 40px;
+    background:#f9f9f9 url(../images/trace-image/iconall.png) no-repeat 6px -45px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px 0 0 4px;
+    border-right: 1px solid #c7c7c7;
+}
+.login-register{
+    text-align: center;
+}
+.identifying-input{
+    width: 49px;
+    border:1px solid #093777;
+    background: #f9f9f9;
+    text-indent: 5px;
+    *margin-left: -6px;
+}
+.identifyImg{
+    width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.identifyImg img{
+    max-width: 90px;
+    max-height: 40px;
+}
+.refreshIdentify{
+    margin-left: 4px;
+    cursor: pointer;
+}
+.refreshIdentify:hover,
+.refreshIdentify:active{
+    color: #093777;
+}
+.icon-login-user{
+    background-position: 6px -45px;
+}
+.icon-login-pwd{
+    background-position: 6px -97px;
+}
+.identifying-input,
+.uesrpwd-input{
+    padding: 9px 0px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.uesrpwd-input{
+    width: 100%;
+    *width: 74%;
+    text-indent: 46px;
+    *text-indent: 0;
+    *padding-left: 45px;
+    border: 0;
+    background: #f9f9f9;
+}
+/**login end**/
+
+/***topbox**/
+.topbox{
+    overflow: hidden;
+}
+.top-pc{
+    display: none;
+}
+.top-mobile{
+    display: block;
+    height: 44px;
+}
+.top-mobile .top-mobile-menubar{
+    display: none;
+}
+.topbarner,
+.top-mobile .topbarner{
+    width: 100%;
+    height: 44px;
+    background: url(../images/trace-image/topbarner_bg.png) no-repeat center;
+    background-size: 100% 44px;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='./css/images_common/topbarner_bg.png',
+    sizingMethod='scale');
+    overflow: hidden;
+}
+.topbarner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 554;
+}
+.logo{
+    width: 160px;
+    float: left;
+    height: 100%;
+}
+.logo-img{
+    margin:3px 5px;
+}
+.menu-moblie-btn{
+    width: 44px;
+    height: 44px;
+    float: right;
+    margin-right: 10px;
+    background: url(../images/trace-image/iconall.png) no-repeat -193px -40px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.t-menu{
+    width: 100%;
+    float: left;
+    height: 100%;
+    margin:0 -220px 0 -160px;
+}
+.t-menu-mid{
+    margin:0 220px 0 160px;
+}
+.t-menu-ul,.f-menu-ul{
+    float: left;
+}
+.t-menu-ul li,.f-menu-ul li{
+    float: left;
+    color: #fff;
+    font-size: 14px;
+}
+.f-menu-ul li{
+    font-size: 12px;
+    height: 30px;
+    overflow: hidden;
+}
+.f-menu-ul .textadd{
+    color: #595757;
+}
+.t-menu-ul li a,.f-menu-ul li a{
+    display: inline-block;
+    padding: 12px 15px 8px 15px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    color: #fff;
+}
+.f-menu-ul li a{
+    border:0;
+    color:#595757;
+    padding: 0;
+}
+.f-menu-ul li a:hover,
+.f-menu-ul li a:active{
+    color: #1267D7;
+}
+.t-menu-ul li a:hover,
+.t-menu-ul li a:active{
+    border-color: #1267D7;
+}
+.t-search{
+    width: 220px;
+    float: right;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+.t-search-input{
+    background:#e6e6e6;
+    height:30px;
+    margin: 7px 0 0 0;
+    width: 100%;
+    border:0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    text-align: center;
+}
+.top-mobile .t-search-input{
+    display: none;
+}
+.icon-people{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    left: 8px;
+    top: 0;
+    background:#e6e6e6 url(../images/trace-image/iconall.png) no-repeat 5px 4px;
+}
+.t-search-input:hover ,
+.t-search-input:active{
+    background: #fff;
+}
+.t-search-input:hover .icon-people,
+.t-search-input:active .icon-people{
+    background-color: #fff;
+}
+.t-search-input input{
+    border: 0;
+    background: transparent;
+    padding:7px 0 6px 0;
+    width: 100%;
+    text-indent: 20px;
+    *text-indent:10px;
+    color: #093777;
+    font-weight: bold;
+}
+.top-message-box{
+    overflow: hidden;
+    height: 30px;
+    border-bottom: 1px solid #d5d5d5;
+    background: #fff;
+    width: 100%;
+    line-height: 30px;
+    color: #4c4c4c;
+    margin-top: 44px;
+}
+.top-m-search{
+    float: left;
+    width: 40%;
+    height: 100%;
+    text-align: left;
+}
+.top-m-search span{
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+}
+.icon-web-search{
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    background: url(../images/trace-image/iconall.png) no-repeat -100px 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+.icon-web-search:hover,
+.icon-web-search:active {
+    background-color: #f2f2f2;
+}
+.web-search-box{
+    height: 25px;
+    background: #f1f1f1;
+    position: relative;
+    width: 180px;
+}
+.web-search-input{
+    width: 144px;
+    padding:4px 32px 4px 4px;
+    border:0;
+    background: transparent;
+}
+.top-m-help{
+    float: right;
+    width: 60%;
+    height: 100%;
+    text-align: right;
+}
+.top-mobile .top-m-help{
+    width: 100%;
+    height: auto;
+    color: #fff;
+    text-align: left;
+    line-height: 30px;
+    text-indent: 4px;
+}
+.top-help-telphone{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.icon-telphone{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/trace-image/iconall.png) no-repeat -50px 4px;
+    vertical-align: middle;
+}
+.online-help{
+    display: inline-block;
+}
+.online-help a:hover,
+.online-help a:active{
+    color: #1267D7;
+    cursor: pointer;
+}
+.top-mobile-menubar{
+    width: 250px;
+    position: absolute;
+    left: -250px;
+    top: 0;
+    background: #333333;
+    height: 100%;
+    z-index: 1266;
+}
+.top-mb-ul li{
+    line-height: 30px;
+    color: #fff;
+    text-align: left;
+    vertical-align: middle;
+}
+.top-mb-ul li a{
+    display: block;
+    padding:5px 10px 5px 30px;
+    cursor: pointer;
+}
+.top-mb-ul li a:hover,
+.top-mb-ul li a:active{
+    background: #494949;
+}
+.icon-menu-home {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(../images/trace-image/iconall.png) no-repeat -300px -47px;
+    vertical-align: middle;
+    margin-left: -25px;
+}
+.format-app-box{
+    border: 1px solid #4F4D4D;
+    border-width: 1px 0;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+.format-app{
+    float: left;
+    width: 100%;
+}
+.format-app li{
+    width: 33.33%;
+    float: left;
+}
+.format-app li a{
+    display: block;
+    height: 80px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.format-app li a:hover,
+.format-app li a:active {
+    background:#494949;
+}
+.format-app p{
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.icon-app{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background: url(../images/trace-image/iconall.png) no-repeat;
+}
+.icon-android-app{
+    background-position: -150px 0;
+}
+.icon-ios-app{
+    background-position: -200px 0;
+}
+.icon-webchat-app{
+    background-position: -250px 4px;
+}
+/***topbox end**/
+
+/**轮播***/
+.picScroll-left{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    height: 188px;
+    margin-bottom: 10px;
+}
+.picScroll-left .hd{
+    overflow:hidden;
+    height: 20px;
+    background: transparent;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 10px;
+}
+.picScroll-left .hd ul{
+    float:left;
+    zoom:1;
+    margin-top:7px;
+    position:relative;
+    left: 50%;
+}
+.picScroll-left .hd ul li{
+    float:left;
+    width:20px;
+    height:8px;
+    overflow:hidden;
+    margin-right:5px;
+    text-indent:-999px;
+    cursor:pointer;
+    background:#b3b3b3;
+    position:relative;
+    right:50%;
+    cursor: pointer;
+}
+.picScroll-left .hd ul li.on{
+    background:#319552;
+}
+.picScroll-left .bd{
+    padding:0px;
+}
+.picScroll-left .bd ul{
+    overflow:hidden;
+    zoom:1;
+}
+.picScroll-left .bd ul li{
+    margin:0;
+    float:left;
+    _display:inline;
+    overflow:hidden;
+    text-align:center;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 188px;
+}
+.picScroll-left .bd ul li img{
+    max-height: 188px;
+    max-width: 100%;
+}
+.picScroll-left .middle-out{
+    width:100%;
+    height:188px;
+    position: relative;
+    display: table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background: transparent;
+}
+.picScroll-left .middle-in{
+    position:static;
+    *position:absolute;
+    top:50%;
+}
+.picScroll-left .middle-out .middle-in img{
+    position:static;
+    *position:relative;
+    top:-50%;
+    left:-50%;
+}
+/**轮播end**/
+
+/***追溯码查询和企业***/
+.tracingcodeandcompany{
+    width: 100%;
+}
+.col50{
+    width: 100%;
+}
+.greencolor{
+    color: #3b9b4e;
+}
+.tracingcode,
+.company{
+    border:1px solid #c7c7c7;
+    border-width: 5px 0px 0px 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+.tracingcode{
+    margin-right: 0px;
+    border-top-color: #093777;
+    height: auto;
+}
+.company{
+    margin-left: 0px;
+    border-top-color: #319552;
+    border-bottom:1px solid #c7c7c7;
+}
+.tracingcodetop{
+    padding: 20px;
+    padding-top: 10px;
+}
+.tracingcodeTable{
+    width: 100%;
+    border: 0;
+    *margin-left: -25px;
+}
+.tracingcodeTable td{
+    padding:5px 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.tracingfont{
+    font-size: 18px;
+    font-weight: bold;
+}
+.tracingcodeTable td.example{
+}
+.tracingcode-input-box{
+    position: relative;
+    width: 100%;
+    *width: 90%;
+}
+.tracingcode-input{
+    width: 100%;
+    border-radius: 5px;
+    border:2px solid #093777;
+    padding: 14px 50px 14px 0px;
+    text-indent: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+.tracingcodeTable .tracingcode-input{
+    border-color:#999;
+    color: #0a622e;
+    font-weight: bold;
+}
+.tracingcode-search-btn{
+    display: inline-block;
+    width: 50px;
+    height: 92%;
+    *height:88%;
+    position: absolute;
+    right: -52px;
+    *right:-137px;
+    top: 2px;
+    *top:3px;
+    background: #fff;
+    border-radius: 0 4px 4px 0;
+}
+.tracingcode-search-btn .icon-web-search{
+    height: 100%;
+    width: 100%;
+    background-position: -250px -95px;
+    *background-position: -250px -97px;
+}
+.message-error{
+    position: absolute;
+    left: 0;
+    *left: 80px;
+    top: 50px;
+    z-index: 15;
+    width: 100%;
+    display: none;
+}
+.message-error-angle{
+    border-left: solid 7px transparent;
+    border-right: solid 7px transparent;
+    border-bottom: solid 7px #0a622e;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.message-error-text{
+    background: #0a622e;
+    color:#f1de15;
+    line-height: 25px;
+    padding:10px 18px;
+    width: 100%;
+    border: 3px solid #fff;
+    margin-top: -3px;
+}
+.forexample{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.trac-left{
+    position: relative;
+    z-index: 1;
+    line-height: 30px;
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+.trac-mid{
+    width: 100%;
+    float: left;
+    margin:0 -100px 0 -10px;
+}
+.trac-mid-c{
+    margin:0 100px 0 10px;
+}
+.trac-right{
+    width: 50px;
+    text-align: center;
+    float: right;
+    position: relative;
+    z-index: 1;
+    line-height: 50px;
+    font-size: 16px;
+    text-indent: 0px;
+}
+.gklocal{
+    padding:0px 10px 10px 10px;
+    text-align: center;
+}
+.gklocal img{
+    max-height: 125px;
+    max-width: 100%;
+}
+/*******追溯码查询和企业*****/
+
+/***资讯 图标**/
+.news-box{
+    width: 100%;
+    margin-right: 0px;
+}
+.news-box-mid{
+    margin-right: 0px;
+}
+.news-top{
+    border-bottom: 1px solid #c7c7c7;
+}
+.news-top-ul-box{
+    width: 100%;
+    float: left;
+    margin-right: -75px;
+}
+.news-top-ul{
+    margin-right: 75px;
+}
+.news-top-ul li{
+    float: left;
+    text-align: center;
+}
+.news-top-ul li a{
+    display: block;
+    padding: 10px;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+.news-top-ul li a:hover{
+    background: #528ADF;
+    border-left-color: #094FB2;
+    color: #fff;
+}
+.news-top-ul li a:active,
+.news-top-ul li.current a{
+    background: #406fb6;
+    border-left-color: #093777;
+    color: #fff;
+}
+.morebox{
+    width: 75px;
+    float: right;
+    position: relative;
+    z-index: 1;
+    text-align: right;
+}
+.newsmore{
+    margin:20px 0 ;
+    text-align: right;
+}
+.newsmore .more{
+    margin:0;
+    display: none;
+}
+.newsmore .more a{
+    border-color:#c7c7c7;
+}
+.newdivdistrict-ul li,
+.newdivdistrict-ul-law li{
+    border: 1px solid #c7c7c7;
+    border-width: 0 0 1px 0;
+    padding: 20px;
+}
+.newdivdistrict-ul li:hover,
+.newdivdistrict-ul li:active,
+.newdivdistrict-ul-law li:hover,
+.newdivdistrict-ul-law li:active{
+    background:#f7fcf2;
+}
+.newstitle{
+    font-size: 14px;
+    font-weight: bold;
+}
+.newdivdistrict-ul .lawdiv-body-left{
+    margin-left: 0;
+    width: 150px;
+    margin-right: 0px;
+}
+.newdivdistrict-ul .middle-out{
+    width: 148px;
+    height: 84px;
+}
+.newdivdistrict-ul .lawdiv-body-right{
+    margin-left: -180px;
+}
+.newdivdistrict-ul .lawdiv-body-right-mid{
+    margin-left: 180px;
+}
+.newdivdistrict-ul .newstitle,
+.newdivdistrict-ul-law .newtitle{
+    margin-bottom: 10px;
+}
+.newdivdistrict-ul .middle-out .middle-in img{
+    max-width: 148px;
+    max-height: 84px;
+}
+.chart-box{
+    width: 100%;
+}
+.chart-box .news-top{
+    border: 0;
+    padding-left: 35px;
+}
+.chart-box .news-top-ul-box p{
+    font-size: 16px;
+    line-height: 47px;
+    font-weight: 700;
+}
+.chart-box fieldset {
+    border-width:1px 0 0 0;
+}
+.chart-box fieldset legend{
+    margin-left: -8px;
+    font-size: 14px;
+}
+.chartshow{
+    padding:15px 40px 20px 40px;
+}
+.chart-img{
+    text-align: center;
+}
+.chart-box .more{
+    margin-right: 5px;
+}
+.chart-img img{
+    max-width: 100%;
+}
+.picScroll-top{
+    margin:0 auto;
+    width:100%;
+    position:relative;
+    height: 190px;
+}
+.picScroll-top .hd{
+    overflow:hidden;
+    height: 0px;
+}
+.picScroll-top .hd .prev,.picScroll-top .hd .next{
+    display:block;
+    width:40px;
+    height:40px;
+    float:right;
+    overflow:hidden;
+    cursor:pointer;
+    background: url(../images/trace-image/iconall.png) no-repeat -343px 3px;
+    position: absolute;
+    top:-24px;
+    left: 50%;
+    margin-left: -20px;
+    bottom:auto;
+}
+.picScroll-top .hd .next{
+    background-position: -393px 7px;
+    bottom: 0;
+    top:auto;
+    z-index: 2;
+}
+.picScroll-top .hd>ul{
+    float:right;
+    overflow:hidden;
+    zoom:1;
+    margin-top:10px;
+}
+.picScroll-top .hd>ul>li{
+    float:left;
+    width:9px;
+    height:9px;
+    overflow:hidden;
+    margin-right:5px;
+    text-indent:-999px;
+    cursor:pointer;
+}
+.picScroll-top .hd>ul>li.on{
+    background-position:0 0;
+}
+.picScroll-top .bd{
+    padding:0 10px;
+    overflow: hidden;
+    height: 160px;
+}
+.picScroll-top .bd>ul{
+    overflow:hidden;
+    zoom:1;
+}
+.picScroll-top .bd ul li{
+    text-align:center;
+    zoom:1;
+}
+.picScroll-top .bd ul li .pic{
+    text-align:center;
+}
+.picScroll-top .bd ul li .pic img{
+    width:180px;
+    height:90px;
+    display:block;
+    padding:2px;
+    border:1px solid #ccc;
+}
+.picScroll-top .bd ul li .pic a:hover img{
+    border-color:#999;
+}
+.picScroll-top .bd ul li .title{
+    line-height:24px;
+}
+.picList{
+    overflow: hidden;
+}
+.picList>li{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+.picList>li>ul{
+    float: left;
+    width: 100%;
+}
+.picList>li>ul>li{
+    float: left;
+    width: 50%;
+    *width: 49.5%;
+    height: 40px;
+    overflow: hidden;
+}
+.picList>li>ul>li>img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/***资讯 图标 end**/
+
+/**法规 电子地图**/
+.lawandmap{
+    margin:0px;
+}
+.lawmapbox{
+    width: 100%;
+}
+.lawdiv{
+    width: 100%;
+    float: none;
+}
+.law-margin{
+    margin-right:0px;
+    border:1px solid #c7c7c7;
+    border-width: 5px 0px 0px 0px;
+    border-top-color: #319552;
+    height:205px;
+}
+.lawdiv-title-left{
+    width: 100%;
+    float: left;
+    margin-right: -100px;
+}
+.lawdiv-title-left-mid{
+    margin-right: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.lawdiv-left-text{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-indent:24px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.lawdiv-title-right{
+    width: 100px;
+    float: right;
+    position: relative;
+    z-index: 1;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.more{
+    margin:4px 5px 0 0;
+    display: inline-block;
+}
+.more a{
+    display: block;
+    padding: 5px 3px 5px 10px;
+    cursor: pointer;
+    border:1px solid transparent;
+    color: #595757;
+}
+.moreborder a{
+    border-color: #c7c7c7;
+}
+.more a:hover,
+.more a:active {
+    border:1px solid #b2b2b2;
+}
+.textadd{
+    margin:0 4px;
+    display: inline-block;
+}
+.lawdiv-body{
+    height: 115px;
+    overflow: hidden;
+}
+.lawdiv-body-left{
+    float: left;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    margin: 10px 25px 10px 25px;
+    border:1px solid transparent;
+}
+.newdivdistrict-ul li:hover .lawdiv-body-left,
+.newdivdistrict-ul li:active .lawdiv-body-left{
+    border-color:#319552;
+    border-radius: 4px;
+}
+.middle-out{
+    width:100px;
+    height:56px;
+    position: relative;
+    display: table-cell;
+    vertical-align:middle;
+    text-align:center;
+    border:2px solid transparent;
+    border-radius: 4px;
+    background: #f4f4f4;
+}
+.lawdiv-body:hover .middle-out{
+    border-color:#319552;
+}
+.middle-in{
+    position:static;
+    *position:absolute;
+    top:50%;
+}
+.middle-out .middle-in img{
+    position:static;
+    *position:relative;
+    top:-50%;
+    left:-50%;
+    max-width: 100px;
+    max-height: 56px;
+}
+.lawdiv-body-right{
+    width: 100%;
+    float: right;
+    margin-left: -152px;
+    height: 100%;
+}
+.lawdiv-body-right-mid{
+    margin-left: 152px;
+    height: 100%;
+    margin-right: 10px;
+    margin-top: 0px;
+    font-size: 12px;
+}
+.lawheight{
+    height: 100px;
+    overflow: hidden;
+}
+.borderline .lawheight{
+    height:80px;
+}
+.lawheight2{
+    height: 90px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.lawheight2 p{
+    text-indent: 24px;
+}
+.replaybox{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.imgdescript .replaybox>span{
+    display: inline-block;
+}
+.replaybox>span{
+    margin-left: 10px;
+    display: block;
+    line-height: 25px;
+}
+.law-ul{
+    margin-bottom: 10px;
+}
+.law-ul li{
+    line-height: 27px;
+}
+.law-ul li a{
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #595757;
+}
+.law-ul li a:hover,
+.law-ul li a:active{
+    color:#319552;
+}
+/**法规 电子地图end**/
+
+/**footer share**/
+.main{
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+.footerbox{
+    margin-top: -120px;
+    height: 120px;
+    background: #e7e7e7;
+    overflow: hidden;
+}
+.borderbottom,
+.online-help,.f-float-right{
+    display: none;
+}
+.share{
+    height: 40px;
+    border-top: 1px solid #d5d5d5;
+    width:100%;
+    line-height: 39px;
+    background: #fff;
+}
+.padding20{
+     padding:0 20px;
+}
+.tracingcodeandcompany .padding20,
+.lawandmap .padding20,
+.mainbox .padding20{
+    padding:0;
+}
+.footerbox .padding20{
+    padding:0 8px;
+}
+.followmetext{
+    float: left;
+    font-size: 12px;
+}
+.followme{
+    float: left;
+}
+.followme li{
+    float: left;
+    width: 44px;
+    height: 100%;
+    margin-left: 10px;
+    height: 40px;
+}
+.followme li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.followme li.xinlang a{
+    background: url(../images/trace-image/xinlang.png) no-repeat center;
+}
+.followme li.txweibo a{
+    background: url(../images/trace-image/txweibo.png) no-repeat center;
+}
+.followme li a:hover,
+.followme li a:active{
+    background-color: #e5e5e5;
+}
+.footer{
+    width: 100%;
+    padding-top: 10px;
+}
+.f-float-left,
+.f-float-right{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+.icon-home{
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    background: url(../images/trace-image/iconall.png) no-repeat -347px -53px;
+    vertical-align: middle;
+}
+
+/**footer share end**/
+
+/****浮层***/
+.floatLayer{
+    background: #d9d9d9;
+    width: 80px;
+    border-radius: 20px;
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    z-index: 555;
+    display: none;
+}
+.floatlayerClose{
+    position: absolute;
+    right: 14px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../images/trace-image/iconall.png) no-repeat -296px 4px;
+    cursor: pointer;
+}
+.floatlayeradd{
+    background-position: -2px -302px;
+    height: 26px;
+    width: 97px;
+}
+.floatlayerClose:hover,
+.floatlayerClose:active{
+   background-color: #D0D0D0;
+}
+.floatlayeradd:hover{
+    background-position: -102px -302px;
+    background-color: transparent;
+}
+.floatLayer-ul{
+    margin-top:20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.floatLayer-ul li{
+    margin-bottom: 5px;
+}
+.appshow{
+    width: 60px;
+    height: 50px;
+    background: #828282;
+    cursor: pointer;
+}
+.appshow:hover,
+.appshow:active{
+    background: #A0A0A0;
+}
+.appshow .icon-app{
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.QRcode{
+    display: none;
+}
+.QRcode img{
+    width: 90px;
+    height: 90px;
+}
+.floatLayer p{
+    display: none;
+    text-align: center;
+}
+.floatLayerslide {
+    width: 205px;
+}
+.floatLayerslide .QRcode{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+.floatLayerslide .appshow{
+    float: left;
+    width: 90px;
+    height: 90px;
+}
+.floatLayerslide p{
+    display: block;
+}
+.floatLayerslide .appshow .icon-app{
+    background: url(../images/trace-image/formaticon.png) no-repeat 1px 5px;
+    width: 90px;
+    height: 90px;
+    margin:0 0 0 10px;
+}
+.floatLayerslide .appshow .icon-android-app{
+    background-position:  1px 5px;
+}
+.floatLayerslide .appshow .icon-ios-app{
+    background-position: 5px -124px;
+}
+.floatLayerslide .appshow .icon-webchat-app{
+    background-position: 0 -253px;
+}
+
+/****浮层end*****/
+
+
+/***追溯码查询结果无**/
+.localtion{
+    width: 100%;
+    border-bottom: 1px solid #c7c7c7;
+    background: #f5f5f5;
+}
+.localtion-left{
+    float: left;
+    width: 50px;
+    height: 85px;
+    position: relative;
+    z-index: 1;
+}
+.localtion-left>a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.localtion-left>a:hover,
+.localtion-left>a:active{
+    background: #EDEDED;
+}
+.icon-backto{
+    background: url(../images/trace-image/iconall.png) no-repeat -150px -57px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.localtion-right{
+    width: 100%;
+    float: right;
+    margin-left: -50px;
+}
+.localtion-right-mid{
+    margin-left: 50px;
+}
+.localtionTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.localtionTitle2{
+    font-size: 16px;
+    margin:15px 0;
+}
+.CrumbsP{
+    margin-top: 5px;
+    font-size: 12px;
+    text-indent: 0;
+}
+.newsDetailfontsize .CrumbsP{
+    text-indent: 0;
+}
+.icon-c-home{
+    width: 30px;
+    height: 27px;
+    vertical-align: middle;
+    display: inline-block;
+    background: url(../images/trace-image/iconall.png) no-repeat -200px -100px;
+}
+.CrumbsP a{
+    cursor: pointer;
+}
+.CrumbsP a:hover,
+.CrumbsP a:active{
+    color:#093777;
+}
+.tracingcoderesult{
+    border-bottom: 1px solid #c7c7c7;
+    padding:10px 0;
+}
+.tracingresult{
+    width: 70%;
+    margin: 0 auto;
+}
+.tracingresult .tracingcodeTable td{
+    padding:5px 0;
+}
+.tracingresult .tracingfont{
+    font-weight: normal;
+    margin-left: -50px;
+    *margin-left: 0;
+}
+.tracingresult .tracingcode-input-box{
+    margin-left: -27px;
+    *margin-left: 0;
+}
+.resultshow{
+    background: url(../images/trace-image/cloud_mb.png) no-repeat;
+    width: 282px;
+    height: 170px;
+    margin:60px auto;
+}
+.resulttext{
+    color: #f1a20c;
+    font-size: 16px;
+    padding-top: 39px;
+    padding-left: 0px;
+    text-align: center;
+}
+.resulttext .warn{
+    font-size: 50px;
+}
+/**追溯码查询结果无end***/
+
+/***企业列表***/
+.companylistshow{
+    width: 100%;
+}
+.company-Ul{
+    float: left;
+    width: 100%;
+    margin-right: -1px;
+    overflow: hidden;
+}
+.company-Ul li{
+    width: 100%;
+    float: left;
+}
+.borderline{
+    padding:0 0 10px 0;
+    border:1px solid #c7c7c7;
+    border-width: 0 0 1px 0;
+    margin-left: 1px;
+}
+.detailcompany{
+    text-align: right;
+    margin-top: 10px;
+}
+.detailcompany a{
+    color: #093777;
+    cursor: pointer;
+    font-size: 12px;
+}
+.detailcompany a:hover,
+.detailcompany a:active{
+    color:#0b4699;
+}
+.company-Ul .middle-out{
+    background: transparent;
+}
+.company-Ul .lawdiv-body:hover .middle-out{
+    border-color: transparent;
+}
+.company-Ul li .borderline:hover,
+.company-Ul li .borderline:active{
+    background: #f7fcf2;
+}
+/****企业列表end*******/
+
+/***分页***/
+.pagination{
+    margin-top:20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.pagination span.paging{
+    display: inline-block;
+    margin:0px 2px 5px 0;
+    font-size: 14px;
+}
+.pagination span.paging a{
+    display: inline-block;
+    padding:3px 10px;
+    border:1px solid #c7c7c7;
+    cursor: pointer;
+}
+.pagination span.paging:hover a,
+.pagination span.paging:active a{
+    background: #ececec;
+}
+.pagination span.paging.current a{
+    background: #093777;
+    color: #fff;
+    border-color: #093777
+}
+.pagination .page{
+    display: inline-block;
+}
+.pagination .prev.disabled a,
+.pagination .next.disabled a{
+    cursor: default;
+    filter: alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: .5;
+}
+.pagination .paging.disabled:hover a,
+.pagination .paging.disabled:active a,
+.pagination .paging.disabled.current a{
+    background: transparent;
+}
+/***分页end***/
+
+/***食品资讯***/
+.food-news-list-left{
+    width: 100%;
+}
+.food-news-list-left-mid{
+}
+.food-news-list-right{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.news-right-ul{
+    float: left;
+    border-bottom: 1px solid #c7c7c7;
+    width: 100%;
+    overflow: hidden;
+}
+.news-right-ul li{
+    text-align: center;
+    float: left;
+}
+.news-right-ul li a{
+    display: block;
+    padding: 10px 6px;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+}
+.news-right-ul li a.newrighta{
+    display: table;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+.news-right-ul li a.newrighta .systemtextmid{
+    border-left: 0;
+    margin-left: 35px;
+}
+.newrighta .systemtext{
+    display: none;
+}
+.news-right-ul li a:hover{
+    background: #528ADF;
+    border-left-color: #094FB2;
+    color: #fff;
+}
+.news-right-ul li a:active,
+.news-right-ul li.current a{
+    background: #406fb6;
+    border-left-color: #093777;
+    color: #fff;
+}
+.commoncss{
+    float: left;
+    position: relative;
+}
+
+.a1,.a8{
+    width: 207px;
+    height:116px;
+    margin-bottom: 10px;
+}
+.a1 .margindiv,
+.a8 .margindiv {
+    width: 195px;
+    height: 114px;
+}
+.a1 .margindiv {
+    margin-right: 10px;
+}
+.a8 .margindiv {
+    margin-left: 10px;
+}
+.a2,.a3,.a6,.a7{
+    width: 103px;
+    height:58px;
+}
+.a7{
+    margin-left: -103px;
+    margin-top: 58px;
+}
+.a2 .margindiv,
+.a3 .margindiv,
+.a6 .margindiv,
+.a7 .margindiv {
+    width: 101px;
+    height: 51px;
+}
+.a2 .margindiv,
+.a6 .margindiv {
+    margin-bottom: 5px;
+}
+.a3 .margindiv,
+.a7 .margindiv {
+    margin-top: 5px;
+}
+
+
+.a4,.a5{
+    width: 155px;
+    height:87px;
+    margin-bottom: 10px;
+}
+.a4 .margindiv,
+.a5 .margindiv {
+    width: 148px;
+    height: 85px;
+}
+.a4 .margindiv {
+    margin-right: 5px;
+}
+.a5 .margindiv {
+    margin-left: 5px;
+}
+.a1 .imgbox.middle-out,
+.a8 .imgbox.middle-out,
+.a1 .imgbox.middle-out .middle-in img,
+.a8 .imgbox.middle-out .middle-in img{
+    width: 195px;
+    height: 114px;
+}
+.a2 .imgbox.middle-out,
+.a3 .imgbox.middle-out,
+.a6 .imgbox.middle-out,
+.a7 .imgbox.middle-out,
+.a2 .imgbox.middle-out .middle-in img,
+.a3 .imgbox.middle-out .middle-in img,
+.a6 .imgbox.middle-out .middle-in img,
+.a7 .imgbox.middle-out .middle-in img{
+    width: 101px;
+    height: 51px;
+}
+.a4 .imgbox.middle-out,
+.a5 .imgbox.middle-out,
+.a4 .imgbox.middle-out .middle-in img,
+.a5 .imgbox.middle-out .middle-in img{
+    width: 148px;
+    height: 85px;
+}
+
+
+
+.margindiv{
+    background: #f4f4f4;
+    border:2px solid #f4f4f4;
+}
+.margindiv:hover,
+.margindiv:active{
+    border-color: #319552;
+}
+.imgbox.middle-out{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    border:0;
+    background: transparent;
+    border-radius: 0;
+}
+.heightshow{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.imgbox.middle-out .middle-in img{
+    max-height: 100%;
+    max-width: 100%;
+}
+.heightshow{
+    position: relative;
+}
+.imgdescript{
+    position: absolute;
+    left: 0;
+    bottom:0px;
+    height: 25px;
+    background: #444;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    color: #fff;
+    padding: 4px 0 0 0;
+    text-align: left;
+}
+.imgdescript .replaybox{
+    display: none;
+}
+.margindiv:hover .imgdescript,
+.margindiv:active .imgdescript{
+    background:#319552;
+    background: rgba(49,149,82,.8);
+}
+.a2 .imgdescript,
+.a3 .imgdescript,
+.a6 .imgdescript,
+.a7 .imgdescript{
+    height: 25px;
+}
+.imgdescript .newstitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.imgdescript .newstitle,
+.descripttext,
+.imgdescript .replaybox{
+    padding:0 10px;
+}
+.imgdescript .replaybox>span{
+    margin-left: 0;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.descripttext{
+    margin: 4px 0;
+    text-indent: 24px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+.icon-replay{
+    width: 20px;
+    height: 15px;
+    background: url(../images/trace-image/iconall.png) no-repeat -400px -52px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.imgdescript .icon-replay{
+    background-position: -400px -102px;
+}
+.change-active-bar{
+    height: 44px;
+}
+.news-change-bar-ul{
+    height: 44px;
+    float: right;
+    margin-right: 30px;
+
+}
+.news-change-bar-ul li{
+    float: left;
+    width: 44px;
+    height: 100%;
+    margin-right: 10px;
+    background: url(../images/trace-image/iconall.png) no-repeat;
+    cursor: pointer;
+}
+.news-change-bar-ul li.news-pic{
+    background-position: -292px -93px;
+}
+.news-change-bar-ul li.news-list{
+    background-position: -342px -93px;
+}
+.news-change-bar-ul li.news-pic:hover,
+.news-change-bar-ul li.news-pic:active,
+.news-change-bar-ul li.news-pic.current{
+    background-position: -292px -144px;
+}
+.news-change-bar-ul li.news-list:hover,
+.news-change-bar-ul li.news-list:active,
+.news-change-bar-ul li.news-list.current{
+    background-position: -342px -144px;
+}
+.picboxs{
+    padding:0;
+    width: 310px;
+    margin: 0 auto;
+}
+.picboxshref{
+    display: block;
+}
+.listnews{
+    display: none;
+}
+
+/*****食品资讯*****/
+
+/***政策法规**/
+.policies{
+    margin:10px 0;
+    height:39px;
+    overflow: hidden;
+}
+.policies p{
+    text-indent: 24px;
+}
+.newdivdistrict-ul-law .replaybox>span{
+    display: inline-block;
+}
+/**政策法规结束**/
+
+
+/***追溯码查询**/
+.tracingcodesearchresultbox{
+    width: 90%;
+    margin:10px auto;
+}
+.tracingcodesearchresultbox fieldset{
+    border-width:1px 0 0 0;
+    border-color: #228c57;
+    position: relative;
+    margin: 20px auto;
+}
+.tracingcodesearchresultbox fieldset legend{
+    color:#0a622e;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 30px 0 0;
+    margin-left: -8px;
+    *margin-left: -12px;
+}
+.tracingcodesearchresultbox fieldset legend.legenddrop{
+    background:#fff url(../images/trace-image/iconall.png) no-repeat 11px -190px;
+    width:44px;
+    height:44px;
+    padding:0;
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    *top:-7px;
+    cursor: pointer;
+}
+.tracingcodesearchresultbox fieldset legend.legenddrop.down{
+    background-position: 11px -190px;
+}
+.tracingcodesearchresultbox fieldset legend.legenddrop.up{
+    background-position: 11px -240px;
+}
+.tracingcodesearchresultbox fieldset legend.legenddrop.down:hover,
+.tracingcodesearchresultbox fieldset legend.legenddrop.down:active{
+    background-position: -39px -190px;
+}
+.tracingcodesearchresultbox fieldset legend.legenddrop.up:hover,
+.tracingcodesearchresultbox fieldset legend.legenddrop.up:active{
+    background-position: -39px -240px;
+}
+.tracingcodecontentbox{
+    width: 96%;
+    margin:10px auto;
+}
+.newsdetailbox .tracingcodecontentbox,
+.foodsguide .tracingcodecontentbox{
+    width: 80%;
+    margin:10px auto;
+}
+.tracodeTablemesssge{
+    width:100%;
+    border:0;
+}
+.tracodeTablemesssge td{
+    padding:10px 5px;
+    vertical-align: middle;
+    background: #e6efea;
+    border:1px solid #fff;
+    text-align: center;
+}
+.tracodeTablemesssge td img{
+    max-width: 100px;
+    max-height: 30px;
+}
+.tracodeTablemesssge th{
+    background: #0a622e;
+    border:1px solid #fff;
+    color: #fff;
+    padding:12px 5px;
+}
+.title2{
+    font-size: 16px;
+    margin-top:20px;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.tracodelifeline{
+    border-left:1px solid #c7c7c7;
+}
+.tracodebasicmessage{
+    line-height: 25px;
+    position: relative;
+}
+.tracodelifeline ul,
+.tracodebasicmessage ul{
+    width: 100%;
+}
+.tracodelifeline li span,
+.tracodebasicmessage li span{
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 20px;
+}
+.tracodebasicmessage li span{
+    vertical-align: top;
+}
+.tracodelifeline li .link{
+    width: 44px;
+    height: 44px;
+    background: url(../images/trace-image/iconall.png) no-repeat -442px -90px;
+    margin-left: -19px;
+}
+.lifetext{
+    margin-left: -44px;
+    width: 100%;
+}
+.lifetextmid{
+    margin-left: 44px;
+}
+.basicname{
+    width: 80px;
+    text-align: right;
+}
+.tracodebasicmessage .lifetext{
+    margin-left: -85px;
+    width: 100%;
+}
+.tracodebasicmessage .lifetextmid{
+    margin-left: 85px;
+}
+.lifetime{
+    padding:2px 5px;
+    background: #0a622e;
+    color: #fff;
+    margin: 0 5px;
+}
+.mixturebtn{
+    background: #0a622e;
+    color: #fff;
+    padding: 2px 6px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.mixturebtn:hover,
+.mixturebtn:active{
+    background: #057e36;
+}
+.mixturesearch{
+    background: url(../images/trace-image/iconall.png) no-repeat -195px -156px;
+    width: 29px;
+    height: 18px;
+    display: inline-block;
+}
+.tracodebasicmessage li .mixturebtn span{
+    vertical-align: middle;
+}
+.foodslinkband{
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.foodslinkband ul{
+    float: left;
+}
+.foodslinkband li{
+    float: left;
+    margin-left: 10px;
+    height: 50px;
+    width: 60px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.foodslinkband li img{
+    max-height: 50px;
+    max-width: 60px;
+}
+.food-Carousel-box{
+    margin: 20px auto 0 auto;
+    width: 280px;
+}
+.foodcleft{
+    width: 220px;
+    float: left;
+    margin-right: -60px;
+    /*height: 100%;*/
+}
+.foodcleftmid{
+    margin-right: 60px;
+}
+.foodcright{
+    float: right;
+    width: 60px;
+    height: 164px;
+    position: relative;
+    z-index: 1;
+    background:#f4f4f4;
+}
+.foodcarpic{
+    width: 220px;
+    height: 124px;
+    text-align: center;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+.foodcarpic li{
+    display: none;
+}
+.foodcarpic li.current{
+    display: block;
+}
+.foodcarpic img{
+    width: 220px;
+    height: 124px;
+}
+.foodcarpicul{
+    width: 220px;
+    height: 40px;
+    overflow: hidden;
+}
+.foodcarpicul ul{
+    float: left;
+}
+.foodcarpicul li{
+    float: left;
+    line-height: 40px;
+    width: 25%;
+    text-align: center;
+    color: #595757;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+.foodcarpicul li:hover,
+.foodcarpicul li:active{
+    background: #e5e5e5;
+}
+.foodcarpicul li.current{
+    background: #0a622e;
+    color: #fff;
+}
+.foodcarpicul li.current:hover,
+.foodcarpicul li.current:active{
+    background: #057e36;
+}
+.droppicbox{
+    height: 114px;
+    padding:0px 8px;
+    overflow: hidden;
+}
+.droppicbox li{
+    height: 28px;
+}
+.droppicbox li img{
+    height: 23px;
+    width: 40px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border:1px solid transparent;
+    cursor: pointer;
+}
+.droppicbox li:hover img,
+.droppicbox li:active img,
+.droppicbox li.current img{
+    border-color: #319552;
+}
+
+.foodcdrop{
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.foodcdrop:hover,
+.foodcdrop:active{
+    background: #e5e5e5;
+}
+.foodcdropup,
+.foodcdropdown{
+    background: url(../images/trace-image/iconall.png) 11px -250px;
+    width: 44px;
+    height: 100%;
+    margin:0 auto;
+}
+.foodcdropdown{
+    background-position: 11px -200px;
+}
+.foodcdropupbox.opacity0,
+.foodcdropdownbox.opacity0{
+    opacity: .5;
+    filter: alpha(opacity = 50);
+    cursor: default;
+}
+.foodcdropupbox.opacity0:hover,
+.foodcdropdownbox.opacity0:hover,
+.foodcdropupbox.opacity0:active,
+.foodcdropdownbox.opacity0:active{
+    background: transparent;
+}
+/****追溯码查询**/
+
+/**********新闻明细*********/
+.newsdetail .localtion-left{
+    width: 30px;
+}
+.newsdetail .icon-backto {
+    background-position: -74px -57px;
+}
+.newsdetail .localtion-right{
+    margin-left: -30px;
+}
+.newsdetail .tracingcodecontentbox{
+    width: 90%;
+}
+.newsdetail .localtion-right-mid{
+    margin-left: 30px;
+}
+.newsDetailfontsize p{
+    text-indent: 24px;
+    margin-top: 10px;
+    line-height: 24px;
+}
+.newsrotate{
+    overflow: hidden;
+}
+.newsTimereplay{
+    text-align: left;
+    line-height: 30px;
+}
+.newsTimereplay .replaybox>span {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 0;
+}
+.newsandpic{
+    text-align: center;
+    margin:10px auto;
+}
+.newsandpic img{
+    max-width: 100%;
+}
+/********新闻明细end****************/
+/*****解决方案*******/
+.systemboxcol{
+    width: 92%;
+    margin:10px auto;
+}
+.systemcolnumber{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.systemmargin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.systema{
+    display: table;
+    *display: inline-block;
+    width: 100%;
+    border:1px solid #888;
+    color: #595757;
+    cursor: pointer;
+}
+.systema:hover,
+.systema:active{
+    border-color: #444;
+    background: #f4f4f4;
+}
+.systemicon{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+.systemicon img{
+    width: 30px;
+    height: 30px;
+}
+.systemicon.icon1{
+    background-position: 0 0;
+}
+.systemicon.icon2{
+    background-position: -50px 0;
+}
+.systemicon.icon3{
+    background-position: -100px 0;
+}
+.systemicon.icon4{
+    background-position: -150px 0;
+}
+.systemicon.icon5{
+    background-position: -200px 0;
+}
+.systemicon.icon6{
+    background-position: -250px 0;
+}
+.systemicon.icon7{
+    background-position: 0px -50px;
+}
+.systemicon.icon8{
+    background-position: -50px -50px;
+}
+.systemicon.icon9{
+    background-position: -100px -50px;
+}
+
+.systemtext{
+    display: inline-block;
+    margin:10px 0 10px -70px;
+    *margin-bottom: 10px;
+    float: right;
+    width: 100%;
+}
+.systemtextmid{
+    display: inline-block;
+    margin-left: 55px;
+    line-height: 30px;
+    border-left: 1px solid #888;
+    text-indent: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.goodul li{
+    border:1px solid #c7c7c7;
+    border-width: 1px 0;
+    margin-top:-1px;
+    *margin-top: -4px;
+}
+.goodul .systemtextmid{
+    border-left: 0;
+    line-height: 20px;
+    margin-top: 0px;
+    white-space: normal;
+}
+.systemicon.icon10{
+    background-position: -150px -50px;
+}
+.systemicon.icon11{
+    background-position: -200px -50px;
+}
+.systemicon.icon12{
+    background-position: -250px -50px;
+}
+.systemicon.icon13{
+    background-position: -0px -100px;
+}
+.systemicon.icon14{
+    background-position: -50px -100px;
+}
+/********解决方案 end*****/
+/*******食品行情*****/
+.foodmarketbox,
+.foodmarket .tracingcodecontentbox{
+    width: 100%;
+    margin:0 auto;
+}
+.foodmarketcol{
+    width: 50%;
+    margin-bottom: 10px;
+}
+.foodmarketcol .imgdescript{
+    height: 45px;
+    padding-top: 5px;
+}
+.foodmarketcol img{
+    max-width: 95%;
+    max-height: 62px;
+    margin-top: 8px;
+}
+.foodmarketcol,
+.foodmarketcol .picboxshref,
+.foodmarketcol .margindiv{
+    height: 140px;
+}
+.foodmarketcol .margindiv:hover,
+.foodmarketcol .margindiv:active{
+    border-color:#319552;
+}
+.foodmarketcol .picboxshref{
+    margin:10px 5px 0 5px;
+}
+.foodmarketcol .margindiv{
+    border-color: #888;
+    border-width: 1px;
+}
+.foodmarketcol .newstitle{
+    font-size: 14px;
+    text-align: left;
+}
+.foodmarketcol .descripttext{
+    font-size: 12px;
+    text-align: right;
+}
+/*******食品行情end*****/
+/**********注册********/
+.registertitle{
+    margin-top: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.registertitle .col3{
+    float: left;
+    width: 33.33%;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    background: #6f6f6f;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+}
+.registertitle .col3.green{
+    background: #3b9c4f;
+}
+.icon-gonext{
+    width: 40px;
+    height: 30px;
+    background: url(../images/trace-image/iconall.png) no-repeat -391px -145px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: 1px solid #fff;
+}
+.form-item label{
+    text-align: right;
+    width: 75px;
+    font-size: 12px;
+    display: inline-block;
+    float: left;
+    line-height: 37px;
+}
+.form-item .icon-star{
+    width: 15px;
+    height: 15px;
+    background: url(../images/trace-image/iconall.png) no-repeat -100px -200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.form-item .form-field{
+    width: 72%;
+    float: left;
+    position: relative;
+}
+.form-item .dyselfield{
+    z-index: 2;
+}
+.form-item .form-field input{
+    width: 90%;
+    border:0;
+    background: #f1f1f1;
+    padding:11px 5px;
+    text-align: left;
+}
+.registerbox{
+    width: 95%;
+    margin:30px auto;
+}
+.form-item{
+    margin-bottom: 10px;
+}
+.form-item .form-field input.identifybox{
+    width: 23%;
+}
+/**下拉列表**/
+.diy_select{
+    height:40px;
+    width:90%;
+    position:relative;
+    background:#f1f1f1;
+    color:#595757;
+    float:left;
+    text-align: left;
+    padding: 0 5px;
+    z-index: 99;
+}
+.diy_select_btn,.diy_select_txt{
+    float:left;
+    height:100%;
+    line-height:40px;
+}
+.diy_select_list{
+    width: 100%;
+    margin-top: 40px;
+    background: #DBDBDB;
+    padding: 0 5px;
+    margin-left: -5px;
+    display: none;
+}
+.diy_select_txt{
+    width:100%;
+}
+.diy_select_txt,.diy_select_list li{
+    text-indent:10px;
+    overflow:hidden;
+}
+.diy_select_list li{
+    line-height: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 -5px;
+}
+.diy_select_btn{
+    width:28px;
+    background: url(../images/trace-image/iconall.png) no-repeat -442px -139px;
+    cursor:pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+.diy_select_btn:hover{
+    background-color: #dbdbdb;
+}
+.diy_select_list li.focus{
+    color:#093777;
+    background: #B2B2B2;
+}
+.form-item .form-field input.registerbtnbox{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: #093777;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 75px;
+    padding:2px 5px;
+    width: 93%;
+    cursor: pointer;
+}
+.form-item .form-field input.registerbtnbox:hover,
+.form-item .form-field input.registerbtnbox:active,
+.gobackindex:hover,
+.gobackindex:active{
+    background: #0b4699;
+}
+.form-state-help{
+    float: left;
+    width: 30px;
+    height: 40px;
+    background: url(../images/trace-image/iconall.png) no-repeat -202px -197px;
+    position: absolute;
+    right: -23px;
+    top: 0;
+    cursor: pointer;
+    display: block;
+}
+.registerverify{
+    display: none;
+}
+.registerverify-left{
+    width: 85px;
+    height: 80px;
+    background: url(../images/trace-image/iconall.png) no-repeat -259px -200px;
+    float: left;
+    margin-top: 15px;
+}
+.registerverify-right{
+    width: 100%;
+    margin-left: -85px;
+    float: right;
+}
+.registerverify-right-mid{
+    margin-left: 90px;
+}
+.registerverify-right-mid h2{
+    font-size: 21px;
+    padding-bottom: 10px;
+}
+.registerverify-right-mid h4{
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+.registerverify-right-mid p{
+    font-size: 12px;
+}
+.gobackindex{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: #093777;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+    display: block;
+    margin: 30px auto;
+}
+.form-state-tooltip{
+    background: #3b9c4f;
+    padding:5px;
+    text-align: left;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    right: -23px;
+    top: -39px;
+    border-radius: 4px;
+    width: auto;
+    display: none;
+}
+.f-s-t-arrow{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #3b9c4f;
+    position: absolute;
+    right: 16px;
+    bottom: -5px;
+    overflow: hidden;
+}
+.form-state-help-box:hover .form-state-tooltip,
+.form-state-help-box:active .form-state-tooltip{
+    display: block;
+}
+/*******注册end**************/
+
+
+/**media query for mobile && pc**/
+/**550***/
+@media screen and (min-width:375px ){
+    .loginbox{
+        width: 300px;
+        margin-left: -150px;
+    }
+    .identifying-input{
+        width: 95px;
+    }
+    .news-top-ul li {
+        min-width: 50px;
+    }
+    .news-right-ul li a{
+        padding: 10px;
+    }
+    .footerbox .padding20{
+        padding: 0 10px;
+    }
+    .picScroll-left,
+    .picScroll-left .bd ul li {
+        height: 221px;
+    }
+    .picScroll-left .bd ul li img {
+        max-height: 221px;
+        margin-top: 0px;
+    }
+    .picScroll-left .middle-out{
+        height:221px;
+    }
+
+    /**news**/
+    .picboxs {
+        width: 375px;
+    }
+    .a1,.a8{
+        width: 249px;
+        height:140px;
+    }
+    .a1 .margindiv,
+    .a8 .margindiv {
+        width: 237px;
+        height: 138px;
+    }
+    .a2,.a3,.a6,.a7{
+        width: 124px;
+        height:70px;
+    }
+    .a7{
+        margin-left: -124px;
+        margin-top: 70px;
+    }
+    .a2 .margindiv,
+    .a3 .margindiv,
+    .a6 .margindiv,
+    .a7 .margindiv {
+        width: 122px;
+        height: 63px;
+    }
+
+    .a4,.a5{
+        width: 186.5px;
+        height:105px;
+    }
+    .a4 .margindiv,
+    .a5 .margindiv {
+        width: 179.5px;
+        height: 103px;
+    }
+    .a1 .imgbox.middle-out,
+    .a8 .imgbox.middle-out,
+    .a1 .imgbox.middle-out .middle-in img,
+    .a8 .imgbox.middle-out .middle-in img{
+        width: 237px;
+        height: 138px;
+    }
+    .a2 .imgbox.middle-out,
+    .a3 .imgbox.middle-out,
+    .a6 .imgbox.middle-out,
+    .a7 .imgbox.middle-out,
+    .a2 .imgbox.middle-out .middle-in img,
+    .a3 .imgbox.middle-out .middle-in img,
+    .a6 .imgbox.middle-out .middle-in img,
+    .a7 .imgbox.middle-out .middle-in img{
+        width: 122px;
+        height: 63px;
+    }
+    .a4 .imgbox.middle-out,
+    .a5 .imgbox.middle-out,
+    .a4 .imgbox.middle-out .middle-in img,
+    .a5 .imgbox.middle-out .middle-in img{
+        width: 179.5px;
+        height: 103px;
+    }
+
+}
+@media screen and (min-width: 550px){
+    .news-top-ul li a{
+        font-size: 16px;
+    }
+    .news-top-ul li {
+        min-width: 80px;
+    }
+    .localtion-left{
+        height: 110px;
+    }
+    .icon-backto{
+        background-position: -150px -47px;
+    }
+    .newsdetail .icon-backto{
+        background-position: -50px -44px;
+    }
+    .newsdetail .localtion-left{
+        width: 80px;
+    }
+    .newsdetailbox{
+        margin-left: 80px;
+    }
+    .newsdetail .localtion-right{
+        margin-left: -80px;
+    }
+    .newsdetail .localtion-right-mid{
+        margin-left: 80px;
+    }
+    .localtionTitle{
+        font-size: 30px;
+        margin-top: 15px;
+    }
+    .newsdetail .localtionTitle{
+        font-size: 20px;
+    }
+    .CrumbsP{
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    .tracingresult{
+        width: 450px;
+    }
+    .tracingresult .tracingcode-input-box{
+        margin-left: -18px;
+        *margin-left: 0;
+    }
+    .company-Ul li{
+        width: 50%;
+        *width:49.99%;
+    }
+    .borderline{
+        border-width: 0 1px 1px 0;
+        margin-right: -1px;
+        *margin-right: 0;
+    }
+    .footerbox .padding20{
+        padding:0 40px;
+    }
+    .foodmarketcol{
+        width: 33.33%;
+    }
+    .foodmarketcol img{
+        max-height: 100px;
+    }
+    .foodmarketcol,
+    .foodmarketcol .picboxshref,
+    .foodmarketcol .margindiv{
+        height: 180px;
+    }
+    .picScroll-left,
+    .picScroll-left .bd ul li {
+        height: 324px;
+    }
+    .picScroll-left .bd ul li img {
+        max-height: 324px;
+        margin-top: 0px;
+    }
+    .picScroll-left .middle-out{
+        height:324px;
+    }
+    .foodmarketbox,
+    .foodmarket .tracingcodecontentbox{
+        width: 95%;
+    }
+    .foodmarketcol .imgdescript {
+        padding-top: 10px;
+    }
+
+
+
+}
+/**768**/
+@media screen and (min-width: 768px){
+    .trac-left{
+        float: left;
+        width: 140px;
+        text-align: center;
+        line-height: 50px;
+    }
+    .trac-mid{
+        width: 100%;
+        margin:0 -200px 0 -140px;
+    }
+    .trac-mid-c{
+        margin:0 200px 0 140px;
+        *margin:0 250px 0 80px;
+    }
+    .trac-right{
+        width: 150px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+    .newdivdistrict-ul li,
+    .newdivdistrict-ul-law li{
+        padding:20px 40px;
+    }
+    .replaybox>span{
+        display: inline-block;
+    }
+    .lawheight{
+        height: 130px;
+    }
+    .lawheight2{
+        height: 80px;
+    }
+    /*****/
+    .foodcleft{
+        margin-right: -100px;
+    }
+    .foodcleftmid{
+        margin-right: 100px;
+    }
+    .foodcright{
+        width: 100px;
+    }
+    .foodcarpic{
+        height: 300px;
+    }
+    .foodcarpic img{
+    }
+    .foodcarpicul{
+        height: 50px;
+    }
+    .foodcarpicul li{
+        line-height: 50px;
+        width: 25%;
+    }
+    .droppicbox{
+        height: 300px;
+        padding:0px 10px;
+    }
+    .droppicbox li{
+        height: 75px;
+    }
+    .droppicbox li img{
+        height: 63px;
+        width: 100%;
+    }
+
+    .newsrotate{
+        float: left;
+        width: 100%;
+        margin-right: -300px;
+    }
+    .newsrotatemid{
+        margin-right: 300px;
+    }
+    .newsTimereplay{
+        float: right;
+        position: relative;
+        z-index: 1;
+        width: 300px;
+        text-align: right;
+    }
+    /*****解决方案*******/
+    .systemcolnumber{
+        width: 50%;
+    }
+    .tracingcodetop{
+        padding-top: 20px;
+    }
+    .lawdiv-title-left-mid,
+    .lawdiv-title-right{
+        margin-top: 20px;
+    }
+    .lawdiv-body-left,
+    .lawdiv-body-right-mid{
+        margin-top: 10px;
+    }
+    .picList>li{
+        height: 48px;
+    }
+    .picList>li>ul>li{
+        width: 25%;
+        *width: 24.5%;
+        height: 48px;
+    }
+
+
+    /**news**/
+    .picboxs {
+        width: 751px;
+    }
+    .a1,.a8{
+        width: 501px;
+        height:282px;
+    }
+    .a1 .margindiv,
+    .a8 .margindiv {
+        width: 489px;
+        height: 280px;
+    }
+    .a2,.a3,.a6,.a7{
+        width: 250px;
+        height:141px;
+    }
+    .a7{
+        margin-left: -250px;
+        margin-top: 141px;
+    }
+    .a2 .margindiv,
+    .a3 .margindiv,
+    .a6 .margindiv,
+    .a7 .margindiv {
+        width: 248px;
+        height: 134px;
+    }
+
+    .a4,.a5{
+        width: 375.5px;
+        height:211px;
+    }
+    .a4 .margindiv,
+    .a5 .margindiv {
+        width: 368.5px;
+        height: 209px;
+    }
+    .a1 .imgbox.middle-out,
+    .a8 .imgbox.middle-out,
+    .a1 .imgbox.middle-out .middle-in img,
+    .a8 .imgbox.middle-out .middle-in img{
+        width: 501px;
+        height:282px;
+    }
+    .a2 .imgbox.middle-out,
+    .a3 .imgbox.middle-out,
+    .a6 .imgbox.middle-out,
+    .a7 .imgbox.middle-out,
+    .a2 .imgbox.middle-out .middle-in img,
+    .a3 .imgbox.middle-out .middle-in img,
+    .a6 .imgbox.middle-out .middle-in img,
+    .a7 .imgbox.middle-out .middle-in img{
+        width: 248px;
+        height: 134px;
+    }
+    .a4 .imgbox.middle-out,
+    .a5 .imgbox.middle-out,
+    .a4 .imgbox.middle-out .middle-in img,
+    .a5 .imgbox.middle-out .middle-in img{
+        width: 368.5px;
+        height: 209px;
+    }
+
+    .imgdescript{
+        height: 95px;
+    }
+    .imgdescript .replaybox{
+        display: block;
+    }
+    .a2 .imgdescript, .a3 .imgdescript,
+    .a4 .imgdescript,
+    .a5 .imgdescript,
+    .a6 .imgdescript, .a7 .imgdescript{
+        height: 47px;
+    }
+    .a2 .replaybox,
+    .a3 .replaybox,
+    .a4 .replaybox,
+    .a5 .replaybox,
+    .a6 .replaybox,
+    .a7 .replaybox{
+        display: none;
+    }
+
+
+    .food-Carousel-box{
+        width: 648px;
+    }
+    .foodcright {
+        width: 118px;
+        height: 348px;
+    }
+    .foodcleft{
+        width: 530px;
+        margin-right: -118px;
+    }
+    .foodcleftmid {
+        margin-right: 118px;
+    }
+    .foodcarpic{
+        height: 298px;
+        width: 530px;
+    }
+    .foodcarpic img {
+        height: 298px;
+        width: 530px;
+    }
+    .foodcarpicul{
+        width: 530px;
+    }
+    .droppicbox li img {
+        height: 55px;
+        width: 98px;
+    }
+    .droppicbox{
+        height: 264px;
+    }
+    .droppicbox li {
+        height: 65px;
+    }
+    .foodcdrop{
+        height: 42px;
+    }
+    .foodcdropdown {
+        background-position: 11px -191px;
+    }
+
+
+}
+/**1024**/
+@media screen and (min-width: 1024px){
+    .lawheight2 {
+        height: 135px;
+    }
+    .registerbox{
+        width: 65%;
+    }
+    .form-item .form-field {
+        width: 73%;
+    }
+    .form-item label{
+        width: 100px;
+        font-size: 14px;
+    }
+    .form-item .form-field input.registerbtnbox{
+        margin-left: 100px;
+    }
+    .form-item .form-field input.identifybox {
+        width: 50%;
+    }
+    .form-item .form-field input.registerbtnbox,
+    .gobackindex{
+        font-size: 22px;
+        line-height: 50px;
+    }
+    .registertitle .col3{
+        font-size: 16px;
+        line-height: 40px;
+        height: 40px;
+    }
+    .form-state-help{
+        width: 40px;
+        background-position: -152px -202px;
+    }
+    .icon-gonext {
+        width: 40px;
+        height: 40px;
+        background-position: -391px -141px;
+    }
+
+    .registerverify-left{
+        width: 150px;
+        height: 100px;
+        background-position: -350px -200px;
+        margin-top: 20px;
+    }
+    .registerverify-right{
+        margin-left: -150px;
+    }
+    .registerverify-right-mid{
+        margin-left: 150px;
+    }
+    .registerverify-right-mid h2{
+        font-size: 40px;
+    }
+    .registerverify-right-mid h4{
+        font-size: 20px;
+    }
+    .registerverify-right-mid p{
+        font-size: 14px;
+    }
+
+    .form-state-tooltip{
+        font-size: 14px;
+        top: 5px;
+        right: -159px;
+        width: 112px;
+    }
+    .f-s-t-arrow{
+        border-right: 5px solid #3b9c4f;
+        border-bottom: 5px solid transparent;
+        border-top: 5px solid transparent;
+        border-left: 0;
+        right: auto;
+        bottom: auto;
+        left: -5px;
+        top: 10px;
+    }
+
+
+    .picScroll-top .bd {
+        height: 96px;
+    }
+
+    .picScroll-top{
+        height: 114px;
+    }
+
+
+    .newsmore .more{
+        display: inline-block;
+    }
+    /**topbox**/
+    .top-pc{
+        display: block;
+    }
+    .top-mobile{
+        display: none;
+    }
+    .top-mobile .top-mobile-menubar{
+        display: none;
+        left: -250px;
+    }
+    .t-search-input{
+        margin:7px 10px 0 0;
+        width: 180px;
+    }
+    .food_slide{
+        margin-bottom: 20px;
+    }
+    .picScroll-left,
+    .picScroll-left .bd ul li{
+        margin-bottom: 20px;
+        height: 380px;
+    }
+    .picScroll-left .bd ul li img{
+        max-height: 380px;
+        margin-top:0;
+    }
+    .picScroll-left .middle-out{
+        height:380px;
+    }
+    .trac-left{
+        width: 130px;
+    }
+    .trac-mid{
+        width: 100%;
+        margin:0 -110px 0 -130px;
+    }
+    .trac-mid-c{
+        margin:0 110px 0 130px;
+        *margin:0 180px 0 80px;
+    }
+    .trac-right{
+        width: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        text-indent: 0px;
+        text-align: right;
+    }
+    .uesrpwd-input{
+        *width: 80%;
+    }
+    /***topbox end**/
+
+    .tracingcodeandcompany .padding20,
+    .lawandmap .padding20,
+    .mainbox .padding20,
+    .top-message-box .padding20{
+        padding:0 40px;
+    }
+
+    /**追溯码查询 企业***/
+    .col50{
+        float: left;
+        width: 50%;
+    }
+    .tracingcode,
+    .company{
+        margin-bottom: 20px;
+        border-width: 5px 1px 1px 1px;
+        height:183px;
+    }
+    .tracingcode{
+        margin-right: 10px;
+    }
+    .company{
+        margin-left: 10px;
+    }
+    /****追溯码查询 企业 end***/
+
+    /**资讯 图标**/
+    .mainbox .marginbottom20{
+        margin-bottom: 20px;
+    }
+    .news-box{
+        width: 100%;
+        margin-right: -33%;
+        float: left;
+    }
+    .news-box-mid{
+        margin-right: 33%;
+    }
+    .chartshow {
+        padding: 20px 0 40px 50px;
+    }
+    .chart-box{
+        float: right;
+        position: relative;
+        z-index: 1;
+        width: 33%;
+    }
+     .chart-box .news-top{
+        padding-left: 35px;
+    }
+    .newdivdistrict-ul li,
+    .newdivdistrict-ul-law li{
+        border-width: 0 1px 1px 1px;
+    }
+    .chart-box .news-top-ul-box p{
+        font-size: 16px;
+        line-height: 43px;
+    }
+    /**资讯 图标end**/
+
+    /**法规 电子地图**/
+    .lawandmap{}
+    .lawmapbox{
+        width: 100%;
+    }
+    .lawdiv{
+        width: 33.33%;
+        float: left;
+    }
+    .law-margin{
+        margin-right:10px;
+        border-width: 5px 1px 1px 1px;
+        margin-bottom: 20px;
+    }
+    .Map .law-margin{
+        margin-right:0;
+    }
+    .chart-box fieldset legend{
+        font-size: 16px;
+    }
+    .policies p{
+        font-size: 14px;
+    }
+    /**法规 电子地图end**/
+
+    /***footer**/
+    .main{
+        padding-bottom: 140px;
+    }
+    .footerbox{
+        margin-top: -140px;
+        height: 140px;
+    }
+    .borderbottom{
+        border-bottom: 1px solid #A1A1A1;
+    }
+    .borderbottom,
+    .f-float-right{
+        display: block;
+    }
+    .online-help{
+        display: inline-block;
+    }
+    .f-float-left{
+        float: left;
+        width: auto;
+    }
+    .f-float-right{
+        float: right;
+        width: auto;
+    }
+    /**footer end**/
+
+    /**浮层**/
+    .floatLayer{
+        display: block;
+    }
+    /**浮层end**/
+    .news-top-ul li {
+        min-width: 94px;
+    }
+    .news-right-ul li{
+        font-size: 18px;
+    }
+    .food-news-list-left{
+        width: 100%;
+        float: left;
+        margin-right: -10%;
+    }
+    .food-news-list-left-mid{
+        margin-right: 10%;
+    }
+    .food-news-list-right{
+        width: 10%;
+        float: right;
+        background: #e5e5e5;
+        height: 100%;
+    }
+    .foodnewslist .food-news-list-left{
+        margin-right: -23%;
+    }
+    .foodnewslist .food-news-list-left-mid{
+        margin-right: 23%;
+    }
+    .foodnewslist .food-news-list-right{
+        width: 23%;
+    }
+    .listshow .food-news-list-left{
+        margin-right: -33%;
+    }
+    .listshow .food-news-list-left-mid{
+        margin-right: 33%;
+    }
+    .listshow .food-news-list-right{
+        width: 33%;
+    }
+    .news-right-ul{
+        float: none;
+        border-bottom: 0;
+    }
+    .news-right-ul li{
+        float: none;
+    }
+    .top-message-box{
+        height: 33px;
+        font-size: 14px;
+    }
+    .news-right-ul li a {
+        font-size: 14px;
+    }
+    .lawdiv-body-left{
+        width: 100px;
+        margin: 10px 25px 10px 25px;
+    }
+    .lawdiv-body-right{
+        margin-left: -152px;
+    }
+    .lawdiv-body-right-mid{
+        margin-left: 152px;
+    }
+    .law-margin{
+        height: 205px;
+    }
+    .newdivdistrict-ul .lawdiv-body-left{
+        width: 250px;
+    }
+    .newdivdistrict-ul .middle-out{
+        width: 248px;
+        height: 140px;
+    }
+    .newdivdistrict-ul .lawdiv-body-right{
+        margin-left: -280px;
+    }
+    .newdivdistrict-ul .lawdiv-body-right-mid{
+        margin-left: 280px;
+    }
+    .newdivdistrict-ul .middle-out .middle-in img{
+        max-width: 248px;
+        max-height: 140px;
+    }
+    .newdivdistrict-ul .newstitle,
+    .newdivdistrict-ul-law .newstitle{
+        font-size: 16px;
+    }
+    .lawheight2 p{
+        font-size: 14px;
+    }
+    .tracodeTablemesssge th{
+        font-size: 14px;
+    }
+    .tracodeTablemesssge td{
+        font-size: 14px;
+    }
+    .title2{
+        font-size: 18px;
+    }
+    .tracodelifeline{
+        font-size: 14px;
+    }
+    .tracingcodesearchresultbox{
+        width: 80%;
+    }
+    .tracingcodesearchresultbox fieldset legend{
+        font-size: 22px;
+    }
+    .tracingcodesearchresultbox fieldset legend.legenddrop{
+        top:-5px;
+        *top:-2px;
+    }
+    .tracingcodecontentbox,
+    .newsdetail .tracingcodecontentbox{
+        width: 80%;
+        margin:30px auto;
+    }
+    .foodmarket{
+        width: 90%;
+    }
+    .newsdetail .tracingcodecontentbox{
+        width: 80%;
+        margin:0 auto 10px auto;
+    }
+    .newsdetailbox .tracingcodecontentbox,
+    .foodsguide .tracingcodecontentbox{
+        width: 80%;
+        margin:10px auto;
+    }
+    .tracodeTablemesssge td img{
+        max-width: 100px;
+        max-height: 55px;
+    }
+    .tracodebasicmessage{
+        font-size: 14px;
+    }
+    .mixturebtn{
+        padding: 4px 10px;
+    }
+    .foodslinkband{
+        position: absolute;
+        left: auto;
+        right:0;
+        width: 350px;
+        overflow: hidden;
+    }
+    .foodslinkband ul{
+        float: right;
+    }
+    .foodslinkband ul li{
+        float: right;
+    }
+    /**********新闻明细*********/
+    .newsDetailfontsize p{
+        font-size: 14px;
+    }
+    /********新闻明细end****************/
+    /*****解决方案*******/
+    .systemcolnumber{
+        width: 33.33%;
+    }
+    .systemicon{
+        width: 40px;
+        height: 40px;
+    }
+    .systemicon img{
+        width: 40px;
+        height: 40px;
+    }
+    .systemtext{
+        margin:10px 0 0px -60px;
+        *margin-bottom: 10px;
+    }
+    .systemtextmid{
+        margin-left: 58px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    .news-right-ul li a.newrighta .systemtextmid{
+        margin-left: 50px;
+    }
+    .goodul .systemtextmid{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .newrighta .systemtext{
+        display: inline-block;
+        margin-left: -60px;
+    }
+    /********解决方案 end*****/
+    .foodmarketcol {
+        width: 20%;
+    }
+    .foodmarketcol, .foodmarketcol .picboxshref, .foodmarketcol .margindiv {
+        height: 160px;
+    }
+    .foodmarketcol img {
+     height: 80px;
+    }
+    /*******食品行情end*****/
+    .localtion-left{
+        width: 80px;
+    }
+    .localtion-right{
+        margin-left: -80px;
+    }
+    .localtion-right-mid{
+        margin-left: 80px;
+    }
+    .icon-backto {
+        background-position: -50px -44px;
+    }
+    .icon-backto, .newsdetail .icon-backto{
+        background-position: -50px -44px;
+    }
+
+
+
+    /**********news****/
+    .picboxs {
+        width: 901px;
+    }
+    .a1,.a8{
+        width: 601px;
+        height:338px;
+        margin-bottom: 10px;
+    }
+    .a1 .margindiv,
+    .a8 .margindiv {
+        width: 589px;
+        height: 336px;
+    }
+    .a2,.a3,.a6,.a7{
+        width: 300px;
+        height:169px;
+    }
+    .a7{
+        margin-left: -300px;
+        margin-top: 169px;
+    }
+    .a2 .margindiv,
+    .a3 .margindiv,
+    .a6 .margindiv,
+    .a7 .margindiv {
+        width: 298px;
+        height: 162px;
+    }
+
+    .a4,.a5{
+        width: 450.5px;
+        height:253.4px;
+        margin-bottom: 10px;
+    }
+    .a4 .margindiv,
+    .a5 .margindiv {
+        width: 443.5px;
+        height: 251.4px;
+    }
+
+    .a1 .imgbox.middle-out,
+    .a8 .imgbox.middle-out,
+    .a1 .imgbox.middle-out .middle-in img,
+    .a8 .imgbox.middle-out .middle-in img{
+        width: 589px;
+        height: 336px;
+    }
+    .a2 .imgbox.middle-out,
+    .a3 .imgbox.middle-out,
+    .a6 .imgbox.middle-out,
+    .a7 .imgbox.middle-out,
+    .a2 .imgbox.middle-out .middle-in img,
+    .a3 .imgbox.middle-out .middle-in img,
+    .a6 .imgbox.middle-out .middle-in img,
+    .a7 .imgbox.middle-out .middle-in img{
+        width: 298px;
+        height: 162px;
+    }
+    .a4 .imgbox.middle-out,
+    .a5 .imgbox.middle-out,
+    .a4 .imgbox.middle-out .middle-in img,
+    .a5 .imgbox.middle-out .middle-in img{
+        width: 443.5px;
+        height: 251.4px;
+    }
+
+
+    .a2 .imgdescript, .a3 .imgdescript,
+    .a4 .imgdescript,
+    .a5 .imgdescript,
+    .a6 .imgdescript, .a7 .imgdescript{
+        height: 47px;
+    }
+    .a2 .replaybox,
+    .a3 .replaybox,
+    .a4 .replaybox,
+    .a5 .replaybox,
+    .a6 .replaybox,
+    .a7 .replaybox{
+        display: none;
+    }
+
+
+
+
+
+}
+
+/**1366**/
+@media screen and (min-width: 1366px){
+    .picScroll-top .bd {
+        height: 140px;
+    }
+    .tracingcode,
+    .company{
+        height:260px;
+    }
+    .picScroll-top {
+        height: 190px;
+    }
+    .trac-left{
+        width: 140px;
+    }
+    .trac-mid{
+        margin:0 -200px 0 -140px;
+    }
+    .trac-mid-c{
+        margin:0 200px 0 140px;
+        *margin:0 250px 0 80px;
+    }
+    .trac-right{
+        width: 150px;
+        line-height: 50px;
+        font-size: 20px;
+        text-indent: 0px;
+        text-align: center;
+    }
+    .t-menu-ul li{
+        font-size:16px;
+    }
+    .t-menu-ul li a{
+        padding: 10px 15px 6px 15px;
+    }
+    .picScroll-left,
+    .picScroll-left .bd ul li{
+        height:490px;
+    }
+    .picScroll-left .bd ul li img{
+        max-height: 490px;
+    }
+    .picScroll-left .middle-out{
+        height:490px;
+    }
+    .tracingcodeTable td{
+        font-size: 18px;
+    }
+    .tracingfont{
+        font-size: 20px;
+    }
+    .tracingcode-input{
+        font-size: 16px;
+        padding: 14px 50px 14px 0px;
+    }
+    .tracingcode-search-btn{
+        height: 92%;
+        *height:88%;
+    }
+    .message-error{
+        top:60px;
+    }
+     /**资讯 图标**/
+    .chart-box .news-top-ul-box p{
+        font-size: 18px;
+        line-height: 47px;
+    }
+    /**资讯 图标end**/
+    .lawdiv-left-text{
+        font-size: 20px;
+    }
+    .lawdiv-body-right-mid{
+        font-size: 14px;
+    }
+    .chart-box fieldset legend{
+        font-size: 18px;
+    }
+    .followmetext{
+        font-size: 14px;
+    }
+    .f-menu-ul li{
+        font-size: 14px;
+    }
+    .footerbox{
+        font-size: 14px;
+    }
+    .news-top-ul li a{
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+    .loginmenu li{
+        font-size: 16px;
+    }
+    .login-register{
+        font-size: 14px;
+    }
+    /***追溯码查询结果无**/
+    .localtion-left{
+        height: 140px;
+    }
+    .icon-backto{
+        background-position:-50px -29px;
+    }
+    .localtionTitle{
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    .newsdetail .localtionTitle{
+        font-size: 24px;
+    }
+    .localtionTitle2{
+        font-size: 18px;
+    }
+    .CrumbsP{
+        font-size: 14px;
+    }
+    .resultshow{
+        background: url(../images/trace-image/cloud_pc.png) no-repeat;
+        width: 489px;
+        height: 296px;
+        margin:40px auto;
+    }
+    .resulttext{
+        padding-top: 80px;
+        font-size: 22px;
+    }
+    .resulttext .warn{
+        font-size: 70px;
+    }
+    .detailcompany a{
+        font-size: 14px;
+    }
+    .news-right-ul li{
+        font-size: 20px;
+    }
+    .newstitle{
+        font-size: 16px;
+    }
+    .replaybox{
+        font-size: 14px;
+    }
+    .descripttext{
+        font-size: 14px;
+        margin: 2px 0;
+    }
+    .textalignright{
+        text-align: right;
+    }
+    .more a {
+        font-size: 14px;
+    }
+    .news-top-ul-box{
+        margin-right: -80px;
+    }
+    .news-top-ul{
+        margin-right: 80px;
+    }
+    .morebox{
+        width: 80px;
+    }
+    .news-right-ul li a {
+        font-size: 16px;
+    }
+    .lawdiv-body-left{
+        width: 200px;
+        margin: 10px 25px 10px 25px;
+    }
+    .middle-out{
+        width:200px;
+        height:112px;
+    }
+    .middle-out .middle-in img{
+        max-width: 200px;
+        max-height: 112px;
+    }
+    .lawdiv-body-right{
+        margin-left: -252px;
+    }
+    .lawdiv-body-right-mid{
+        margin-left: 252px;
+    }
+    .law-margin{
+        height: 235px;
+    }
+    .newdivdistrict-ul .lawdiv-body-left{
+        width: 300px;
+    }
+    .newdivdistrict-ul .middle-out{
+        width: 298px;
+        height: 168px;
+    }
+    .newdivdistrict-ul .lawdiv-body-right{
+        margin-left: -350px;
+    }
+    .newdivdistrict-ul .lawdiv-body-right-mid{
+        margin-left: 350px;
+    }
+    .newdivdistrict-ul .middle-out .middle-in img{
+        max-width: 298px;
+        max-height: 168px;
+    }
+    .lawdiv-body {
+        height: 138px;
+    }
+    .borderline .lawheight{
+        height:100px;
+    }
+    .tracingcodesearchresultbox{
+        width: 70%;
+    }
+    .foodmarket{
+        width: 90%;
+    }
+    .tracingcodecontentbox,
+    .newsdetail .tracingcodecontentbox,
+    .newsdetailbox  .tracingcodecontentbox,
+    .foodsguide .tracingcodecontentbox{
+        width: 70%;
+    }
+    .tracingcodesearchresultbox fieldset legend{
+        font-size: 30px;
+    }
+    .tracingcodesearchresultbox fieldset legend.legenddrop{
+        top:0;
+        *top:2px;
+    }
+    .tracodeTablemesssge th{
+        font-size: 16px;
+    }
+    .title2{
+        font-size: 20px;
+    }
+    .tracodelifeline{
+        font-size: 16px;
+    }
+    .tracodebasicmessage{
+        font-size: 16px;
+        line-height: 30px
+    }
+    .lifetime{
+        padding:5px 10px;
+    }
+    .mixturebtn{
+        padding: 5px 10px;
+    }
+    .mixturesearch{
+        background-position: -240px -156px;
+        width: 45px;
+        height: 25px;
+    }
+    .foodslinkband{
+        width: 420px;
+    }
+    /*****解决方案*******/
+    .systemicon{
+        width: 50px;
+        height: 50px;
+    }
+    .systemicon img{
+        width: 50px;
+        height: 50px;
+    }
+    .systemtext{
+        margin-left: -70px;
+    }
+    .systemtextmid{
+        margin-left: 70px;
+        line-height: 50px;
+        font-size: 16px;
+    }
+    .news-right-ul li a.newrighta .systemtextmid{
+        margin-left: 56px;
+    }
+    .newrighta .systemtext{
+        margin-left: -80px;
+    }
+    /********解决方案 end*****/
+    .foodmarketcol {
+        width: 16.66%;
+    }
+    /*******食品行情end*****/
+    /***注册****/
+    .registerbox{
+        width: 50%;
+    }
+    .form-item .form-field{
+        width: 75%;
+    }
+
+
+
+    /**********news****/
+    .picboxs {
+        width: 1200px;
+    }
+    .a1,.a8{
+        width: 800px;
+        height: 450px;
+    }
+    .a1 .margindiv,
+    .a8 .margindiv {
+        width: 788px;
+        height: 448px;
+    }
+    .a2,.a3,.a6,.a7{
+        width: 400px;
+        height:225px;
+    }
+    .a7{
+        margin-left: -400px;
+        margin-top: 225px;
+    }
+    .a2 .margindiv,
+    .a3 .margindiv,
+    .a6 .margindiv,
+    .a7 .margindiv {
+        width: 398px;
+        height: 218px;
+    }
+
+    .a4,.a5{
+        width: 600px;
+        height:337.5px;
+    }
+    .a4 .margindiv,
+    .a5 .margindiv {
+        width: 598px;
+        height: 330.5px;
+    }
+
+    .a1 .imgbox.middle-out,
+    .a8 .imgbox.middle-out,
+    .a1 .imgbox.middle-out .middle-in img,
+    .a8 .imgbox.middle-out .middle-in img{
+        width: 788px;
+        height: 448px;
+    }
+    .a2 .imgbox.middle-out,
+    .a3 .imgbox.middle-out,
+    .a6 .imgbox.middle-out,
+    .a7 .imgbox.middle-out,
+    .a2 .imgbox.middle-out .middle-in img,
+    .a3 .imgbox.middle-out .middle-in img,
+    .a6 .imgbox.middle-out .middle-in img,
+    .a7 .imgbox.middle-out .middle-in img{
+        width: 398px;
+        height: 218px;
+    }
+    .a4 .imgbox.middle-out,
+    .a5 .imgbox.middle-out,
+    .a4 .imgbox.middle-out .middle-in img,
+    .a5 .imgbox.middle-out .middle-in img{
+        width: 598px;
+        height: 330.5px;
+    }
+
+    .imgdescript {
+        height: 100px;
+    }
+
+    .a2 .imgdescript, .a3 .imgdescript,
+    .a4 .imgdescript,
+    .a5 .imgdescript,
+    .a6 .imgdescript, .a7 .imgdescript{
+        height: 78px;
+    }
+    .a2 .replaybox,
+    .a3 .replaybox,
+    .a4 .replaybox,
+    .a5 .replaybox,
+    .a6 .replaybox,
+    .a7 .replaybox{
+        display: block;
+    }
+
+
+    .food-Carousel-box{
+        width: 856px;
+    }
+    .foodcright {
+        width: 155px;
+        height: 444px;
+    }
+    .foodcleft{
+        width: 701px;
+        margin-right: -155px;
+    }
+    .foodcleftmid {
+        margin-right: 155px;
+    }
+    .foodcarpic{
+        height: 394px;
+        width: 701px;
+    }
+    .foodcarpic img {
+        height: 394px;
+        width: 701px;
+    }
+    .foodcarpicul{
+        width: 701px;
+    }
+    .droppicbox li img {
+        height: 76px;
+        width: 135px;
+    }
+    .droppicbox{
+        height: 364px;
+    }
+    .droppicbox li {
+        height: 90px;
+    }
+    .foodcdrop{
+        height: 40px;
+    }
+    .foodcdropdown {
+        background-position: 11px -191px;
+    }
+
+
+
+
+}
+/**1680**/
+@media screen and (min-width: 1680px){
+    .picScroll-left,
+    .picScroll-left .bd ul li{
+        height:590px;
+    }
+    .picScroll-left .bd ul li img{
+        max-height: 590px;
+    }
+    .picScroll-left .middle-out{
+        height:590px;
+    }
+
+    /**********news****/
+    .picboxs {
+        width: 1428px;
+    }
+    .a1,.a8{
+        width: 950px;
+        height: 534px;
+    }
+    .a1 .margindiv,
+    .a8 .margindiv {
+        width: 938px;
+        height: 532px;
+    }
+    .a2,.a3,.a6,.a7{
+        width: 474px;
+        height:267px;
+    }
+    .a7{
+        margin-left: -474px;
+        margin-top: 267px;
+    }
+    .a2 .margindiv,
+    .a3 .margindiv,
+    .a6 .margindiv,
+    .a7 .margindiv {
+        width: 472px;
+        height: 260px;
+    }
+
+    .a4,.a5{
+        width: 712px;
+        height:400px;
+    }
+    .a4 .margindiv,
+    .a5 .margindiv {
+        width: 705px;
+        height: 398px;
+    }
+
+    .a1 .imgbox.middle-out,
+    .a8 .imgbox.middle-out,
+    .a1 .imgbox.middle-out .middle-in img,
+    .a8 .imgbox.middle-out .middle-in img{
+        width: 938px;
+        height: 534px;
+    }
+    .a2 .imgbox.middle-out,
+    .a3 .imgbox.middle-out,
+    .a6 .imgbox.middle-out,
+    .a7 .imgbox.middle-out,
+    .a2 .imgbox.middle-out .middle-in img,
+    .a3 .imgbox.middle-out .middle-in img,
+    .a6 .imgbox.middle-out .middle-in img,
+    .a7 .imgbox.middle-out .middle-in img{
+        width: 472px;
+        height: 260px;
+    }
+    .a4 .imgbox.middle-out,
+    .a5 .imgbox.middle-out,
+    .a4 .imgbox.middle-out .middle-in img,
+    .a5 .imgbox.middle-out .middle-in img{
+        width: 705px;
+        height: 398px;
+    }
+
+    .imgdescript {
+        height: 100px;
+    }
+
+    .a2 .imgdescript, .a3 .imgdescript,
+    .a4 .imgdescript,
+    .a5 .imgdescript,
+    .a6 .imgdescript, .a7 .imgdescript{
+        height: 78px;
+    }
+    .a2 .replaybox,
+    .a3 .replaybox,
+    .a4 .replaybox,
+    .a5 .replaybox,
+    .a6 .replaybox,
+    .a7 .replaybox{
+        display: block;
+    }
+
+}
+
+/**retina 2**/
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2){
+    .menu-moblie-btn{
+        background: url(../images/trace-image/top_menu_btn.png) no-repeat center;
+        background-size: 29px 25px;
+    }
+    .icon-app{
+        background: url(../images/trace-image/formaticon.png) no-repeat;
+        background-size: 100%;
+    }
+    .icon-android-app{
+        background-position: 0px 0;
+    }
+    .icon-ios-app{
+        background-position: 0 -69px;
+    }
+    .icon-webchat-app{
+        background-position: 0 -134px;
+    }
+}
+
+/**retina 3**/
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio: 3){
+    .menu-moblie-btn{
+        background: url(../images/trace-image/top_menu_btn.png) no-repeat center;
+        background-size: 29px 25px;
+    }
+
+}

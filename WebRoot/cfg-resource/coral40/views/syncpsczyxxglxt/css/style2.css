@@ -1,0 +1,291 @@
+@charset "utf-8";
+/* CSS Document */
+body{background-image:url(../images/bg.jpg); background-repeat:no-repeat;}
+#wrapper{width:1920px; height:1080px;}
+.clearfix:before, .clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+	overflow:hidden;
+}
+.clearfix{
+	zoom:1;
+}
+
+
+/*head*/
+.head{
+	width:100%;
+	height:156px;
+	background:url(../images/logo.png) no-repeat center;
+	margin:0 auto;
+	overflow:hidden;
+}
+.head .exit{
+	float:right;
+	margin:40px 90px 0 0;
+}
+.head .tip{
+	margin:40px 0 0 90px;
+	font-size:30px;
+	line-height:39px;
+	display:none;
+}
+.exit *{
+	float:left;
+}
+.exit span{
+	display:inline-block;
+	font-size:26px;
+	line-height:39px;
+	margin-left:20px;
+}
+
+/*content*/
+.content .right{
+	float:right;
+	width:260px;
+	margin-top:70px;
+	height:800px;
+}
+.content .left{
+	float:left;
+	width:100%;
+	margin:0 -260px 0 0;
+}
+
+/*content-left*/
+.left .info{width:464px;margin:170px auto 0;}
+.left #left-shadow{  margin-top: 40px;
+	margin-left: 500px;
+	position: absolute;}
+.infotopbg{background:url(../images/left-bg1.png) no-repeat bottom center; height:42px;}
+.infobottombg{background:url(../images/left-bg3.png) no-repeat top center; height:42px;}
+.info .text{background:url(../images/left-bg2.png) repeat-y center;}
+.text dl{width:392px;margin:0 auto;line-height:40px;}
+.text dt{font-size:35px;line-height:46px;}
+
+
+.left .show{
+	margin:0 0 0 400px;
+}
+
+.left .info{
+	margin: 30px 0 0 100px;
+	position: absolute;
+}
+
+.show .info2{
+	width:1223px;
+	margin:160px auto 0;
+	text-align:center;	
+}
+.info2 .rect{
+	width:640px;
+	margin:0 auto;
+	background-color:rgba(255,255,255,.2);
+	-webkit-border-radius:20px;
+	   -moz-border-radius:20px;
+	    -ms-border-radius:20px;
+	     -o-border-radius:20px;
+	        border-radius:20px;	
+	text-align:center;
+	font-size:80px;
+	line-height:210px;
+}
+.info2 .triangle{
+	width:0;
+	height:0;
+	margin:0 auto 40px;
+	border-left:solid 23px transparent;
+	border-right:solid 23px transparent;
+	border-top:solid 46px rgba(255,255,255,.2);
+}
+
+.left .infobox{
+	margin:30px 260px 0 0;
+	width:1640px;
+	height:880px;
+	background-color:rgba(255,255,255,.3);
+	-webkit-border-radius:35px;
+	   -moz-border-radius:35px;
+	    -ms-border-radius:35px;
+	     -o-border-radius:35px;
+	        border-radius:35px;
+	float:right;
+	display:none;	
+}
+
+.infobox .info{
+	width:1600px;
+	height:736px;
+	margin:50px auto 15px;
+}
+.info table{
+	width:99%;
+	border-collapse: collapse;/*清除表格内部空隙*/
+}
+.info #table-content{
+	width:1570px;
+}
+.info table td{
+	/*要操作表格内部只能操作td，不能操作tr*/
+	background-color:rgba(17,65,0,0.8);
+	height:102px;
+	font-size:35px;
+}
+.info table .fengxi{
+	height:10px;
+	background-color:transparent;
+}
+.info table .title{
+	background-color:rgba(17,65,0,0);
+	font-size:30px;
+	height:64px;
+	padding-bottom:10px;
+}
+.title span{
+	display:inline-block;
+	font-size:30px;
+	width:105px;
+	height:64px;
+	line-height:64px;
+	
+	text-align:center;
+	-webkit-border-radius:12px;
+	   -moz-border-radius:12px;
+	    -ms-border-radius:12px;
+	     -o-border-radius:12px;
+	        border-radius:12px;
+	cursor:pointer;
+}
+.info table .operate{
+	width:40%;
+	text-align:center;
+}
+.info table .left-radius{
+	-webkit-border-radius:15px 0 0 15px;
+	   -moz-border-radius:15px 0 0 15px;
+	    -ms-border-radius:15px 0 0 15px;
+	     -o-border-radius:15px 0 0 15px;
+	        border-radius:15px 0 0 15px;
+	background-repeat:no-repeat;
+	background-position:28px center;
+	width:12%;
+}
+.left-radius img{
+	margin-left:36px;
+}
+.skin{padding-left:24px;}
+.info table .right-radius{
+	-webkit-border-radius:0 15px 15px 0;
+	   -moz-border-radius:0 15px 15px 0;
+	    -ms-border-radius:0 15px 15px 0;
+	     -o-border-radius:0 15px 15px 0;
+	        border-radius:0 15px 15px 0;
+			width:40%;
+}
+.right-radius div{
+	float:left;
+}
+.right-radius .handle,.repeat,.save{
+	width:170px;
+	background-color:#f08300;
+	-webkit-border-radius:15px;
+	   -moz-border-radius:15px;
+	    -ms-border-radius:15px;
+	     -o-border-radius:15px;
+	        border-radius:15px;
+	line-height:66px;
+	text-align:center;
+	margin-right:14px;
+	font-size:35px;
+	cursor:pointer;
+}
+.right-radius .repeat,.save{
+	background-color:#9fa0a0;
+}
+.repeat *,.save *{
+	float:left;
+	margin-left:20px;
+	font-size:35px;
+}
+.repeat span,.save span{
+	float:left;
+	margin-left:5px;
+}
+.right-radius .save{
+	width:238px;
+}
+.all-handle{
+	display:inline-block;
+	background-color:#f08300;
+	height:64px;
+	width:245px;
+	font-size:30px;
+	line-height:64px;
+	text-align:center;
+	-webkit-border-radius:12px;
+	   -moz-border-radius:12px;
+	    -ms-border-radius:12px;
+	     -o-border-radius:12px;
+	        border-radius:12px;
+	float:right;
+	margin-right:56px;
+	margin-top:800px;
+	cursor:pointer;
+}
+
+
+/*content-right*/
+.right .nav{
+	width:236px;	
+}
+.nav .square{
+	width:100%;
+	-webkit-border-radius:35px 35px 35px 35px;
+	   -moz-border-radius:35px 35px 35px 35px;
+	    -ms-border-radius:35px 35px 35px 35px;
+	     -o-border-radius:35px 35px 35px 35px;
+	        border-radius:35px 35px 35px 35px;
+	margin-bottom:20px;
+	cursor:pointer;
+	background-color:rgba(255,255,255,.3);
+}
+.nav .new-square{
+	-webkit-border-radius:0 35px 35px 0;
+	   -moz-border-radius:0 35px 35px 0;
+	    -ms-border-radius:0 35px 35px 0;
+	     -o-border-radius:0 35px 35px 0;
+	        border-radius:0 35px 35px 0;
+}
+.nav .new-square1{
+	background-color:transparent;
+}
+.square img{
+	float:left;
+	margin:5px 0 5px 45px;
+}
+.square .text{
+	float:right;
+	line-height:90px;
+	margin-right:50px;
+}
+.square #icon_1,#icon_2,#icon_3,#icon_4,#icon_5,#icon_6,#icon_7{
+	display:inline-block;
+	width:80px;
+	height:90px;
+	float:left;
+	margin:0 0 5px 40px;
+}
+
+
+#icon_1{ background:url(../images/icon1.png) no-repeat center top;}
+#icon_2{ background:url(../images/icon2.png) no-repeat center top;}
+#icon_3{ background:url(../images/icon3.png) no-repeat center top;}
+#icon_4{ background:url(../images/icon4.png) no-repeat center top;}
+#icon_5{ background:url(../images/icon5.png) no-repeat center top;}
+#icon_6{ background:url(../images/icon6.png) no-repeat center top;}
+#icon_7{ background:url(../images/icon7.png) no-repeat center top;}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	<!-- 安全设置 -->
+    <!-- debug / -->
+
+	<!-- 配置不需要进行安全认证的资源 -->
+	<!-- 配置示例： 
+    <http pattern="/static/**" security="none"/>
+	<http pattern="/login" security="none"/>
+	-->
+	<http pattern="/companyImages/**" security="none"/>
+	<http pattern="/cfg-resource/dhtmlx/common/**" security="none"/>
+	<http pattern="/cfg-resource/coral40/_cui_library/**" security="none"/>
+	<http pattern="/cfg-resource/coral40/common/**" security="none"/>
+	<http pattern="/cfg-resource/cell/views/token.jsp**" security="none"/>
+	<http pattern="/sso.jsp**" security="none"/>
+	<http pattern="/aquatic/**" security="none"/>
+	<http pattern="/spzstpfj/**" security="none"/>
+	<http pattern="/services/jaxrs/aquatic/login" security="none"/>
+	<http pattern="/services/jaxrs/farm/login" security="none"/>
+    <http pattern="/services/jaxrs/herb/signin" security="none"/>
+	<http pattern="/resource/**" security="none"/>
+	<http pattern="/cfg-resource/coral40/views/component/wlwsjcj/wlwsjcj.jsp" security="none"/>
+	<http pattern="/cfg-resource/coral40/views/nsjlcmpzxt/**" security="none"/>
+	<http pattern="/cfg-resource/coral40/views/syncpsczyxxglxt/**" security="none"/>
+	<http pattern="/download/**" security="none"/>
+    <http pattern="/qrCode/**" security="none"/>
+
+	<!-- 水产JaxRs安全认证filter -->
+	<http use-expressions="true"
+	      auto-config="false"
+	      create-session="stateless"
+	      entry-point-ref="unauthorizedEntryPoint"
+	      authentication-manager-ref="authenticationManager"
+	      pattern="/services/jaxrs/aquatic/**">
+		<custom-filter ref="aquaticCrosTokenProcessingFilter" position="BASIC_AUTH_FILTER" />
+	</http>
+    <!-- 山东中药材JaxRs安全认证filter -->
+    <http use-expressions="true"
+          auto-config="false"
+          create-session="stateless"
+          entry-point-ref="herbUnauthorizedEntryPoint"
+          authentication-manager-ref="authenticationManager"
+          pattern="/services/jaxrs/herb/**"  >
+        <custom-filter ref="herbCrosTokenProcessingFilter" position="BASIC_AUTH_FILTER"/>
+    </http>
+	<!-- 海岛田园JaxRs安全认证filter -->
+	<http use-expressions="true"
+	      auto-config="false"
+	      create-session="stateless"
+	      entry-point-ref="farmUnauthorizedEntryPoint"
+	      authentication-manager-ref="authenticationManager"
+	      pattern="/services/jaxrs/farm/**">
+		<custom-filter ref="farmCrosTokenProcessingFilter" position="BASIC_AUTH_FILTER" />
+	</http>
+
+	<http pattern="/services/**" security="none"/>
+
+	<beans:bean id="aquaticCrosTokenProcessingFilter" class="com.ces.component.aquatic.filter.AquaticCrosTokenFilter">
+	</beans:bean>
+    <beans:bean id="herbCrosTokenProcessingFilter" class="com.ces.component.herb.filter.HerbCrosTokenFilter">
+    </beans:bean>
+	<beans:bean id="unauthorizedEntryPoint" class="com.ces.component.aquatic.filter.UnauthorizedEntryPoint">
+	</beans:bean>
+    <beans:bean id="herbUnauthorizedEntryPoint" class="com.ces.component.herb.filter.HerbUnauthorizedEntryPoint">
+	</beans:bean>
+
+
+	<beans:bean id="farmCrosTokenProcessingFilter" class="com.ces.component.farm.filter.FarmCrosTokenFilter">
+	</beans:bean>
+
+	<beans:bean id="farmUnauthorizedEntryPoint" class="com.ces.component.farm.filter.UnauthorizedEntryPoint">
+	</beans:bean>
+
+
+	<!-- 没有配置访问权限的资源默认拒绝访问 -->
+	<!--bean id="securityDenyAll" class="java.lang.Boolean">
+    	<constructor-arg index="0" value="true"/>
+    </bean-->
+    
+    <!-- 每次都从数据库获取资源权限 -->
+    <!--bean id="securityAwaysLoadFromDB" class="java.lang.Boolean">
+    	<constructor-arg index="0" value="false"/>
+    </bean-->
+</beans:beans>

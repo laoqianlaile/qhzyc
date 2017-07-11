@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.h-uploadify-button{
+	display:inline-block;
+	/*margin-left: 10%;*/
+	margin-top:8px;
+	border:1px solid #808080;
+	background-color: #707070;
+	/*background-color: #578490;*/
+	line-height:24px;
+	border-radius:12px;
+	padding:4px 6%;
+    font-size:14px;
+    font-weight: 600;
+    font-family: '微软雅黑';
+	color:#FFF;
+	cursor:pointer;
+	text-decoration:none;
+}
+.h-uploadify-button:hover{
+	background-color: #888;
+}
+.uploadfile{
+	width:0;
+	}
+.h-uploadify-queue .h-uploadify-queue-item{
+	list-style-type:none;
+	margin-top:10px;
+	}
+.h-uploadbtn,.h-delfilebtn{
+	display:inline-block;
+	border:1px solid #999;
+	line-height:24px;
+	border-radius:4px;
+	padding:0 18px;
+    font-size:12px;
+	color:#666;
+	text-decoration:none;
+	}
+.h-uploadbtn{
+	display: none;/*默认不显示上传按钮，非自动上传时用js控制显示*/
+}
+.h-disabledbtn{
+
+}
+.h-up_filename,.h-progressnum,.h-delfilebtn,.h-uploadbtn,.h_up_percent{
+	font-size:12px;
+	color:#666;
+	margin-left:10px;
+	}
+.h-up_filename {
+	width: 100px;
+	text-overflow: ellipsis;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.h-uploadify-progress{
+	 display:inline-block; 
+	 width:360px;
+	 height:10px; 
+	 background-color:white;
+	 border-radius:20px;
+	 border:2px groove #666;
+	 vertical-align:middle;
+	 padding:0;
+	 }
+.h-uploadify-progress-bar{
+	width:0;
+	height:100%;
+	border-radius:20px;
+	background-color: #0099FF;
+	}

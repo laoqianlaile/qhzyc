@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>Zzbzglxzxq</code>  
+	<name>zzbzglxzxq</name>  
+	<alias>包装管理详情</alias>  
+	<version>V2.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>/zzbzglxzxq/zzbzglxzxq.jsp</url>  
+	<package_time>2015-12-16 10:56:16</package_time>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>rowDataId</name>  
+			<value/>  
+			<remark>包装详情入餐</remark> 
+		</input_parameter> 
+	</input_parameters>  
+	<reserve_zones> 
+		<reserve_zone> 
+			<name>bzjsxq</name>  
+			<alias>包装件数详情</alias>  
+			<type>1</type>  
+			<page>zzbzglxzxq.jsp</page> 
+		</reserve_zone> 
+	</reserve_zones>  
+	<functions> 
+		<function> 
+			<name>getBzjs</name>  
+			<page>zzbzglxzxq.jsp</page>  
+			<return_datas> 
+				<return_data> 
+					<name>P_columns</name>  
+					<remark/> 
+				</return_data> 
+			</return_datas>  
+			<remark/> 
+		</function> 
+	</functions>  
+	<remark>包装管理详情</remark> 
+</component>

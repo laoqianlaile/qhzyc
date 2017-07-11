@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Organization>
+  <Departments>
+    <Department name="组织机构" parentId="0000" id="-1">
+    </Department>
+    <Department name="中央档案馆" parentId="-1" id="138">
+    </Department>
+    <Department name="组织12" parentId="138" id="236">
+    </Department>
+    <Department name="组织13" parentId="138" id="237">
+    </Department>
+    <Department name="无证单位" parentId="-1" id="140">
+    </Department>
+    <Department name="无证单位的部门" parentId="140" id="141">
+    </Department>
+    <Department name="测试" parentId="140" id="264">
+    </Department>
+    <Department name="北京分公司" parentId="-1" id="107">
+    </Department>
+    <Department name="市场部" parentId="107" id="114">
+    </Department>
+    <Department name="销售部" parentId="107" id="115">
+    </Department>
+    <Department name="广东分公司" parentId="-1" id="108">
+    </Department>
+    <Department name="商务部" parentId="108" id="116">
+    </Department>
+    <Department name="质量部" parentId="108" id="117">
+    </Department>
+    <Department name="检查部" parentId="108" id="242">
+    </Department>
+    <Department name="没有全宗的单位" parentId="-1" id="137">
+    </Department>
+    <Department name="独立用户" parentId="-1" id="1">
+    </Department>
+    <Department name="上海中信信息" parentId="-1" id="105">
+    </Department>
+    <Department name="产品管理部" parentId="105" id="109">
+    </Department>
+    <Department name="产品实施部" parentId="105" id="110">
+    </Department>
+    <Department name="总经办" parentId="105" id="111">
+    </Department>
+    <Department name="构件产品部" parentId="105" id="112">
+    </Department>
+    <Department name="咨询服务部" parentId="105" id="113">
+    </Department>
+    <Department name="光典产品部" parentId="105" id="106">
+    </Department>
+    <Department name="333" parentId="-1" id="265">
+    </Department>
+    <Department name="松江测试部" parentId="-1" id="263">
+    </Department>
+  </Departments>
+  <Roles>
+  </Roles>
+  <Users>
+    <User name="manager" desc="manager" id="147">
+      <OwnDept id="114"/>
+    </User>
+    <User name="admin" desc="admin" id="146">
+      <OwnDept id="110"/>
+    </User>
+    <User name="管理员11" desc="管理员11" id="1011">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员12" desc="管理员12" id="1012">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员13" desc="管理员13" id="1013">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员14" desc="管理员14" id="1014">
+      <OwnDept id="106"/>
+    </User>
+    <User name="12" desc="12" id="1015">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员16" desc="管理员16" id="1016">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员17" desc="管理员17" id="1017">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员18" desc="管理员18" id="1018">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员19" desc="管理员19" id="1019">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员20" desc="管理员20" id="1020">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员21" desc="管理员21" id="1021">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员22" desc="管理员22" id="1022">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员23" desc="管理员23" id="1023">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员24" desc="管理员24" id="1024">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员25" desc="管理员25" id="1025">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员26" desc="管理员26" id="1026">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员27" desc="管理员27" id="1027">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员28" desc="管理员28" id="1028">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员29" desc="管理员29" id="1029">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员30" desc="管理员30" id="1030">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员31" desc="管理员31" id="1031">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员32" desc="管理员32" id="1032">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员33" desc="管理员33" id="1033">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员34" desc="管理员34" id="1034">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员35" desc="管理员35" id="1035">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员36" desc="管理员36" id="1036">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员37" desc="管理员37" id="1037">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员38" desc="管理员38" id="1038">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员39" desc="管理员39" id="1039">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员40" desc="管理员40" id="1040">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员41" desc="管理员41" id="1041">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员42" desc="管理员42" id="1042">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员43" desc="管理员43" id="1043">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员44" desc="管理员44" id="1044">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员45" desc="管理员45" id="1045">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员46" desc="管理员46" id="1046">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员47" desc="管理员47" id="1047">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员48" desc="管理员48" id="1048">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员49" desc="管理员49" id="1049">
+      <OwnDept id="106"/>
+    </User>
+    <User name="QA" desc="QA" id="138">
+      <OwnDept id="106"/>
+    </User>
+    <User name="兼职档案管理员" desc="兼职档案管理员" id="111">
+      <OwnDept id="106"/>
+    </User>
+    <User name="移交审批人员" desc="移交审批人员" id="113">
+      <OwnDept id="106"/>
+    </User>
+    <User name="bmld" desc="bmld" id="115">
+      <OwnDept id="106"/>
+    </User>
+    <User name="档案管理员" desc="档案管理员" id="110">
+      <OwnDept id="106"/>
+    </User>
+    <User name="一般人员" desc="一般人员" id="112">
+      <OwnDept id="106"/>
+    </User>
+    <User name="集团领导" desc="集团领导" id="114">
+      <OwnDept id="106"/>
+    </User>
+    <User name="超级档案管理员" desc="超级档案管理员" id="116">
+      <OwnDept id="106"/>
+    </User>
+    <User name="测试用户" desc="测试用户" id="158">
+      <OwnDept id="106"/>
+    </User>
+    <User name="管理员50" desc="管理员50" id="1050">
+      <OwnDept id="106"/>
+    </User>
+  </Users>
+</Organization>

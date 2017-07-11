@@ -1,0 +1,47 @@
+@charset "utf-8";
+@IMPORT url("media.css");
+/* -------------------------------------------------
+ * reset css
+ * -------------------------------------------------
+*/
+
+
+.userboxthing{
+	width: 190px;
+	position: absolute;
+	right: 0;
+	top: 62px;
+	background: #c9c9c9;
+	display: none;
+
+}
+
+.headerUser:hover .userboxthing{display: block;}
+
+.userboxthing>div{
+	border-bottom: 1px solid #fff;
+	line-height: 45px;
+	height: 45px;
+	padding:0 10px;
+}
+
+.useredit a{
+	display: inline-block;
+	background: url(../images/xg.png) no-repeat 3px; width: 30px;height:100%;
+	vertical-align: top;
+}
+.loginoutdiv a{
+	display: inline-block;
+	background: url(../images/out.png) no-repeat 5px ;width: 30px;height:100%;
+	vertical-align: top;
+}
+.useredit,.loginoutdiv b{
+	font-size: 14px;
+}
+.userboxthing>div:hover{
+	color: #fff;
+}
+
+.userbox ul li{
+	cursor:pointer;
+}

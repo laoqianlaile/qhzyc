@@ -1,0 +1,23 @@
+package com.ces.component.${packageName}.action;
+
+import com.ces.component.${packageName}.dao.${className}Dao;
+import com.ces.component.${packageName}.service.${className}Service;
+import com.ces.component.trace.action.base.TraceShowModuleDefineServiceDaoController;
+import com.ces.xarch.core.entity.StringIDEntity;
+
+public class ${className}Controller extends TraceShowModuleDefineServiceDaoController<StringIDEntity, ${className}Service, ${className}Dao> {
+
+    private static final long serialVersionUID = 1L;
+
+    /*
+     * (非 Javadoc)
+     * <p>标题: initModel</p>
+     * <p>描述: </p>
+     * @see com.ces.xarch.core.web.struts2.BaseController#initModel()
+     */
+    @Override
+    protected void initModel() {
+        setModel(new StringIDEntity());
+    }
+
+}

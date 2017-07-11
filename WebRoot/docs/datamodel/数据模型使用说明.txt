@@ -1,0 +1,16 @@
+coral4.0:
+1. 树模型URL：contextPath + "/appmanage/tree-define!tree.json"
+				+ "?E_frame_name=coral" // 表示使用coral4.0前端UI
+				//+ "&E_model_name=tree"  // 表示使用树模型 (可以不写)
+				+ "&P_ISPARENT=child"   // 表示判断树节点是否为父节点的bean属性
+				+ "&F_in=name,id"  // F_in中第一个bean属性是树节点名称，其他的是树节点的隐藏值，多个属性时用英文逗号分隔(,)
+				+ "&P_ID=userId"   // 表示bean中的userId属性，在转JSON时转id
+				+ "&P_filterId=parentId" // 表示前台id的值传入后时，在查询时用parentId属性来过滤
+				+ "&P_CHECKED=838386ae45acc0c60145acc412bb0003"// 表示在选中的树节点ID,多个值时用英文逗号分隔(,); 如果是"all"则表示选中所有节点
+				+ "&P_ICON=";// P_ICON可以传入三个属性，分别表示叶子节点图标、 节点关闭时图标、节点打开时图标，多个属性时用英文逗号分隔(,)
+				
+2. 下拉框模型URL : contextPath + "/appmanage/column-define!combobox.json"
+				+ "?E_frame_name=coral" // 表示使用coral4.0前端UI
+				//+ "&E_model_name=combobox"  // 表示使用下拉框模型 (可以不写)
+				+ "&F_in=columnName,showName"  // F_in中第一个bean属性是下拉框的"隐藏值"，第二个bean属性是下拉框的"显示值"
+				+ "&P_SELECTED=ARCHIVE_NO";// 表示下拉框中的默认选中项(隐藏值),多个值时用英文逗号分隔(,)

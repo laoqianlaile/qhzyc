@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>zzpzxx</code>  
+	<name>zzpzxx</name>  
+	<alias>蔬菜种植品种信息</alias>  
+	<version>V1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>/zzpzxx/zzpzxx.jsp</url>  
+	<package_time>2015-08-14 17:06:52</package_time>  
+	<reserve_zones> 
+		<reserve_zone> 
+			<name>pzzjd</name>  
+			<alias>品种子节点页面</alias>  
+			<type>3</type>  
+			<page>zzpzxx.jsp</page> 
+		</reserve_zone>  
+		<reserve_zone> 
+			<name>pzjd</name>  
+			<alias>品种节点页面</alias>  
+			<type>3</type>  
+			<page>zzpzxx.jsp</page> 
+		</reserve_zone>  
+		<reserve_zone> 
+			<name>plym</name>  
+			<alias>品类页面</alias>  
+			<type>3</type>  
+			<page>zzpzxx.jsp</page> 
+		</reserve_zone> 
+	</reserve_zones>  
+	<functions> 
+		<function> 
+			<name>getTreeNodeId</name>  
+			<page>zzpzxx.jsp</page>  
+			<return_datas> 
+				<return_data> 
+					<name>treeId</name>  
+					<remark>treeId</remark> 
+				</return_data>  
+				<return_data> 
+					<name>plbh</name>  
+					<remark>品类编号</remark> 
+				</return_data>  
+				<return_data> 
+					<name>pl</name>  
+					<remark>品类</remark> 
+				</return_data> 
+			</return_datas>  
+			<remark/> 
+		</function> 
+	</functions>  
+	<remark/> 
+</component>

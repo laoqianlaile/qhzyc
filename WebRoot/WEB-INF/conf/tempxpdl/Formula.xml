@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Formulas>
+	<Formula>
+		<name>上一节点操作者部门领导</name>
+		<value>@?xxxxx?aaaaaa</value>
+	</Formula>
+	<Formula>
+		<name>自定义公式2</name>
+		<value>@?xxxxx?bbbb</value>
+	</Formula>
+	<Formula>
+		<name>自定义公式3</name>
+		<value>@?xxxxx?ccccc</value>
+	</Formula>
+</Formulas>

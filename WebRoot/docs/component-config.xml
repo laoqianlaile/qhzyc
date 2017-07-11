@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<!-- 构件的基本信息 -->
+	<code>编码[构件的身份证，唯一性]</code>
+	<name>构件类名</name>
+	<alias>构件名称</alias>
+	<version>版本号</version>
+	<type>类型0-公用构件 1-页面构件 2-逻辑构件 3-树构件 4-物理表构件 5-逻辑表构件 6-通用表构件 7-标签页构件 8-中转器构件 9-组合构件</type>
+	<views>前台技术[coral40 ...]</views>
+	<url>访问地址[xxx/xxx.jsp]或[xxx/xxx.action]</url>
+	<package_time>构件打包时间yyyy-MM-dd HH:mm:ss，构件更新时使用</package_time>
+	<remark>备注（如：如何使用、参数配置、注意事项等等）</remark>
+	<!-- 构件的系统参数 -->
+	<system_parameters>
+		<system_parameter>
+			<name>名称</name>
+			<remark>参数说明</remark>
+		</system_parameter>
+	</system_parameters>
+	<!-- 构件自身的配置参数 -->
+	<self_parameters>
+		<self_parameter>
+			<name>名称</name>
+			<type>0-文本框 1-普通下拉框</type>
+			<text>默认选项的text</text>
+			<value>默认值</value>
+			<options>
+				<option>
+					<text></text>
+					<value></value>
+				</option>
+			</options>
+			<remark>参数说明</remark>
+		</self_parameter>
+	</self_parameters>
+	<!-- 构件入参 -->
+	<input_parameters>
+		<input_parameter>
+			<name>参数名称</name>
+			<value>参数默认值</value>
+			<remark>参数说明</remark>
+		</input_parameter>
+		<input_parameter>
+			<name>condition</name>
+			<remark>（中转器构件必须）转向某构件的条件</remark>
+		</input_parameter>
+		<input_parameter>
+			<name>params</name>
+			<remark>（中转器构件必须）传递到构件中的参数，格式为param1≡value1;param2≡value2</remark>
+		</input_parameter>
+	</input_parameters> 
+	<!-- 构件出参 -->
+	<output_parameters>
+		<output_parameter>
+			<name>参数名称</name>
+			<remark>参数说明</remark>
+		</output_parameter>
+	</output_parameters> 
+	<!-- 构件预留区 -->
+	<reserve_zones>
+		<reserve_zone>
+			<name>预留区名称</name>
+			<alias>预留区配置列表上显示的名称</alias>
+			<type>预留区类型：0-工具条 1-列表超链接 2-按钮预留区 3-树节点预留区 4-标签页预留区 5-中转器预留区</type>
+			<page>所在页面</page>
+		</reserve_zone>
+		<reserve_zone>
+			<name>transferDeviceReserve</name>
+			<alias>（中转器构件必须）中转器预留区</alias>
+			<type>5</type>
+		</reserve_zone>
+	</reserve_zones>
+	<!-- 页面构件提供的获取页面上信息的js方法 -->
+	<functions>
+		<function>
+			<name>方法名</name>
+			<remark>说明</remark>
+			<page>所在页面</page>
+			<return_datas>
+				<return_data>
+					<name>名称1</name>
+					<remark>说明</remark>
+				</return_data>
+				<return_data>
+					<name>名称2</name>
+					<remark>说明</remark>
+				</return_data>
+			</return_datas>
+		</function>
+	</functions>
+	<!-- 页面构件提供的执行页面操作的js方法 -->
+	<callbacks>
+		<callback>
+			<name>方法名（用于绑定的构件关闭或返回时使用）</name>
+			<remark>参数说明</remark>
+			<page>所在页面</page>
+			<parameters>
+				<parameter>
+					<name>名称1</name>
+					<remark>说明</remark>
+				</parameter>
+				<parameter>
+					<name>名称2</name>
+					<remark>说明</remark>
+				</parameter>
+			</parameters>
+		</callback>
+	</callbacks>
+	<!-- 构件中用到的表 -->
+	<tables>
+		<table>
+			<name>表名称</name>
+			<is_selfdefine>是否是自定义的表，如果是自定义的表，那么columns和release_with_data不要了，直接在表定义里定义 0-不是 1-是</is_selfdefine>
+			<release_with_data>发布时是否生成数据脚本 0-不生成，1-生成</release_with_data>
+			<columns>
+				<column>
+					<name>字段名称</name>
+					<type>字段类型（字符型，日期型，数字型和clob等数据库本身的类型）</type>
+					<length>长度</length>
+					<is_null>0-可为空，1-非空</is_null>
+					<default_value>默认值</default_value>
+					<remark>字段说明</remark>
+				</column>
+			</columns>
+		</table>
+	</tables>
+	<before_click_js>
+		构件绑定按钮时使用。点击按钮后，打开构件前调用的js方法。
+	</before_click_js>
+	<!-- 构件中需要配置权限的按钮 -->
+	<authority_buttons>
+		<button>
+			<name>按钮名称</name>
+			<display_name>按钮显示名称</display_name>
+		</button>
+	</authority_buttons>
+</component>

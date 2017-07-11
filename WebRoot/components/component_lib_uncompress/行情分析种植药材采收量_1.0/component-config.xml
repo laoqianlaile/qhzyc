@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component> 
+	<code>hqfxzzyccsl</code>  
+	<name>hqfxzzyccsl</name>  
+	<alias>行情分析种植药材采收量</alias>  
+	<version>1.0</version>  
+	<type>1</type>  
+	<views>coral40</views>  
+	<url>hqfxzzyccsl/hqfxzzyccsl.jsp</url>  
+	<package_time>2016-06-12 09:35:00</package_time>  
+	<system_parameters> 
+		<system_parameter> 
+			<name>sysParam</name>  
+			<remark/> 
+		</system_parameter> 
+	</system_parameters>  
+	<self_parameters> 
+		<self_parameter> 
+			<name>sysParam</name>  
+			<type>0</type>  
+			<text/>  
+			<value/>  
+			<remark/> 
+		</self_parameter> 
+	</self_parameters>  
+	<input_parameters> 
+		<input_parameter> 
+			<name>inputParam</name>  
+			<value/>  
+			<remark/> 
+		</input_parameter> 
+	</input_parameters>  
+	<output_parameters> 
+		<output_parameter> 
+			<name>outputParam</name>  
+			<remark/> 
+		</output_parameter> 
+	</output_parameters>  
+	<remark/> 
+</component>
